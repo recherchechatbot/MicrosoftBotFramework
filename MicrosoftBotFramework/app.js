@@ -6,60 +6,68 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var restify = require('restify');
+var builder = require('botbuilder');
+var apiairecognizer = require('api-ai-recognizer');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
 
+var server = restify.createServer();
 var app = express();
+process.env.MICROSOFT_APP_ID = '';
+process.env.MICROSOFT_APP_PASSWORD = '';
+process.env.LUIS_APP_URL = 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/5852ed00-7fee-4cf5-86d6-f6f2f4fb9f30?subscription-key=d0a77746cd964a45b2a61a629824e17d&verbose=true&timezoneOffset=0&';
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', routes);
-app.use('/users', users);
-
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
+//Setup server restify
+server.listen(process.env.port || process.env.PORT || 3978, function () {
+    console.log('%s listening to %s', server.name, server.url);
 });
 
-// error handlers
+//Creation chat connector pour communiquer avec le serve bot framework
+var connector = new builder.ChatConnector({
+    appId: process.env.MICROSOFT_APP_ID,
+    appPassword: process.env.MICROSOFT_APP_PASSWORD
+});
 
-// development error handler
-// will print stacktrace
-if (app.get('env') === 'development') {
-    app.use(function (err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
+
+
+
+//listen messages utlisateurs
+server.post('/api/messages', connector.listen());
+
+
+//Reception message utilisateur
+var bot = new builder.UniversalBot(connector);
+
+
+
+
+////Ajout reconnaissance LUIS
+var luisAppUrl = process.env.LUIS_APP_URL ;
+bot.recognizer(new builder.LuisRecognizer(luisAppUrl));
+
+bot.dialog('/Recettes', [
+    function (session) {
+        session.send('WESHWESHWESHWESH');
+    }
+]).triggerAction({
+    matches: 'Recettes'
     });
-}
 
-// production error handler
-// no stacktraces leaked to user
-app.use(function (err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: {}
-    });
-});
 
-app.set('port', process.env.PORT || 3000);
+////creation dialogue recette
+//bot.dialog('RechercheRecette', [
+//    //mon code (appel webservice, format de réponse etc...
+//    function (session, args, next) {
+//        session.send('bonjour, vous avez tapé : %s', session.message.text);
+//        console.log("on est dans le dialogue recettes");
+//        var intent = args.intent;
+//        var produit = builder.EntityRecogniser.findEntity(intent.entities, 'Nourriture');
+//        builder.Prompts.text(session, 'Vous recherchez des recettes à base de ' + produit);
+        
+//    }
+//]).triggerAction({ matches: 'Recettes' });//Dialogue lancé ssi l'intent matché est "recettes"
 
-var server = app.listen(app.get('port'), function () {
-    debug('Express server listening on port ' + server.address().port);
-});
+
+
+
