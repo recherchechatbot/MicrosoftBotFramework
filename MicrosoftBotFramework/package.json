@@ -16,6 +16,8 @@
     "cookie-parser": "^1.4.0",
     "debug": "^2.2.0",
     "express": "^4.14.0",
+    "http": "0.0.0",
+    "microsoft-adaptivecards": "^0.6.1",
     "morgan": "^1.7.0",
     "pug": "^2.0.0-beta6",
     "restify": "^6.2.3",
