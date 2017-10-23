@@ -11,6 +11,7 @@ var http = require('http');
 var request = require('request');
 var AdaptiveCards = require('microsoft-adaptivecards');
 const FO_URL = 'https://drive.intermarche.com/';
+const URL_MCO = process.env.URL_MCO;
 
 
 var server = restify.createServer();
