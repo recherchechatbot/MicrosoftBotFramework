@@ -3,9 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "main": "MicrosoftBotFramework/app.js",
-  "scripts": {
-    "start": "node app.js"
-  },
   "description": "MicrosoftBotFramework",
   "author": {
     "name": "a.rousselot"
