@@ -11,6 +11,7 @@ var builder = require('botbuilder');
 var apiairecognizer = require('api-ai-recognizer');
 var http = require('http');
 var request = require('request');
+var AdaptiveCards = require('microsoft-adaptivecards');
 const FO_URL = 'https://drive.intermarche.com/';
 
 
@@ -80,7 +81,7 @@ var bot = new builder.UniversalBot(connector, function (session) {
 var recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/5852ed00-7fee-4cf5-86d6-f6f2f4fb9f30?subscription-key=d0a77746cd964a45b2a61a629824e17d&timezoneOffset=0&verbose=true');
 bot.recognizer(recognizer);
 
-bot.dialog('getproduit', [    
+bot.dialog('getproduit', [   
     function (session) {
         session.send('Bienvenue sur le service de courses d\'intermarché');
         builder.Prompts.text(session, 'Merci de rentrer le produit que vous recherchez (par exemple: poulet');
@@ -127,16 +128,374 @@ bot.dialog('getproduit', [
     }
 ]).triggerAction({
     matches: /^courses$/i,
-    confirmPrompt:"t'as plus besoin d'aide?"
     });
 
 
-bot.dialog('recettes', [
+bot.dialog('adaptive', [
     function (session) {
-        session.send('Recettes');
+        console.log('je suis dans le dialogue adaptive card ');
+        var card = {
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "type": "AdaptiveCard",
+            "version": "1.0",
+            "body": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": 2,
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Tell us about yourself",
+                                    "weight": "bolder",
+                                    "size": "medium"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "We just need a few more details to get you booked for the trip of a lifetime!",
+                                    "isSubtle": true,
+                                    "wrap": true
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Don't worry, we'll never share or sell your information.",
+                                    "isSubtle": true,
+                                    "wrap": true,
+                                    "size": "small"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Your name",
+                                    "wrap": true
+                                },
+                                {
+                                    "type": "Input.Text",
+                                    "id": "myName",
+                                    "placeholder": "Last, First"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Your email",
+                                    "wrap": true
+                                },
+                                {
+                                    "type": "Input.Text",
+                                    "id": "myEmail",
+                                    "placeholder": "youremail@example.com",
+                                    "style": "email"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Phone Number"
+                                },
+                                {
+                                    "type": "Input.Text",
+                                    "id": "myTel",
+                                    "placeholder": "xxx.xxx.xxxx",
+                                    "style": "tel"
+                                }
+                            ]
+                        }
+                        //{
+                        //    "type": "Column",
+                        //    "width": 1,
+                        //    "items": [
+                        //        {
+                        //            "type": "Image",
+                        //            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Diver_Silhouette%2C_Great_Barrier_Reef.jpg",
+                        //            "size": "auto"
+                        //        }
+                        //    ]
+                        //}
+                    ]
+                }
+            ],
+            "actions": [
+                {
+                    "type": "Action.Submit",
+                    "title": "Submit"
+                }
+            ]
+        }
+        var msg = new builder.Message(session);
+        msg.addAttachment(card);
+        session.send(msg);
     }
 ]).triggerAction({
-    matches: 'Recettes',
+    matches: /^adaptive$/i,
+    });
+
+AdaptiveCards.setHostConfig({
+    "spacing": {
+        "small": 3,
+        "default": 8,
+        "medium": 20,
+        "large": 30,
+        "extraLarge": 40,
+        "padding": 20
+    },
+    "separator": {
+        "lineThickness": 1,
+        "lineColor": "#EEEEEE"
+    },
+    "supportsInteractivity": true,
+    "fontFamily": "Segoe UI",
+    "fontSizes": {
+        "small": 12,
+        "default": 14,
+        "medium": 17,
+        "large": 21,
+        "extraLarge": 26
+    },
+    "fontWeights": {
+        "lighter": 200,
+        "default": 400,
+        "bolder": 600
+    },
+    "containerStyles": {
+        "default": {
+            "backgroundColor": "#00000000",
+            "fontColors": {
+                "default": {
+                    "normal": "#333333",
+                    "subtle": "#EE333333"
+                },
+                "accent": {
+                    "normal": "#2E89FC",
+                    "subtle": "#882E89FC"
+                },
+                "attention": {
+                    "normal": "#cc3300",
+                    "subtle": "#DDcc3300"
+                },
+                "good": {
+                    "normal": "#54a254",
+                    "subtle": "#DD54a254"
+                },
+                "warning": {
+                    "normal": "#e69500",
+                    "subtle": "#DDe69500"
+                }
+            }
+        },
+        "emphasis": {
+            "backgroundColor": "#08000000",
+            "fontColors": {
+                "default": {
+                    "normal": "#333333",
+                    "subtle": "#EE333333"
+                },
+                "accent": {
+                    "normal": "#2E89FC",
+                    "subtle": "#882E89FC"
+                },
+                "attention": {
+                    "normal": "#cc3300",
+                    "subtle": "#DDcc3300"
+                },
+                "good": {
+                    "normal": "#54a254",
+                    "subtle": "#DD54a254"
+                },
+                "warning": {
+                    "normal": "#e69500",
+                    "subtle": "#DDe69500"
+                }
+            }
+        }
+    },
+    "imageSizes": {
+        "small": 40,
+        "medium": 80,
+        "large": 160
+    },
+    "actions": {
+        "maxActions": 5,
+        "spacing": 2,
+        "buttonSpacing": 10,
+        "showCard": {
+            "actionMode": 0,
+            "inlineTopMargin": 16
+        },
+        "actionsOrientation": 0,
+        "actionAlignment": 3
+    },
+    "adaptiveCard": {
+        "allowCustomStyle": false
+    },
+    "image": {
+        "size": 3
+    },
+    "imageSet": {
+        "imageSize": 3,
+        "maxImageHeight": 100
+    },
+    "factSet": {
+        "title": {
+            "color": 0,
+            "size": 1,
+            "isSubtle": false,
+            "weight": 2,
+            "wrap": true,
+            "maxWidth": 150
+        },
+        "value": {
+            "color": 0,
+            "size": 1,
+            "isSubtle": false,
+            "weight": 1,
+            "wrap": true
+        },
+        "spacing": 10
+    }
+})
+
+bot.dialog('adaptive2', [
+    function (session) {
+        console.log('je suis dans le dialogue adaptive card ');
+        var card = {
+            
+	"$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "type": "AdaptiveCard",
+            "version": "1.0",
+            "body": [
+                {
+                    "type": "Container",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Publish Adaptive Card schema",
+                            "weight": "bolder",
+                            "size": "medium"
+                        },
+                        {
+                            "type": "ColumnSet",
+                            "columns": [
+                                {
+                                    "type": "Column",
+                                    "width": "auto",
+                                    "items": [
+                                        {
+                                            "type": "Image",
+                                            "url": "https://pbs.twimg.com/profile_images/3647943215/d7f12830b3c17a5a9e4afcc370e3a37e_400x400.jpeg",
+                                            "size": "small",
+                                            "style": "person"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Column",
+                                    "width": "stretch",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "Matt Hidinger",
+                                            "weight": "bolder",
+                                            "wrap": true
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "spacing": "none",
+                                            "text": "Created {{DATE(2017-02-14T06:08:39Z,Short)}}",
+                                            "isSubtle": true,
+                                            "wrap": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Now that we have defined the main rules and features of the format, we need to produce a schema and publish it to GitHub. The schema will be the starting point of our reference documentation.",
+                            "wrap": true
+                        },
+                        {
+                            "type": "FactSet",
+                            "facts": [
+                                {
+                                    "title": "Board:",
+                                    "value": "Adaptive Card"
+                                },
+                                {
+                                    "title": "List:",
+                                    "value": "Backlog"
+                                },
+                                {
+                                    "title": "Assigned to:",
+                                    "value": "Matt Hidinger"
+                                },
+                                {
+                                    "title": "Due date:",
+                                    "value": "Not set"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "actions": [
+                {
+                    "type": "Action.ShowCard",
+                    "title": "Set due date",
+                    "card": {
+                        "type": "AdaptiveCard",
+                        "body": [
+                            {
+                                "type": "Input.Date",
+                                "id": "dueDate",
+                                "title": "Select due date"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "Action.Submit",
+                                "title": "OK"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "Action.ShowCard",
+                    "title": "Comment",
+                    "card": {
+                        "type": "AdaptiveCard",
+                        "body": [
+                            {
+                                "type": "Input.Text",
+                                "id": "comment",
+                                "isMultiline": true,
+                                "placeholder": "Enter your comment"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "Action.Submit",
+                                "title": "OK"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "Action.OpenUrl",
+                    "title": "View",
+                    "url": "http://adaptivecards.io"
+                }
+            ]
+        }
+        
+        var msg = new builder.Message(session);
+        msg.addAttachment(card);
+        session.send(msg);
+    }
+]).triggerAction({
+    matches: /^adaptive2$/i,
 });
 ////creation dialogue recette
 //bot.dialog('RechercheRecette', [
