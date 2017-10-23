@@ -20,8 +20,6 @@ var app = express();
 const MICROSOFT_APP_ID = process.env.MICROSOFT_APP_ID;
 const MICROSOFT_APP_PASSWORD = process.env.MICROSOFT_APP_PASSWORD;
 process.env.LUIS_APP_URL = 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/5852ed00-7fee-4cf5-86d6-f6f2f4fb9f30?subscription-key=d0a77746cd964a45b2a61a629824e17d';
-console.log('ID' + MICROSOFT_APP_ID);
-console.log('MDP' + MICROSOFT_APP_PASSWORD);
 
 //Setup server restify
 server.listen(process.env.port || process.env.PORT || 3978, function () {
@@ -30,8 +28,8 @@ server.listen(process.env.port || process.env.PORT || 3978, function () {
 
 //Creation chat connector pour communiquer avec le serve bot framework
 var connector = new builder.ChatConnector({
-    appId: process.env.MICROSOFT_APP_ID,
-    appPassword: process.env.MICROSOFT_APP_PASSWORD
+    appId: MICROSOFT_APP_ID,
+    appPassword: MICROSOFT_APP_PASSWORD
 });
 
 
@@ -85,6 +83,9 @@ bot.recognizer(recognizer);
 
 bot.dialog('getproduit', [   
     function (session) {
+
+        console.log('ID' + MICROSOFT_APP_ID);
+        console.log('MDP' + MICROSOFT_APP_PASSWORD);
         session.send('Bienvenue sur le service de courses d\'intermarché');
         builder.Prompts.text(session, 'Merci de rentrer le produit que vous recherchez (par exemple: poulet');
     },
