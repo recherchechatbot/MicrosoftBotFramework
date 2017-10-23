@@ -1,1 +1,1 @@
-web: node MicrosoftBotBuilder/app.js
+web: node ./MicrosoftBotBuilder/app.js
