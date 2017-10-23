@@ -2,8 +2,9 @@
   "name": "microsoft-bot-framework",
   "version": "0.0.0",
   "private": true,
+  "main": "MicrosoftBotFramework/app.js",
   "scripts": {
-    "start": "node app"
+    "start": "node app.js"
   },
   "description": "MicrosoftBotFramework",
   "author": {
