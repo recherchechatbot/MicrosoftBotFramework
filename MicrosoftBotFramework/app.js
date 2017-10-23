@@ -13,6 +13,8 @@ var AdaptiveCards = require('microsoft-adaptivecards');
 const FO_URL = 'https://drive.intermarche.com/';
 const URL_MCO = process.env.URL_MCO;
 const URL_RC = process.env.URL_RC;
+const MSQ_JETON_APP_RC = process.env.MSQ_JETON_APP_RC;
+const MSQ_APP_RC = process.env.MSQ_APP_RC;
 
 
 var server = restify.createServer();
