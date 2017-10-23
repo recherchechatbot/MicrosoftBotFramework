@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "main": "MicrosoftBotFramework/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "description": "MicrosoftBotFramework",
   "author": {
     "name": "a.rousselot"
