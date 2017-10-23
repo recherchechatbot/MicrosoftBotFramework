@@ -126,7 +126,11 @@ bot.dialog('getrecette', [
                 msg.attachmentLayout(builder.AttachmentLayout.carousel)
                 var myCardArray = [];
                 const limit = Math.min(10, body.Recettes.length);
-                for (var i = 0; i < limit; i++) {
+                for (var i = 0; i < limit; i++) {                    
+                    var ingredientList = "";
+                    for (var j = 0; j < body.Recettes[i].IngredientsPrincipaux.length; j++) {
+                        ingredientsList += body.Recettes[i].IngredientsPrincipaux[j] + "\n";
+                    };
                     const url = "https://drive.intermarche.com/1-nantes-leraudiere/recette/" + body.Recettes[i].IdRecette + "-recette"; //TODO Choisir le bon magasin quand authentification
                     myCardArray.push(
                         new builder.HeroCard(session)
