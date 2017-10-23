@@ -12,6 +12,7 @@ var request = require('request');
 var AdaptiveCards = require('microsoft-adaptivecards');
 const FO_URL = 'https://drive.intermarche.com/';
 const URL_MCO = process.env.URL_MCO;
+const URL_RC = process.env.URL_RC;
 
 
 var server = restify.createServer();
@@ -51,6 +52,101 @@ var bot = new builder.UniversalBot(connector, function (session) {
 ////Ajout reconnaissance LUIS
 var recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/5852ed00-7fee-4cf5-86d6-f6f2f4fb9f30?subscription-key=d0a77746cd964a45b2a61a629824e17d&timezoneOffset=0&verbose=true');
 bot.recognizer(recognizer);
+
+function parseCookies(cookiesString) {
+    var list = {};
+
+    cookiesString && cookiesString.split(';').forEach(function (c1) {
+        c1 && c1.split(',').forEach(function (cookie) {
+            var parts = cookie.split('=');
+            list[parts.shift().trim()] = decodeURI(parts.join('='));
+        });
+    });
+
+    return list;
+}
+
+bot.dialog('login', [
+    function (session) {
+        session.send('Vous allez vous connecter sur votre compte Intermarché');
+        builder.Prompts.text(session, 'Merci de rentrer votre email');
+    },
+    function (session,results) {
+        session.dialogData.email = results.response
+        builder.Prompts.text(session, 'Merci de rentrer votre mot de passe à présent');
+    },
+    function (session, results) {//recuperation idrc
+        session.dialogData.mdp = results.response;
+        console.log("email: " + session.dialogData.email);
+        console.log("Mot de passe: " + session.dialogData.mdp);
+        var options = {
+            method: 'POST',
+            uri: URL_RC + "ReferentielClient/v1/login",
+            headers: {
+                "Msq-Jeton-App": MSQ_JETON_APP_RC,
+                "Msq-App": MSQ_APP_RC
+            },
+            json: true
+        };
+        request(options, function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+                console.log('ok');
+                console.log("ceci est l'id apres login RC: " + body.id);
+                session.dialogData.idrc = body.id;
+            }
+        });
+
+    },
+    function (session, results) {//recuperation token
+        var options2 = {
+            url: MCO_URL + 'api/v1/loginRc',
+            method: 'POST',
+            body: {
+                email: session.dialogData.email,
+                motdepasse: session.dialogData.mdp,
+                idrc: session.dialogData.idrc,
+                veutcartefid: false
+            },
+            json: true
+        };
+        request(options, function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+                console.log('ok');
+                console.log("Ceci estle token qu'on choppe: " + body.TokenAuthentification);
+                session.dialogData.TokenAuthentification = body.TokenAuthentification;
+            }
+        });
+    },
+
+    function (session, results) {//recuperation aspnetsession
+        var options = {
+            method: 'POST',
+            uri: FO_URL + "Connexion",
+            body: {
+                txtEmail: session.dialogData.email,
+                txtMotDePasse: session.dialogData.mdp,
+                largeur: "800",
+                hauteur: "300",
+                resteConnecte: true,
+            },
+            json: true,
+            headers: {
+                referer: 'http://google.fr'
+            }
+        };
+        request(options, (error, response) => {
+            if (!error && response.statusCode == 200) {
+                console.log("getAspNetSessionId retourne : " + response.headers['set-cookie']);
+                console.log("MYCOOOKIIIEEES: " + parseCookies(response.headers['set-cookie'].toString()));
+                resolve(parseCookies(response.headers['set-cookie'].toString()));
+                session.dialogData.sessionID = response.headers["ASP.NET_SessionId"]; // Ca sent la couille ici.
+            }
+        })
+    }
+
+]).triggerAction({
+    matches: /^login$/i,
+});
 
 bot.dialog('getproduit', [   
     function (session) {
@@ -109,11 +205,11 @@ bot.dialog('getrecette', [
         builder.Prompts.text(session, 'Merci de rentrer un produit (par exemple: poulet)');
     },
     function (session, results) {
-        session.dialogData.produit = results.response;
+        session.dialogData.ingredient = results.response;
         console.log(session.dialogData.produit);
         var options = {
             method: 'GET',
-            uri: URL_MCO + "/api/v1/recherche/recette?mot=" + session.dialogData.produit ,
+            uri: URL_MCO + "/api/v1/recherche/recette?mot=" + session.dialogData.ingredient ,
             headers: {
                 TokenAuthentification: '0b5d3d02-b51c-4238-b170-1ef0103b4928', //TODO Faire un login et récuperer le idrc puis le token en appelant un ws
             },
