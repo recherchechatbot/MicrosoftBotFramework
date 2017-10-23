@@ -129,14 +129,14 @@ bot.dialog('getrecette', [
                 for (var i = 0; i < limit; i++) {                    
                     var ingredientList = "";
                     for (var j = 0; j < body.Recettes[i].IngredientsPrincipaux.length; j++) {
-                        ingredientList += body.Recettes[i].IngredientsPrincipaux[j] + ", ";
+                        ingredientList += body.Recettes[i].IngredientsPrincipaux[j] + "\n ";
                     };
                     console.log('liste des ingredients' + ingredientList);
                     const url = "https://drive.intermarche.com/1-nantes-leraudiere/recette/" + body.Recettes[i].IdRecette + "-recette"; //TODO Choisir le bon magasin quand authentification
                     myCardArray.push(
                         new builder.HeroCard(session)
                             .title(body.Recettes[i].Titre)
-                            .subtitle(body.Recettes[i].ingredientList)
+                            .subtitle(ingredientList)
                             .images([builder.CardImage.create(session, body.Recettes[i].ImageUrl)])
                             .buttons([
                                 builder.CardAction.openUrl(session, url, "+ d'infos")
