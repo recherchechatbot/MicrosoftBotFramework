@@ -17,8 +17,8 @@ const FO_URL = 'https://drive.intermarche.com/';
 
 var server = restify.createServer();
 var app = express();
-process.env.MICROSOFT_APP_ID = '';//'0bff99a1-6ffd-4eea-aef2-2728bdb196db';
-process.env.MICROSOFT_APP_PASSWORD = '';//'wajNZqXpd82xoieFBcgt37y';
+const MICROSOFT_APP_ID = process.env.MICROSOFT_APP_ID;
+const MICROSOFT_APP_PASSWORD = process.env.MICROSOFT_APP_PASSWORD;
 process.env.LUIS_APP_URL = 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/5852ed00-7fee-4cf5-86d6-f6f2f4fb9f30?subscription-key=d0a77746cd964a45b2a61a629824e17d';
 
 //Setup server restify
