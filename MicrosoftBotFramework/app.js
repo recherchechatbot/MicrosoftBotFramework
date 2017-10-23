@@ -77,6 +77,7 @@ bot.dialog('getproduit', [
                 var msg = new builder.Message(session);
                 msg.attachmentLayout(builder.AttachmentLayout.carousel)
                 var myCardArray = [];
+                const limit = Math.min(10, body.length);
                 for (var i = 0; i < 10; i++) {
                     myCardArray.push(
                         new builder.HeroCard(session)
