@@ -2,7 +2,7 @@
   "name": "microsoft-bot-framework",
   "version": "0.0.0",
   "private": true,
-  "main": "MicrosoftBotFramework\app.js",
+  "main": "MicrosoftBotFramework/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
