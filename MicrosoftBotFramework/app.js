@@ -64,7 +64,7 @@ bot.dialog('getproduit', [
             method: 'POST',
             uri: FO_URL + "RechercheJs",
             headers: {
-                cookie: 'ASP.NET_SessionId=kipxnqyfwwpj4tunu4qzux5v',
+                cookie: 'ASP.NET_SessionId=kipxnqyfwwpj4tunu4qzux5v', //TODO Authentification enlever le dur
             },
             body: {
                 mot: session.dialogData.produit
@@ -100,6 +100,53 @@ bot.dialog('getproduit', [
 ]).triggerAction({
     matches: /^courses$/i,
     });
+
+
+bot.dialog('getrecette', [
+    function (session) {
+        session.send('Bienvenue sur la recherche des recettes d\'intermarché');
+        builder.Prompts.text(session, 'Merci de rentrer un produit (par exemple: poulet)');
+    },
+    function (session, results) {
+        session.dialogData.produit = results.response;
+        console.log(session.dialogData.produit);
+        var options = {
+            method: 'GET',
+            uri: URL_MCO + "/api/v1/recherche/recette?mot=" + session.dialogData.produit ,
+            headers: {
+                TokenAuthentification: '0b5d3d02-b51c-4238-b170-1ef0103b4928', //TODO Faire un login et récuperer le idrc puis le token en appelant un ws
+            },
+            json: true
+        };
+        request(options, function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+                console.log('ok');
+                var msg = new builder.Message(session);
+                msg.attachmentLayout(builder.AttachmentLayout.carousel)
+                var myCardArray = [];
+                const limit = Math.min(10, body.Recettes.length);
+                for (var i = 0; i < limit; i++) {
+                    const url = "https://drive.intermarche.com/1-nantes-leraudiere/recette/" + body.Recettes[i].IdRecette + "-recette"; //TODO Choisir le bon magasin quand authentification
+                    myCardArray.push(
+                        new builder.HeroCard(session)
+                            .title(body.Recettes[i].Titre)
+                            .subtitle(body.Recettes[i].IngredientsPrincipaux)
+                            .images([builder.CardImage.create(session, body.Recettes[i].ImageUrl)])
+                            .buttons([
+                                builder.CardAction.openUrl(session, "+ d'infos", "+ d'infos")
+                            ])
+                    )
+                }
+                msg.attachments(myCardArray);
+                session.send(msg).endDialog();
+            }
+        })
+
+
+    }
+]).triggerAction({
+    matches: /^recettes$/i,
+});
 
 
 bot.dialog('adaptive', [
