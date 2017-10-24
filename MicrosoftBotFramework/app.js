@@ -82,6 +82,7 @@ bot.dialog('login', [
         session.dialogData.mdp = results.response;
         console.log("email: " + session.dialogData.email);
         console.log("Mot de passe: " + session.dialogData.mdp);
+        //Recup idrc
         var options = {
             method: 'POST',
             uri: URL_RC + "ReferentielClient/v1/login",
@@ -91,28 +92,6 @@ bot.dialog('login', [
             },
             json: true
         };
-        console.log("ceci est options au cas où: " + options);
-        request(options, function (error, response, body) {
-            if (!error && response.statusCode == 200) {
-                console.log('ok');
-                console.log("ceci est l'id apres login RC: " + body.id);
-                session.dialogData.idrc = body.id;
-            }
-            else {
-                console.log("erreur login RC");
-            }
-        }).then(request(options2, function (error, response, body) {
-            if (!error && response.statusCode == 200) {
-                console.log('ok');
-                console.log("Ceci estle token qu'on choppe: " + body.TokenAuthentification);
-                session.dialogData.TokenAuthentification = body.TokenAuthentification;
-            }
-            else {
-                console.log("erreur récuperation Token");
-            }
-                })
-            );
-
         //recuperation token
         var options2 = {
             url: URL_MCO + 'api/v1/loginRc',
@@ -125,7 +104,6 @@ bot.dialog('login', [
             },
             json: true
         };
-    
         //recuperation aspnetsession
         var options3 = {
             method: 'POST',
@@ -142,6 +120,36 @@ bot.dialog('login', [
                 referer: 'http://google.fr'
             }
         };
+
+        console.log("ceci est options au cas où: " + options);
+        request(options, function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+                console.log('ok');
+                console.log("ceci est l'id apres login RC: " + body.id);
+                session.dialogData.idrc = body.id;
+            }
+            else {
+                console.log("erreur login RC");
+            }
+        }).then(
+
+
+            request(options2, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    console.log('ok');
+                    console.log("Ceci estle token qu'on choppe: " + body.TokenAuthentification);
+                    session.dialogData.TokenAuthentification = body.TokenAuthentification;
+                }
+                else {
+                    console.log("erreur récuperation Token");
+                }
+            })
+            );
+
+        
+
+    
+       
         request(options3, (error, response) => {
             if (!error && response.statusCode == 200) {
                 console.log("getAspNetSessionId retourne : " + response.headers['set-cookie']);
