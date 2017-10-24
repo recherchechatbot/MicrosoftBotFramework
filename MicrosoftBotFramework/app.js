@@ -107,7 +107,7 @@ function getIdrc(email, mdp, session) {
 
 function getToken(email, mdp, idrc, session) {
     console.log("nous sommes dans le getToken");
-    console; log("voici l'idrc dans le getToken: " + idrc);
+    console.log("voici l'idrc dans le getToken: " + idrc);
     var options = {
         url: URL_MCO + 'api/v1/loginRc',
         method: 'POST',
