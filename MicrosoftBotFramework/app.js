@@ -120,7 +120,7 @@ function getToken(email, mdp, idrc, session) {
         json: true,
         
     };
-    console.log("options est defini au calme: " + options);
+    console.log("options est defini au calme: " + JSON.stringify(options));
 
     request(options, function (error, response, body) {
         if (!error && response.statusCode == 200) {
