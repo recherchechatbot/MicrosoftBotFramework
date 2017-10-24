@@ -89,6 +89,8 @@ function getIdrc(email, mdp, session) {
             console.log('ok');
             console.log("ceci est l'id apres login RC: " + body.id);
             session.dialogData.idrc = body.id;
+            resolve();            
+            console.log("terminé l'idrc");
         }, (error, response) => {
             if (error) {
                 console.log("erreur pendant la recuperation de l'idrc");
@@ -98,8 +100,7 @@ function getIdrc(email, mdp, session) {
                 console.error('Error: ', response.body.error);
                 reject(new Error(response.body.error));
             }
-            resolve();
-            console.log("terminé l'idrc");
+            
         });
     })
 }
