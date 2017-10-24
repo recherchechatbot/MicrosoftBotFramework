@@ -99,6 +99,7 @@ function getIdrc(email, mdp, session) {
                 reject(new Error(response.body.error));
             }
             resolve();
+            console.log("terminé l'idrc");
         });
     })
 }
