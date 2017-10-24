@@ -98,7 +98,7 @@ bot.dialog('login', [
                 session.dialogData.idrc = body.id;
             }
         });
-    
+
         //recuperation token
         var options2 = {
             url: URL_MCO + 'api/v1/loginRc',
@@ -118,7 +118,7 @@ bot.dialog('login', [
                 session.dialogData.TokenAuthentification = body.TokenAuthentification;
             }
         });
-    
+
         //recuperation aspnetsession
         var options3 = {
             method: 'POST',
@@ -152,10 +152,10 @@ bot.dialog('login', [
             headers: {
                 'cookie': cookieSession
             }
+        })
+
+
     }
-
-
-    
 
 ]).triggerAction({
     matches: /^login$/i,
