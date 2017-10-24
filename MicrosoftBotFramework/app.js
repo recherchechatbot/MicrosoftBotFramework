@@ -69,34 +69,41 @@ function parseCookies(cookiesString) {
     return list;
 }
 
-function getIdrc(email, mdp) {
-    var options = {
-        method: 'POST',
-        uri: URL_RC + "ReferentielClient/v1/login",
-        body: {
-            email: email,
-            mdp: mdp
-        },
-        headers: {
-            "Msq-Jeton-App": MSQ_JETON_APP_RC,
-            "Msq-App": MSQ_APP_RC
-        },
-        json: true
-    };
+function getIdrc(email, mdp, session) {
+    return new Promise((resolve, reject) => {
+        var options = {
+            method: 'POST',
+            uri: URL_RC + "ReferentielClient/v1/login",
+            body: {
+                email: email,
+                mdp: mdp
+            },
+            headers: {
+                "Msq-Jeton-App": MSQ_JETON_APP_RC,
+                "Msq-App": MSQ_APP_RC
+            },
+            json: true
+        };
 
-    request(options, function (error, response, body) {
-        if (!error && response.statusCode == 200) {
+        request(options, function (error, response, body) {
             console.log('ok');
             console.log("ceci est l'id apres login RC: " + body.id);
             session.dialogData.idrc = body.id;
-        }
-        else {
-            console.log("erreur login RC");
-        }
+        }, (error, response) => {
+            if (error) {
+                console.log("erreur pendant la recuperation de l'idrc");
+                reject(error);
+            }
+            else if (response.body.error) {
+                console.error('Error: ', response.body.error);
+                reject(new Error(response.body.error));
+            }
+            resolve();
+        });
     })
 }
 
-function getToken(email, mdp,idrc) {
+function getToken(email, mdp, idrc) {
     var options = {
         url: URL_MCO + 'api/v1/loginRc',
         method: 'POST',
@@ -173,7 +180,7 @@ bot.dialog('login', [
         session.dialogData.mdp = results.response;
         console.log("email: " + session.dialogData.email);
         console.log("Mot de passe: " + session.dialogData.mdp);
-        getIdrc(session.dialogData.email, session.dialogData.mdp)
+        getIdrc(session.dialogData.email, session.dialogData.mdp, session)
             .then(console.log("on à à priori recuperé l'idrc, le voici:  " + session.dialogData.idrc))
             .then(getToken(session.dialogData.email, session.dialogData.mdr, session.dialogData.idrc))
             .then(getSessionId(session.dialogData.email, session.dialogData.mdp))
