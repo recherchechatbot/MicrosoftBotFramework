@@ -138,9 +138,11 @@ bot.dialog('login', [
         request(options3, (error, response) => {
             if (!error && response.statusCode == 200) {
                 console.log("getAspNetSessionId retourne : " + response.headers['set-cookie']);
+                var c = parseCookies(response.headers['set-cookie'].toString());
                 console.log("MYCOOOKIIIEEES: " + parseCookies(response.headers['set-cookie'].toString()));
                 parseCookies(response.headers['set-cookie'].toString());
-                session.dialogData.sessionID = response.headers["ASP.NET_SessionId"]; // Ca sent la couille ici.
+                session.dialogData.sessionID = c["ASP.NET_SessionId"];
+                console.log("Le ASPSESSIONID est : " + session.dialogData.sessionID);// Ca sent la couille ici.
             }
         })
     }
@@ -162,7 +164,7 @@ bot.dialog('getproduit', [
             method: 'POST',
             uri: FO_URL + "RechercheJs",
             headers: {
-                cookie: 'ASP.NET_SessionId=kipxnqyfwwpj4tunu4qzux5v', //TODO Authentification enlever le dur
+                cookie: session.dialogData.sessionID, //TODO Authentification enlever le dur
             },
             body: {
                 mot: session.dialogData.produit
