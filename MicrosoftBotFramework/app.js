@@ -69,6 +69,8 @@ function parseCookies(cookiesString) {
     return list;
 }
 
+function getIdrc()
+
 bot.dialog('login', [
     function (session) {
         session.send('Vous allez vous connecter sur votre compte Intermarché');
@@ -86,6 +88,10 @@ bot.dialog('login', [
         var options = {
             method: 'POST',
             uri: URL_RC + "ReferentielClient/v1/login",
+            body: {
+                email: session.dialogData.email,
+                mdp: session.dialogData.mdp
+            },
             headers: {
                 "Msq-Jeton-App": MSQ_JETON_APP_RC,
                 "Msq-App": MSQ_APP_RC
@@ -131,20 +137,20 @@ bot.dialog('login', [
             else {
                 console.log("erreur login RC");
             }
-        }).then(
+        })
 
 
-            request(options2, function (error, response, body) {
-                if (!error && response.statusCode == 200) {
-                    console.log('ok');
-                    console.log("Ceci estle token qu'on choppe: " + body.TokenAuthentification);
-                    session.dialogData.TokenAuthentification = body.TokenAuthentification;
-                }
-                else {
-                    console.log("erreur récuperation Token");
-                }
-            })
-            );
+        request(options2, function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+                console.log('ok');
+                console.log("Ceci estle token qu'on choppe: " + body.TokenAuthentification);
+                session.dialogData.TokenAuthentification = body.TokenAuthentification;
+            }
+            else {
+                console.log("erreur récuperation Token");
+            }
+        })
+            
 
         
 
