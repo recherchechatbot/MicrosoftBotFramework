@@ -91,11 +91,15 @@ bot.dialog('login', [
             },
             json: true
         };
+        console.log("ceci est options au cas où: " + options);
         request(options, function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 console.log('ok');
                 console.log("ceci est l'id apres login RC: " + body.id);
                 session.dialogData.idrc = body.id;
+            }
+            else {
+                console.log("erreur login RC");
             }
         });
 
@@ -116,6 +120,9 @@ bot.dialog('login', [
                 console.log('ok');
                 console.log("Ceci estle token qu'on choppe: " + body.TokenAuthentification);
                 session.dialogData.TokenAuthentification = body.TokenAuthentification;
+            }
+            else {
+                console.log("erreur récuperation Token");
             }
         });
 
