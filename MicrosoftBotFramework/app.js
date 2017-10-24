@@ -111,10 +111,10 @@ function getToken(email, mdp, idrc, session) {
         url: URL_MCO + 'api/v1/loginRc',
         method: 'POST',
         body: {
-            "email": email,
-            "motdepasse": mdp,
-            "idrc": idrc,
-            "veutcartefid": false
+            email: email,
+            motdepasse: mdp,
+            idrc: idrc,
+            veutcartefid: false
         }
         
     };
