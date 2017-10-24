@@ -181,8 +181,6 @@ bot.dialog('login', [
         console.log("email: " + session.dialogData.email);
         console.log("Mot de passe: " + session.dialogData.mdp);
         getIdrc(session.dialogData.email, session.dialogData.mdp, session)
-            .then(() =>console.log("on à à priori recuperé l'idrc, le voici:  " + session.dialogData.idrc))
-            .then(() =>console.log("au cas où voici l'email: " + session.dialogData.email))
             .then(() =>getToken(session.dialogData.email, session.dialogData.mdr, session.dialogData.idrc, session))
             .then(() =>getSessionId(session.dialogData.email, session.dialogData.mdp,session))
             .then(() =>session.send("Vous êtes bien connecté"))
