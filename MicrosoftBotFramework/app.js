@@ -128,6 +128,7 @@ bot.dialog('login', [
         };
 
         console.log("ceci est options au cas où: " + options);
+
         request(options, function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 console.log('ok');
