@@ -145,7 +145,16 @@ bot.dialog('login', [
                 console.log("Le ASPSESSIONID est : " + session.dialogData.sessionID);// Ca sent la couille ici.
             }
         })
-    }
+
+        var cookieSession = 'ASP.NET_SessionId=' + session.dialogData.sessionID;
+        request({
+            url: FO_URL,
+            method: 'GET',
+            headers: {
+                'cookie': cookie
+            }
+
+        })
 
 ]).triggerAction({
     matches: /^login$/i,
@@ -194,6 +203,7 @@ bot.dialog('getproduit', [
                 session.send(msg).endDialog();
             }
         })
+
   
         
     }
