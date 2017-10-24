@@ -139,7 +139,7 @@ bot.dialog('login', [
             if (!error && response.statusCode == 200) {
                 console.log("getAspNetSessionId retourne : " + response.headers['set-cookie']);
                 console.log("MYCOOOKIIIEEES: " + parseCookies(response.headers['set-cookie'].toString()));
-                resolve(parseCookies(response.headers['set-cookie'].toString()));
+                parseCookies(response.headers['set-cookie'].toString());
                 session.dialogData.sessionID = response.headers["ASP.NET_SessionId"]; // Ca sent la couille ici.
             }
         })
