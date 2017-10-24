@@ -77,7 +77,7 @@ bot.dialog('login', [
         session.dialogData.email = results.response
         builder.Prompts.text(session, 'Merci de rentrer votre mot de passe à présent');
     },
-    function (session, results) {//recuperation idrc
+    function (session, results) {//recuperation idrc ,token, aspnetsession
         session.dialogData.mdp = results.response;
         console.log("email: " + session.dialogData.email);
         console.log("Mot de passe: " + session.dialogData.mdp);
@@ -97,9 +97,8 @@ bot.dialog('login', [
                 session.dialogData.idrc = body.id;
             }
         });
-
-    },
-    function (session, results) {//recuperation token
+    
+        //recuperation token
         var options2 = {
             url: MCO_URL + 'api/v1/loginRc',
             method: 'POST',
@@ -111,17 +110,16 @@ bot.dialog('login', [
             },
             json: true
         };
-        request(options, function (error, response, body) {
+        request(options2, function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 console.log('ok');
                 console.log("Ceci estle token qu'on choppe: " + body.TokenAuthentification);
                 session.dialogData.TokenAuthentification = body.TokenAuthentification;
             }
         });
-    },
-
-    function (session, results) {//recuperation aspnetsession
-        var options = {
+    
+        //recuperation aspnetsession
+        var options3 = {
             method: 'POST',
             uri: FO_URL + "Connexion",
             body: {
@@ -136,7 +134,7 @@ bot.dialog('login', [
                 referer: 'http://google.fr'
             }
         };
-        request(options, (error, response) => {
+        request(options3, (error, response) => {
             if (!error && response.statusCode == 200) {
                 console.log("getAspNetSessionId retourne : " + response.headers['set-cookie']);
                 console.log("MYCOOOKIIIEEES: " + parseCookies(response.headers['set-cookie'].toString()));
