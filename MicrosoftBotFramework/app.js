@@ -69,8 +69,96 @@ function parseCookies(cookiesString) {
     return list;
 }
 
+function getIdrc(email, mdp, session) {
+    var options = {
+        method: 'POST',
+        uri: URL_RC + "ReferentielClient/v1/login",
+        body: {
+            email: email,
+            mdp: mdp
+        },
+        headers: {
+            "Msq-Jeton-App": MSQ_JETON_APP_RC,
+            "Msq-App": MSQ_APP_RC
+        },
+        json: true
+    };
 
+    request(options, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            console.log('ok');
+            console.log("ceci est l'id apres login RC: " + body.id);
+            session.dialogData.idrc = body.id;
+        }
+        else {
+            console.log("erreur login RC");
+        }
+    })
+}
 
+function getToken(email, mdp,idrc) {
+    var options = {
+        url: URL_MCO + 'api/v1/loginRc',
+        method: 'POST',
+        body: {
+            email: email,
+            motdepasse: mdp,
+            idrc: idrc,
+            veutcartefid: false
+        },
+        json: true
+    };
+
+    request(options, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            console.log('ok');
+            console.log("Ceci estle token qu'on choppe: " + body.TokenAuthentification);
+            session.dialogData.TokenAuthentification = body.TokenAuthentification;
+        }
+        else {
+            console.log("erreur récuperation Token");
+        }
+    })
+}
+
+function getSessionId(email, mdp) {
+    var options = {
+        method: 'POST',
+        uri: FO_URL + "Connexion",
+        body: {
+            txtEmail:email,
+            txtMotDePasse: mdp,
+            largeur: "800",
+            hauteur: "300",
+            resteConnecte: true,
+        },
+        json: true,
+        headers: {
+            referer: 'http://google.fr'
+        }
+    };
+
+    request(options, (error, response) => {
+        if (!error && response.statusCode == 200) {
+            console.log("getAspNetSessionId retourne : " + response.headers['set-cookie']);
+            var c = parseCookies(response.headers['set-cookie'].toString());
+            console.log("MYCOOOKIIIEEES: " + parseCookies(response.headers['set-cookie'].toString()));
+            parseCookies(response.headers['set-cookie'].toString());
+            session.dialogData.sessionID = c["ASP.NET_SessionId"];
+            console.log("Le ASPSESSIONID est : " + session.dialogData.sessionID);
+        }
+    })
+
+    var cookieSession = 'ASP.NET_SessionId=' + session.dialogData.sessionID;
+    //HitFO sinon ça marche pas.
+    request({
+        url: FO_URL,
+        method: 'GET',
+        headers: {
+            'cookie': cookieSession
+        }
+    })
+}
 bot.dialog('login', [
     function (session) {
         session.send('Vous allez vous connecter sur votre compte Intermarché');
@@ -80,102 +168,15 @@ bot.dialog('login', [
         session.dialogData.email = results.response
         builder.Prompts.text(session, 'Merci de rentrer votre mot de passe à présent');
     },
-    function (session, results) {//recuperation idrc ,token, aspnetsession
+    function (session, results) {
+        //recuperation idrc ,token, aspnetsession
         session.dialogData.mdp = results.response;
         console.log("email: " + session.dialogData.email);
         console.log("Mot de passe: " + session.dialogData.mdp);
-        //Recup idrc
-        var options = {
-            method: 'POST',
-            uri: URL_RC + "ReferentielClient/v1/login",
-            body: {
-                email: session.dialogData.email,
-                mdp: session.dialogData.mdp
-            },
-            headers: {
-                "Msq-Jeton-App": MSQ_JETON_APP_RC,
-                "Msq-App": MSQ_APP_RC
-            },
-            json: true
-        };
-        //recuperation token
-        var options2 = {
-            url: URL_MCO + 'api/v1/loginRc',
-            method: 'POST',
-            body: {
-                email: session.dialogData.email,
-                motdepasse: session.dialogData.mdp,
-                idrc: session.dialogData.idrc,
-                veutcartefid: false
-            },
-            json: true
-        };
-        //recuperation aspnetsession
-        var options3 = {
-            method: 'POST',
-            uri: FO_URL + "Connexion",
-            body: {
-                txtEmail: session.dialogData.email,
-                txtMotDePasse: session.dialogData.mdp,
-                largeur: "800",
-                hauteur: "300",
-                resteConnecte: true,
-            },
-            json: true,
-            headers: {
-                referer: 'http://google.fr'
-            }
-        };
-
-        
-
-        request(options, function (error, response, body) {
-            if (!error && response.statusCode == 200) {
-                console.log('ok');
-                console.log("ceci est l'id apres login RC: " + body.id);
-                session.dialogData.idrc = body.id;
-            }
-            else {
-                console.log("erreur login RC");
-            }
-        })
-
-
-        request(options2, function (error, response, body) {
-            if (!error && response.statusCode == 200) {
-                console.log('ok');
-                console.log("Ceci estle token qu'on choppe: " + body.TokenAuthentification);
-                session.dialogData.TokenAuthentification = body.TokenAuthentification;
-            }
-            else {
-                console.log("erreur récuperation Token");
-            }
-        })
-            
-
-        
-
-    
-       
-        request(options3, (error, response) => {
-            if (!error && response.statusCode == 200) {
-                console.log("getAspNetSessionId retourne : " + response.headers['set-cookie']);
-                var c = parseCookies(response.headers['set-cookie'].toString());
-                console.log("MYCOOOKIIIEEES: " + parseCookies(response.headers['set-cookie'].toString()));
-                parseCookies(response.headers['set-cookie'].toString());
-                session.dialogData.sessionID = c["ASP.NET_SessionId"];
-                console.log("Le ASPSESSIONID est : " + session.dialogData.sessionID);// Ca sent la couille ici.
-            }
-        })
-        var cookieSession = 'ASP.NET_SessionId=' + session.dialogData.sessionID;
-        request({
-            url: FO_URL,
-            method: 'GET',
-            headers: {
-                'cookie': cookieSession
-            }
-        })
-
+        getIdrc(session.dialogData.email, session.dialogData.mdp,session)
+            .then(getToken(session.dialogData.email, session.dialogData.mdr, session.dialogData.idrc))
+            .then(getSessionId(session.dialogData.email, session.dialogData.mdp))
+            .then(session.send("Vous êtes bien connecté"))
 
     }
 
