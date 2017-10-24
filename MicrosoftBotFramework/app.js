@@ -101,7 +101,17 @@ bot.dialog('login', [
             else {
                 console.log("erreur login RC");
             }
+        }).then(request(options2, function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+                console.log('ok');
+                console.log("Ceci estle token qu'on choppe: " + body.TokenAuthentification);
+                session.dialogData.TokenAuthentification = body.TokenAuthentification;
+            }
+            else {
+                console.log("erreur récuperation Token");
+            }
         });
+)
 
         //recuperation token
         var options2 = {
@@ -115,17 +125,7 @@ bot.dialog('login', [
             },
             json: true
         };
-        request(options2, function (error, response, body) {
-            if (!error && response.statusCode == 200) {
-                console.log('ok');
-                console.log("Ceci estle token qu'on choppe: " + body.TokenAuthentification);
-                session.dialogData.TokenAuthentification = body.TokenAuthentification;
-            }
-            else {
-                console.log("erreur récuperation Token");
-            }
-        });
-
+    
         //recuperation aspnetsession
         var options3 = {
             method: 'POST',
