@@ -110,8 +110,8 @@ bot.dialog('login', [
             else {
                 console.log("erreur récuperation Token");
             }
-        });
-)
+                })
+            );
 
         //recuperation token
         var options2 = {
