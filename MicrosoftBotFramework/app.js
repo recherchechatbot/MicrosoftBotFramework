@@ -69,7 +69,7 @@ function parseCookies(cookiesString) {
     return list;
 }
 
-function getIdrc()
+
 
 bot.dialog('login', [
     function (session) {
