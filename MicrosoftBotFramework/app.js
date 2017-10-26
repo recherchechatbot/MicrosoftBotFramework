@@ -256,8 +256,8 @@ bot.dialog('login', [
             // A Card's Submit Action obj was received
             console.log("ceci est inchallah la data utilisateur: " + JSON.stringify(session.message.value));
 
-            session.dialogData.email = session.message.value.email;
-            session.dialogData.mdp = session.message.mdp;
+            session.dialogData.email = session.message.value.email;//on stocke dans dialogdata car cela nous permet de stocker meme en dehors de ce dialogue et ce même si on demande d'autres inputs'
+            session.dialogData.mdp = session.message.value.mdp;
             console.log("email: " + session.dialogData.email);
             console.log("Mot de passe: " + session.dialogData.mdp);
             getIdrc(session.dialogData.email, session.dialogData.mdp, session)
@@ -267,6 +267,18 @@ bot.dialog('login', [
                 .then(() => session.send("Vous êtes bien connecté"))
             
         }
+    },
+    function (session, results) {
+        //recuperation idrc ,token, aspnetsession
+        session.dialogData.mdp = results.response;
+        console.log("email: " + session.dialogData.email);
+        console.log("Mot de passe: " + session.dialogData.mdp);
+        getIdrc(session.dialogData.email, session.dialogData.mdp, session)
+            .then(() => console.log("voyons voir si l'idrc est accessible en dehors de la fonction getidrc: " + session.dialogData.idrc))
+            .then(() =>getToken(session.dialogData.email, session.dialogData.mdp, session.dialogData.idrc, session))
+            .then(() =>getSessionId(session.dialogData.email, session.dialogData.mdp,session))
+            .then(() =>session.send("Vous êtes bien connecté"))
+
     }
 
 ]).triggerAction({
