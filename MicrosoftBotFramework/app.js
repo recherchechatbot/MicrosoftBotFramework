@@ -242,7 +242,7 @@ bot.dialog('login', [
                     "type": "Action.Submit",
                     "title": "En avant!",
                     "data": {
-                        'type': 'login'
+                        'type': 'identifiants'
 
                     }
                 }
@@ -252,7 +252,6 @@ bot.dialog('login', [
             contentType: "application/vnd.microsoft.card.adaptive",
             content: card
         }));
-        session.endDialog();
         if (session.message && session.message.value) {
             // A Card's Submit Action obj was received
             console.log("ceci est inchallah la data utilisateur: " + JSON.stringify(session.message.value));
@@ -278,9 +277,12 @@ bot.dialog('login', [
             .then(() => console.log("voyons voir si l'idrc est accessible en dehors de la fonction getidrc: " + session.dialogData.idrc))
             .then(() =>getToken(session.dialogData.email, session.dialogData.mdp, session.dialogData.idrc, session))
             .then(() =>getSessionId(session.dialogData.email, session.dialogData.mdp,session))
-            .then(() =>session.send("Vous êtes bien connecté"))
+            .then(() => session.send("Vous êtes bien connecté"))
+
+        session.endDialog();
 
     }
+
 
 ]).triggerAction({
     matches: /^login$/i,
