@@ -195,12 +195,70 @@ function getSessionId(email, mdp,session) {
 }
 bot.dialog('login', [
     function (session) {
-        session.send('Vous allez vous connecter sur votre compte Intermarché');
-        builder.Prompts.text(session, 'Merci de rentrer votre email');
-    },
-    function (session,results) {
-        session.dialogData.email = results.response
-        builder.Prompts.text(session, 'Merci de rentrer votre mot de passe à présent');
+        var card = {
+            "type": "AdaptiveCard",
+            "version": "1.0",
+            "body": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": 2,
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Connexion",
+                                    "weight": "bolder",
+                                    "size": "medium"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Ton e-mail :",
+                                    "wrap": true
+                                },
+                                {
+                                    "type": "Input.Text",
+                                    "id": "email",
+                                    "placeholder": "moi@exemple.com"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Ton mot de passe :",
+                                    "wrap": true
+                                },
+                                {
+                                    "type": "Input.Text",
+                                    "id": "mdp",
+                                    "placeholder": "•••••••"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "actions": [
+                {
+                    "type": "Action.Submit",
+                    "title": "En avant!",
+                    "data": {
+                        'type': 'login'
+
+                    }
+                }
+            ]
+        }
+        session.send(new builder.Message(session).addAttachment({
+            contentType: "application/vnd.microsoft.card.adaptive",
+            content: card
+        }));
+        if (session.message && session.message.value) {
+            // A Card's Submit Action obj was received
+            console.log("ceci est inchallah la data utilisateur: " + JSON.stringify(session.message.value));
+
+            session.dialogData.email = session.message.value.email;
+            session.dialogData.mdp = session.message.mdp;
+        }
     },
     function (session, results) {
         //recuperation idrc ,token, aspnetsession
