@@ -360,8 +360,7 @@ bot.dialog('adaptive', [
                                 {
                                     "type": "Input.Text",
                                     "id": "mdp",
-                                    "placeholder": "•••••••",
-                                    "style": "email"
+                                    "placeholder": "•••••••"
                                 }
                             ]
                         }
