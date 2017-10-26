@@ -325,36 +325,36 @@ bot.dialog('getrecette', [
 bot.dialog('adaptive', [
     function (session) {
         console.log('je suis dans le dialogue adaptive card ');
-        var card =  {
-                        "type": "AdaptiveCard",
-                        "version": "1.0",
-                        "body": [
-                            {
-                                "type": "TextBlock",
-                                "text": "Hello World!",
-                                "size": "large"
-                            },
-                            {
-                                "type": "TextBlock",
-                                "text": "*Sincerely yours,*"
-                            },
-                            {
-                                "type": "TextBlock",
-                                "text": "Adaptive Cards",
-                                "separation": "none"
-                            }
-                        ],
-                        "actions": [
-                            {
-                                "type": "Action.OpenUrl",
-                                "url": "http://adaptivecards.io",
-                                "title": "Learn More"
-                            }
-                        ]
-                    }
+        var card = {
+            "type": "AdaptiveCard",
+            "version": "1.0",
+            "body": [
+                {
+                    "type": "TextBlock",
+                    "text": "Hello World!",
+                    "size": "large"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "*Sincerely yours,*"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Adaptive Cards",
+                    "separation": "none"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "Action.OpenUrl",
+                    "url": "http://adaptivecards.io",
+                    "title": "Learn More"
                 }
             ]
         }
+    
+
+        
         session.send(new builder.Message(session).addAttachment({
             contentType: "application/vnd.microsoft.card.adaptive",
             content: card
