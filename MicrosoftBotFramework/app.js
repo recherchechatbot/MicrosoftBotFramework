@@ -57,17 +57,17 @@ var bot = new builder.UniversalBot(connector, function (session) {
 //bot.recognizer(recognizer);
 
 //ajout reconaissance api.ai(dialogflow)
-var recognizer = new apiairecognizer("30dfeddc13344176b6cefa6c09056e73");
+//var recognizer = new apiairecognizer("30dfeddc13344176b6cefa6c09056e73");
 
-var intents = new builder.IntentDialog({
-    recognizers: [recognizer]
-});
+//var intents = new builder.IntentDialog({
+//    recognizers: [recognizer]
+//});
 
-console.log(JSON.stringify(intents));
+//console.log(JSON.stringify(intents));
 
-bot.dialog("whatever", function (session) {
-    session.send('localisation ok ok ok ok ');
-}).triggerAction({ matches: 'intents' });
+//bot.dialog("whatever", function (session) {
+//    session.send('localisation ok ok ok ok ');
+//}).triggerAction({ matches: 'intents' });
 
 //bot.dialog("ok", intents);
 //intents.matches('Localisation', function (session, args) {
