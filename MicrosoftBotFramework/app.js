@@ -258,19 +258,15 @@ bot.dialog('login', [
 
             session.dialogData.email = session.message.value.email;
             session.dialogData.mdp = session.message.mdp;
+            console.log("email: " + session.dialogData.email);
+            console.log("Mot de passe: " + session.dialogData.mdp);
+            getIdrc(session.dialogData.email, session.dialogData.mdp, session)
+                .then(() => console.log("voyons voir si l'idrc est accessible en dehors de la fonction getidrc: " + session.dialogData.idrc))
+                .then(() => getToken(session.dialogData.email, session.dialogData.mdp, session.dialogData.idrc, session))
+                .then(() => getSessionId(session.dialogData.email, session.dialogData.mdp, session))
+                .then(() => session.send("Vous êtes bien connecté"))
+            
         }
-    },
-    function (session, results) {
-        //recuperation idrc ,token, aspnetsession
-        session.dialogData.mdp = results.response;
-        console.log("email: " + session.dialogData.email);
-        console.log("Mot de passe: " + session.dialogData.mdp);
-        getIdrc(session.dialogData.email, session.dialogData.mdp, session)
-            .then(() => console.log("voyons voir si l'idrc est accessible en dehors de la fonction getidrc: " + session.dialogData.idrc))
-            .then(() =>getToken(session.dialogData.email, session.dialogData.mdp, session.dialogData.idrc, session))
-            .then(() =>getSessionId(session.dialogData.email, session.dialogData.mdp,session))
-            .then(() =>session.send("Vous êtes bien connecté"))
-
     }
 
 ]).triggerAction({
