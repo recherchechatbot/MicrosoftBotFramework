@@ -67,7 +67,7 @@ console.log(intents);
 
 bot.dialog("whatever", function (session) {
     session.send('localisation ok ok ok ok ');
-}).triggerAction({ matches: 'intents' });
+}).triggerAction({ matches: intents });
 
 //bot.dialog("ok", intents);
 //intents.matches('Localisation', function (session, args) {
