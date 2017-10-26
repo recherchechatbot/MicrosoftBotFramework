@@ -381,7 +381,11 @@ bot.dialog('adaptive', [
             contentType: "application/vnd.microsoft.card.adaptive",
             content: card
         }));
-        console.log("ceci est inchallah le data que l\'on recupere: " + JSON.stringify(card.actions.data));
+        if (session.message && session.message.value) {
+            // A Card's Submit Action obj was received
+            processSubmitAction(session, session.message.value);
+            console.log("ceci est inchallah la data utilisateur: "+ session.message.value);
+        }
     }
 ]).triggerAction({
     matches: /^adaptive$/i,
