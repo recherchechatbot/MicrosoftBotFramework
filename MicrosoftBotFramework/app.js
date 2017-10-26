@@ -53,8 +53,23 @@ var bot = new builder.UniversalBot(connector, function (session) {
 
 
 ////Ajout reconnaissance LUIS
-var recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/5852ed00-7fee-4cf5-86d6-f6f2f4fb9f30?subscription-key=d0a77746cd964a45b2a61a629824e17d&timezoneOffset=0&verbose=true');
-bot.recognizer(recognizer);
+//var recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/5852ed00-7fee-4cf5-86d6-f6f2f4fb9f30?subscription-key=d0a77746cd964a45b2a61a629824e17d&timezoneOffset=0&verbose=true');
+//bot.recognizer(recognizer);
+
+//ajout reconaissance api.ai(dialogflow)
+var recognizer = new apiairecognizer("30dfeddc13344176b6cefa6c09056e73");
+
+var intents = new builder.IntentDialog({
+    recognizers: [recognizer]
+});
+
+bot.dialog("ok", intents);
+intent.matches('Localisation', function (session, args) {
+    session.send("c'est exact")
+})
+
+
+
 
 function parseCookies(cookiesString) {
     var list = {};
