@@ -387,7 +387,7 @@ bot.dialog('adaptive', [
         }));
         if (session.message && session.message.value) {
             // A Card's Submit Action obj was received
-            console.log("ceci est inchallah la data utilisateur: "+ session.message.value);
+            console.log("ceci est inchallah la data utilisateur: "+ JSON.stringify(session.message.value));
         }
     }
 ]).triggerAction({
