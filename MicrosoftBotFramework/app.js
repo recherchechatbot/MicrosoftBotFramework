@@ -65,10 +65,14 @@ var intents = new builder.IntentDialog({
 
 console.log(intents);
 
-bot.dialog("ok", intents);
-intents.matches('Localisation', function (session, args) {
-    session.send("c'est exact")
-})
+bot.dialog("whatever", function (session) {
+    session.send('localisation ok ok ok ok ');
+}).triggerAction({ matches: 'Localisation' });
+
+//bot.dialog("ok", intents);
+//intents.matches('Localisation', function (session, args) {
+//    session.send("c'est exact")
+//})
 
 
 
