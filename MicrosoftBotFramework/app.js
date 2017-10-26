@@ -193,7 +193,7 @@ function getSessionId(email, mdp,session) {
         }
     })
 }
-bot.dialog('login', [
+bot.dialog('login', [//TODO enlever cette deuxième carte qui apparait pour rien
     function (session) {
         var card = {
             "type": "AdaptiveCard",
@@ -391,77 +391,77 @@ bot.dialog('getrecette', [
 });
 
 
-bot.dialog('adaptive', [
-    function (session) {
-        console.log('je suis dans le dialogue adaptive card ');
-        var card = {
-            "type": "AdaptiveCard",
-            "version": "1.0",
-            "body": [
-                {
-                    "type": "ColumnSet",
-                    "columns": [
-                        {
-                            "type": "Column",
-                            "width": 2,
-                            "items": [
-                                {
-                                    "type": "TextBlock",
-                                    "text": "Connexion",
-                                    "weight": "bolder",
-                                    "size": "medium"
-                                },
-                                {
-                                    "type": "TextBlock",
-                                    "text": "Ton e-mail :",
-                                    "wrap": true
-                                },
-                                {
-                                    "type": "Input.Text",
-                                    "id": "email",
-                                    "placeholder": "moi@exemple.com"
-                                },
-                                {
-                                    "type": "TextBlock",
-                                    "text": "Ton mot de passe :",
-                                    "wrap": true
-                                },
-                                {
-                                    "type": "Input.Text",
-                                    "id": "mdp",
-                                    "placeholder": "•••••••"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
-            "actions": [
-                {
-                    "type": "Action.Submit",
-                    "title": "En avant!",
-                    "data": {
-                        'type':'login'
+//bot.dialog('adaptive', [
+//    function (session) {
+//        console.log('je suis dans le dialogue adaptive card ');
+//        var card = {
+//            "type": "AdaptiveCard",
+//            "version": "1.0",
+//            "body": [
+//                {
+//                    "type": "ColumnSet",
+//                    "columns": [
+//                        {
+//                            "type": "Column",
+//                            "width": 2,
+//                            "items": [
+//                                {
+//                                    "type": "TextBlock",
+//                                    "text": "Connexion",
+//                                    "weight": "bolder",
+//                                    "size": "medium"
+//                                },
+//                                {
+//                                    "type": "TextBlock",
+//                                    "text": "Ton e-mail :",
+//                                    "wrap": true
+//                                },
+//                                {
+//                                    "type": "Input.Text",
+//                                    "id": "email",
+//                                    "placeholder": "moi@exemple.com"
+//                                },
+//                                {
+//                                    "type": "TextBlock",
+//                                    "text": "Ton mot de passe :",
+//                                    "wrap": true
+//                                },
+//                                {
+//                                    "type": "Input.Text",
+//                                    "id": "mdp",
+//                                    "placeholder": "•••••••"
+//                                }
+//                            ]
+//                        }
+//                    ]
+//                }
+//            ],
+//            "actions": [
+//                {
+//                    "type": "Action.Submit",
+//                    "title": "En avant!",
+//                    "data": {
+//                        'type':'login'
 
-                    }
-                }
-            ]
-}
+//                    }
+//                }
+//            ]
+//}
     
 
         
-        session.send(new builder.Message(session).addAttachment({
-            contentType: "application/vnd.microsoft.card.adaptive",
-            content: card
-        }));
-        if (session.message && session.message.value) {
-            // A Card's Submit Action obj was received
-            console.log("ceci est inchallah la data utilisateur: "+ JSON.stringify(session.message.value));
-        }
-    }
-]).triggerAction({
-    matches: /^adaptive$/i,
-    });
+//        session.send(new builder.Message(session).addAttachment({
+//            contentType: "application/vnd.microsoft.card.adaptive",
+//            content: card
+//        }));
+//        if (session.message && session.message.value) {
+//            // A Card's Submit Action obj was received
+//            console.log("ceci est inchallah la data utilisateur: "+ JSON.stringify(session.message.value));
+//        }
+//    }
+//]).triggerAction({
+//    matches: /^adaptive$/i,
+//    });
 
 //AdaptiveCards.setHostConfig({
 //    "spacing": {
