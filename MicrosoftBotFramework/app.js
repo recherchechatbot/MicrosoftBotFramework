@@ -361,9 +361,10 @@ bot.dialog('adaptive', [
                 }
             ]
         }
-        var msg = new builder.Message(session);
-        msg.addAttachment(card);
-        session.send(msg);
+        session.send(new builder.Message(session).addAttachment({
+            contentType: "application/vnd.microsoft.card.adaptive",
+            content: card
+ }));
     }
 ]).triggerAction({
     matches: /^adaptive$/i,
