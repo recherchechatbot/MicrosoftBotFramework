@@ -381,6 +381,7 @@ bot.dialog('adaptive', [
             contentType: "application/vnd.microsoft.card.adaptive",
             content: card
         }));
+        console.log("ceci est inchallah le data que l\'on recupere: " + JSON.stringify(card.actions.data));
     }
 ]).triggerAction({
     matches: /^adaptive$/i,
