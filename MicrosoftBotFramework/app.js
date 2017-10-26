@@ -330,78 +330,38 @@ bot.dialog('adaptive', [
             "version": "1.0",
             "body": [
                 {
-                    "type": "Container",
-                    "items": [
+                    "type": "ColumnSet",
+                    "columns": [
                         {
-                            "type": "TextBlock",
-                            "text": "Publish Adaptive Card schema",
-                            "weight": "bolder",
-                            "size": "medium"
-                        },
-                        {
-                            "type": "ColumnSet",
-                            "columns": [
+                            "type": "Column",
+                            "width": 2,
+                            "items": [
                                 {
-                                    "type": "Column",
-                                    "width": "auto",
-                                    "items": [
-                                        {
-                                            "type": "Image",
-                                            "url": "https://pbs.twimg.com/profile_images/3647943215/d7f12830b3c17a5a9e4afcc370e3a37e_400x400.jpeg",
-                                            "size": "small",
-                                            "style": "person"
-                                        }
-                                    ]
+                                    "type": "TextBlock",
+                                    "text": "Connexion",
+                                    "weight": "bolder",
+                                    "size": "medium"
                                 },
                                 {
-                                    "type": "Column",
-                                    "width": "stretch",
-                                    "items": [
-                                        {
-                                            "type": "TextBlock",
-                                            "text": "Matt Hidinger",
-                                            "weight": "bolder",
-                                            "wrap": true
-                                        },
-                                        {
-                                            "type": "TextBlock",
-                                            "spacing": "none",
-                                            "text": "Created {{DATE(2017-02-14T06:08:39Z,Short)}}",
-                                            "isSubtle": true,
-                                            "wrap": true
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "Container",
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": "Now that we have defined the main rules and features of the format, we need to produce a schema and publish it to GitHub. The schema will be the starting point of our reference documentation.",
-                            "wrap": true
-                        },
-                        {
-                            "type": "FactSet",
-                            "facts": [
-                                {
-                                    "title": "Board:",
-                                    "value": "Adaptive Card"
+                                    "type": "TextBlock",
+                                    "text": "Ton e-mail :",
+                                    "wrap": true
                                 },
                                 {
-                                    "title": "List:",
-                                    "value": "Backlog"
+                                    "type": "Input.Text",
+                                    "id": "email",
+                                    "placeholder": "ex: ilovelesmousquetaires@intermarche.com"
                                 },
                                 {
-                                    "title": "Assigned to:",
-                                    "value": "Matt Hidinger"
+                                    "type": "TextBlock",
+                                    "text": "Ton mot de passe :",
+                                    "wrap": true
                                 },
                                 {
-                                    "title": "Due date:",
-                                    "value": "Not set"
+                                    "type": "Input.Text",
+                                    "id": "mdp",
+                                    "placeholder": "•••••••",
+                                    "style": "email"
                                 }
                             ]
                         }
@@ -410,60 +370,18 @@ bot.dialog('adaptive', [
             ],
             "actions": [
                 {
-                    "type": "Action.ShowCard",
-                    "title": "Set due date",
-                    "card": {
-                        "type": "AdaptiveCard",
-                        "body": [
-                            {
-                                "type": "Input.Date",
-                                "id": "dueDate",
-                                "title": "Select due date"
-                            }
-                        ],
-                        "actions": [
-                            {
-                                "type": "Action.Submit",
-                                "title": "OK"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "type": "Action.ShowCard",
-                    "title": "Comment",
-                    "card": {
-                        "type": "AdaptiveCard",
-                        "body": [
-                            {
-                                "type": "Input.Text",
-                                "id": "comment",
-                                "isMultiline": true,
-                                "placeholder": "Enter your comment"
-                            }
-                        ],
-                        "actions": [
-                            {
-                                "type": "Action.Submit",
-                                "title": "OK"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "type": "Action.OpenUrl",
-                    "title": "View",
-                    "url": "http://adaptivecards.io"
+                    "type": "Action.Submit",
+                    "title": "En avant!"
                 }
             ]
-        }
+}
     
 
         
         session.send(new builder.Message(session).addAttachment({
             contentType: "application/vnd.microsoft.card.adaptive",
             content: card
- }));
+        }));
     }
 ]).triggerAction({
     matches: /^adaptive$/i,
