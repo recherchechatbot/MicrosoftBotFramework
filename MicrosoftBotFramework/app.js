@@ -370,7 +370,11 @@ bot.dialog('adaptive', [
             "actions": [
                 {
                     "type": "Action.Submit",
-                    "title": "En avant!"
+                    "title": "En avant!",
+                    "data": {
+                        'type':'login'
+
+                    }
                 }
             ]
 }
@@ -383,7 +387,6 @@ bot.dialog('adaptive', [
         }));
         if (session.message && session.message.value) {
             // A Card's Submit Action obj was received
-            processSubmitAction(session, session.message.value);
             console.log("ceci est inchallah la data utilisateur: "+ session.message.value);
         }
     }
