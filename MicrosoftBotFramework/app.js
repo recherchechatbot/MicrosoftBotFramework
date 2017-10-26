@@ -350,7 +350,7 @@ bot.dialog('adaptive', [
                                 {
                                     "type": "Input.Text",
                                     "id": "email",
-                                    "placeholder": "ex: ilovelesmousquetaires@intermarche.com"
+                                    "placeholder": "moi@exemple.com"
                                 },
                                 {
                                     "type": "TextBlock",
