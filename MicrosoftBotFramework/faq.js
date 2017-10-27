@@ -30,35 +30,35 @@ const LUIS_APP_URL = process.env.LUIS_APP_URL;
 //    console.log('%s listening to %s', server.name, server.url);
 //});
 
-////Creation chat connector pour communiquer avec le serve bot framework
-//var connector = new builder.ChatConnector({
-//    appId: MICROSOFT_APP_ID,
-//    appPassword: MICROSOFT_APP_PASSWORD
-//});
+//Creation chat connector pour communiquer avec le serve bot framework
+var connector = new builder.ChatConnector({
+    appId: MICROSOFT_APP_ID,
+    appPassword: MICROSOFT_APP_PASSWORD
+});
 
 
 
 
-////listen messages utlisateurs
-//server.post('/api/messages', connector.listen());
+//listen messages utlisateurs
+server.post('/api/messages', connector.listen());
 
 
 
-////Reception message utilisateur
-//var bot = new builder.UniversalBot(connector, function (session) {
-//    session.send("SALUT SALUT");
-//});
+//Reception message utilisateur
+var bot = new builder.UniversalBot(connector, function (session) {
+    session.send("SALUT SALUT");
+});
 
 
 
 
-////Ajout reconnaissance LUIS
-//var recognizer = new builder.LuisRecognizer(LUIS_APP_URL);
-//bot.recognizer(recognizer);
+//Ajout reconnaissance LUIS
+var recognizer = new builder.LuisRecognizer(LUIS_APP_URL);
+bot.recognizer(recognizer);
 
 
     
-bot.dialog('getproduit', [ //TODO le faire marcher  
+bot.dialog('ajoutexpress', [ 
     function (session) {
         let msg = {
             "type": "message",
