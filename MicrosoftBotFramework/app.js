@@ -107,7 +107,7 @@ function getEntityElement(message) {
                 console.log("body.entities[0].resolution stringifyisé" + JSON.stringify(body.entities[0].resolution));
                 console.log("body.entities[0].resolution.values[0] stringifyisé" + JSON.stringify(body.entities[0].resolution.values[0]));
 
-                return JSON.stringify(retourLuis.entities[0].resolution.values[0]);
+                return JSON.stringify(body.entities[0].resolution.values[0]);
                 resolve();
             }
             else {
