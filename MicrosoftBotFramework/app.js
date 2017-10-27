@@ -485,7 +485,7 @@ bot.dialog('consulterListeCourses', [
     matches: 'FAQ.Consulter.Liste.Courses',
 });
 
-bot.dialog('consulterListeCourses', [
+bot.dialog('ancienneCommande', [
     function (session) {
         var card = {
             "type": "AdaptiveCard",
