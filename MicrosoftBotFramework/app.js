@@ -106,8 +106,8 @@ function getEntityElement(message) {
                 console.log("body.entities[0] stringifyisé" + JSON.stringify(body.entities[0]));
                 console.log("body.entities[0].resolution stringifyisé" + JSON.stringify(body.entities[0].resolution));
                 console.log("body.entities[0].resolution.values[0] stringifyisé" + JSON.stringify(body.entities[0].resolution.values[0]));
-                resolve();
-                return JSON.stringify(body.entities[0].resolution.values[0]);
+                resolve(JSON.stringify(body.entities[0].resolution.values[0]));
+                
                 
             }
             else {
@@ -412,9 +412,9 @@ bot.dialog('getrecette', [
     function (session,args) {
         session.send('Je traite ta demande et je reviens vers toi dès que j\'ai trouvé la recette parfaite');
         var userMessage = session.message.text;
-        session.dialogData.ingredient = getEntityElement(userMessage)
-            .then(() => console.log("ceci est l'ingredient qu'on a j'espère recuperé: " + session.dialogData.ingredient))
-            .then(() => getRecette(session.dialogData.token, session.dialogData.ingredient,session))
+        getEntityElement(userMessage)
+            .then((p) => console.log("ceci est l'ingredient qu'on a j'espère recuperé: " + p))
+            .then((p) => getRecette(session.dialogData.token, p,session))
     }
 ]).triggerAction({
     matches: 'Recherche Recette'/*/^recettes$/i*/,
