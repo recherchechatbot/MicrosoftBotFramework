@@ -222,6 +222,7 @@ function getToken(email, mdp, idrc, session) {
             console.log('ok');
             console.log("Ceci estle token qu'on choppe: " + body.TokenAuthentification);
             session.userData.TokenAuthentification = body.TokenAuthentification;
+            session.save();
         }
         else {
             console.log("erreur récuperation Token");
@@ -412,7 +413,7 @@ bot.dialog('getproduit', [
 
 
 bot.dialog('getrecette', [
-    function (session,args) {
+    function (session) {
         session.send('Je traite ta demande et je reviens vers toi dès que j\'ai trouvé la recette parfaite');
         var userMessage = session.message.text;
         getEntityElement(userMessage,session)
