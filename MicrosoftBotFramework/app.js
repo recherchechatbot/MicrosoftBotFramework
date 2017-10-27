@@ -338,7 +338,7 @@ bot.dialog('getproduit', [
 
 
 bot.dialog('getrecette', [
-    function (session) {
+    function (session,args) {
         session.send('Je traite ta demande et je reviens vers toi dès que j\'ai trouvé la recette parfaite');
         var produit = builder.EntityRecognizer.findEntity(args.entities, 'Nourriture');
         session.dialogData.ingredient = produit;
