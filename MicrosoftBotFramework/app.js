@@ -120,6 +120,8 @@ function getEntityElement(message) {
 
 function getRecette(token, produit,session) {
     console.log("Debut getRecette");
+    console.log('le produit qu\'on utilise: ' + produit);
+    console.log('token qu\'on utilise: ' + token);
     var options = {
         method: 'GET',
         uri: URL_MCO + "/api/v1/recherche/recette?mot=" + produit,
