@@ -290,10 +290,8 @@ bot.dialog('login', [//TODO enlever cette deuxième carte qui apparait pour rien
 
 bot.dialog('getproduit', [   
     function (session) {
-        session.send('Bienvenue sur le service de courses d\'intermarché');
-        builder.Prompts.text(session, 'Merci de rentrer le produit que vous recherchez (par exemple: poulet');
-    },
-    function (session, results) {
+        session.send('Je traite ta demande et je reviens vers toi le plus vite possible');    
+        var produit = builder.EntityRecognizer.findEntity(args.entities, 'foodName');
         session.dialogData.produit = results.response;
         console.log('${session.dialogData.produit}');
         console.log(session.dialogData.produit);
@@ -341,12 +339,10 @@ bot.dialog('getproduit', [
 
 bot.dialog('getrecette', [
     function (session) {
-        session.send('Bienvenue sur la recherche des recettes d\'intermarché');
-        builder.Prompts.text(session, 'Merci de rentrer un produit (par exemple: poulet)');
-    },
-    function (session, results) {
-        session.dialogData.ingredient = results.response;
-        console.log(session.dialogData.produit);
+        session.send('Je traite ta demande et je reviens vers toi dès que j\'ai trouvé la recette parfaite');
+        var produit = builder.EntityRecognizer.findEntity(args.entities, 'Nourriture');
+        session.dialogData.ingredient = produit;
+        console.log(session.dialogData.ingredient);
         var options = {
             method: 'GET',
             uri: URL_MCO + "/api/v1/recherche/recette?mot=" + session.dialogData.ingredient ,
