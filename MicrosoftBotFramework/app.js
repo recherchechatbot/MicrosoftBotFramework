@@ -512,7 +512,7 @@ bot.dialog('consulterListeCourses', [
                 {
                     "type": "Action.OpenUrl",
                     "url": "/mon-compte/mes-commandes",
-                    "title": "Par ici!"
+                    "title": "Mon compte"
 
                 }
             ]
