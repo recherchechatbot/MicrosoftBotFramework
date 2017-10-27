@@ -90,7 +90,7 @@ function parseCookies(cookiesString) {
     return list;
 }
 
-function getEntityElement(message) {
+function getEntityElement(message,session) {
     return new Promise((resolve, reject) => {
         var options = {
             method: 'GET',
@@ -106,7 +106,8 @@ function getEntityElement(message) {
                 console.log("body.entities[0] stringifyisé" + JSON.stringify(body.entities[0]));
                 console.log("body.entities[0].resolution stringifyisé" + JSON.stringify(body.entities[0].resolution));
                 console.log("body.entities[0].resolution.values[0] stringifyisé" + JSON.stringify(body.entities[0].resolution.values[0]));
-                resolve(JSON.stringify(body.entities[0].resolution.values[0]));
+                session.userData.produit = JSON.stringify(body.entities[0].resolution.values[0]);
+                resolve();
                 
                 
             }
@@ -414,8 +415,8 @@ bot.dialog('getrecette', [
     function (session,args) {
         session.send('Je traite ta demande et je reviens vers toi dès que j\'ai trouvé la recette parfaite');
         var userMessage = session.message.text;
-        getEntityElement(userMessage)
-            .then((p) => getRecette(session.userData.TokenAuthentification, p,session))
+        getEntityElement(userMessage,session)
+            .then((p) => getRecette(session.userData.TokenAuthentification, session.userData.produit,session))
     }
 ]).triggerAction({
     matches: 'Recherche Recette'/*/^recettes$/i*/,
