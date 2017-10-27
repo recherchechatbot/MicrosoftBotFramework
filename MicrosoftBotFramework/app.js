@@ -100,11 +100,13 @@ function getEntityElement(message) {
         request(options, function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 console.log("constate mon body: " + JSON.stringify(body));
-                var retourLuis = JSON.parse(body);
-                console.log("le retourLuis parsé et dans getEntity: " + retourLuis);
                 console.log("body.entities[0]" + body.entities[0]);
                 console.log("body.entities[0].resolution" + body.entities[0].resolution);
                 console.log("body.entities[0].resolution.values[0]" + body.entities[0].resolution.values[0]);
+                console.log("body.entities[0] stringifyisé" + JSON.stringify(body.entities[0]));
+                console.log("body.entities[0].resolution stringifyisé" + JSON.stringify(body.entities[0].resolution));
+                console.log("body.entities[0].resolution.values[0] stringifyisé" + JSON.stringify(body.entities[0].resolution.values[0]));
+
                 return retourLuis.entities[0].resolution.values[0];
                 resolve();
             }
