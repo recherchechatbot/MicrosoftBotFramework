@@ -90,6 +90,61 @@ function parseCookies(cookiesString) {
     return list;
 }
 
+function getEntityElement(message) {
+    var options = {
+        method: 'GET',
+        uri: LUIS_APP_URL + message,
+        json: true
+    };
+    request(options, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            return body.entities.resolution.values[0];
+        }
+        else {
+            console.log('erreur recuperation element');
+            
+        }
+    }
+};
+
+function getRecette(token,produit) {
+    var options = {
+        method: 'GET',
+        uri: URL_MCO + "/api/v1/recherche/recette?mot=" + produit,
+        headers: {
+            TokenAuthentification: token, 
+        },
+        json: true
+    };
+    request(options, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            var msg = new builder.Message(session);
+            msg.attachmentLayout(builder.AttachmentLayout.carousel)
+            var myCardArray = [];
+            const limit = Math.min(10, body.Recettes.length);
+            for (var i = 0; i < limit; i++) {
+                var ingredientList = "";
+                for (var j = 0; j < body.Recettes[i].IngredientsPrincipaux.length; j++) {
+                    ingredientList += body.Recettes[i].IngredientsPrincipaux[j] + ", ";
+                };
+                console.log('liste des ingredients' + ingredientList);
+                const url = "https://drive.intermarche.com/1-nantes-leraudiere/recette/" + body.Recettes[i].IdRecette + "-recette"; //TODO Choisir le bon magasin quand authentification
+                myCardArray.push(
+                    new builder.HeroCard(session)
+                        .title(body.Recettes[i].Titre)
+                        .subtitle(ingredientList)
+                        .images([builder.CardImage.create(session, body.Recettes[i].ImageUrl)])
+                        .buttons([
+                            builder.CardAction.openUrl(session, url, "+ d'infos")
+                        ])
+                )
+            }
+            msg.attachments(myCardArray);
+            session.send(msg).endDialog();
+        }
+    })
+}
+
 function getIdrc(email, mdp, session) {
     return new Promise((resolve, reject) => {
         var options = {
@@ -340,47 +395,11 @@ bot.dialog('getproduit', [
 bot.dialog('getrecette', [
     function (session,args) {
         session.send('Je traite ta demande et je reviens vers toi dès que j\'ai trouvé la recette parfaite');
-        var produit = builder.EntityRecognizer.findEntity(args.entities, 'Nourriture');
-        session.dialogData.ingredient = produit;
+        var userMessage = session.message.text;
+        session.dialogData.ingredient = getEntityElement(userMessage);        
         console.log(session.dialogData.ingredient);
-        var options = {
-            method: 'GET',
-            uri: URL_MCO + "/api/v1/recherche/recette?mot=" + session.dialogData.ingredient ,
-            headers: {
-                TokenAuthentification: '0b5d3d02-b51c-4238-b170-1ef0103b4928', //TODO Faire un login et récuperer le idrc puis le token en appelant un ws
-            },
-            json: true
-        };
-        request(options, function (error, response, body) {
-            if (!error && response.statusCode == 200) {
-                console.log('ok');
-                var msg = new builder.Message(session);
-                msg.attachmentLayout(builder.AttachmentLayout.carousel)
-                var myCardArray = [];
-                const limit = Math.min(10, body.Recettes.length);
-                for (var i = 0; i < limit; i++) {                    
-                    var ingredientList = "";
-                    for (var j = 0; j < body.Recettes[i].IngredientsPrincipaux.length; j++) {
-                        ingredientList += body.Recettes[i].IngredientsPrincipaux[j] + ", ";
-                    };
-                    console.log('liste des ingredients' + ingredientList);
-                    const url = "https://drive.intermarche.com/1-nantes-leraudiere/recette/" + body.Recettes[i].IdRecette + "-recette"; //TODO Choisir le bon magasin quand authentification
-                    myCardArray.push(
-                        new builder.HeroCard(session)
-                            .title(body.Recettes[i].Titre)
-                            .subtitle(ingredientList)
-                            .images([builder.CardImage.create(session, body.Recettes[i].ImageUrl)])
-                            .buttons([
-                                builder.CardAction.openUrl(session, url, "+ d'infos")
-                            ])
-                    )
-                }
-                msg.attachments(myCardArray);
-                session.send(msg).endDialog();
-            }
-        })
-
-
+        getRecette(session.dialogData.token, session.dialogData.ingredient);
+        
     }
 ]).triggerAction({
     matches: 'Recherche Recette'/*/^recettes$/i*/,
