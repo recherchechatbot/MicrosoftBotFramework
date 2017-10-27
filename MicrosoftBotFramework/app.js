@@ -442,6 +442,44 @@ bot.dialog('listeCourses', [
     }
 ]).triggerAction({
     matches: 'FAQ.Liste.Courses',
+    });
+
+bot.dialog('consulterListeCourses', [
+    function (session) {
+        var card = {
+            "type": "AdaptiveCard",
+                "version": "1.0",
+                    "body": [
+                        {
+                            "type": "ColumnSet",
+                            "columns": [
+                                {
+                                    "type": "Column",
+                                    "width": 2,
+                                    "items": [
+
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "Pour consulter votre liste de courses, vous devez vous connecter à votre compte. Vous pouvez consulter vos listes de courses directement en cliquant ci-dessous:", "wrap": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                        "actions": [
+                            {
+                                "type": "Action.OpenUrl",
+                                "url": "/mon-compte/mes-listes-de-courses"
+                                "title": "Par ici!"
+
+                            }
+                        ]
+        }
+        session.send("La liste de courses procure un gain de temps considérable. Elle te donne la possibilité par un simple clic de déposer dans ton panier les articles que tu commandes régulièrement.Pour que tes prochaines commandes soient plus rapides, tu peux créer des listes thématiques. Remplis ton panier avec les articles désirés, clique ensuite sur « Aller en caisse », puis clique sur le lien « Tout ajouter à une liste ». Donne un nom à ta liste et le tour est joué ! Ta liste de courses est enregistrée, tu pourras la réutiliser lors de ta prochaine visite sur notre site.");
+    }
+]).triggerAction({
+    matches: 'FAQ.Consulter.Liste.Courses',
 });
 
 
