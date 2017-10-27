@@ -485,5 +485,44 @@ bot.dialog('consulterListeCourses', [
     matches: 'FAQ.Consulter.Liste.Courses',
 });
 
+bot.dialog('consulterListeCourses', [
+    function (session) {
+        var card = {
+            "type": "AdaptiveCard",
+            "version": "1.0",
+            "body": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": 2,
+                            "items": [
 
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Il faut que tu te rendes dans ton compte. Tu peux y acceder en cliquant sur le lien ci-dessous 😁. Dans « Historique de mes commandes », sélectionne la commande concernée et clique sur « Transformer en liste ».", "wrap": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "actions": [
+                {
+                    "type": "Action.OpenUrl",
+                    "url": "/mon-compte/mes-commandes",
+                    "title": "Par ici!"
+
+                }
+            ]
+        }
+        session.send(new builder.Message(session).addAttachment({
+            contentType: "application/vnd.microsoft.card.adaptive",
+            content: card
+        }));
+    }
+]).triggerAction({
+    matches: 'FAQ.Ancienne.Commande',
+});
 
