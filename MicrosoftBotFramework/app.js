@@ -476,7 +476,7 @@ bot.dialog('consulterListeCourses', [
                             }
                         ]
         }
-        session.send("La liste de courses procure un gain de temps considérable. Elle te donne la possibilité par un simple clic de déposer dans ton panier les articles que tu commandes régulièrement.Pour que tes prochaines commandes soient plus rapides, tu peux créer des listes thématiques. Remplis ton panier avec les articles désirés, clique ensuite sur « Aller en caisse », puis clique sur le lien « Tout ajouter à une liste ». Donne un nom à ta liste et le tour est joué ! Ta liste de courses est enregistrée, tu pourras la réutiliser lors de ta prochaine visite sur notre site.");
+        session.send(card);
     }
 ]).triggerAction({
     matches: 'FAQ.Consulter.Liste.Courses',
