@@ -470,7 +470,7 @@ bot.dialog('consulterListeCourses', [
                         "actions": [
                             {
                                 "type": "Action.OpenUrl",
-                                "url": "/mon-compte/mes-listes-de-courses"
+                                "url": "/mon-compte/mes-listes-de-courses",
                                 "title": "Par ici!"
 
                             }
