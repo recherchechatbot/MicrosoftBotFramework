@@ -16,6 +16,7 @@ const URL_MCO = process.env.URL_MCO;
 const URL_RC = process.env.URL_RC;
 const MSQ_JETON_APP_RC = process.env.MSQ_JETON_APP_RC;
 const MSQ_APP_RC = process.env.MSQ_APP_RC;
+const faq = require('./faq.js');
 
 
 var server = restify.createServer();
@@ -363,7 +364,7 @@ bot.dialog('login', [//TODO enlever cette deuxième carte qui apparait pour rien
     matches: /^login$/i,
 });
 
-bot.dialog('getproduit', [   
+bot.dialog('getproduit', [ //TODO le faire marcher  
     function (session) {
         session.send('Je traite ta demande et je reviens vers toi le plus vite possible');    
         var produit = builder.EntityRecognizer.findEntity(args.entities, 'foodName');
