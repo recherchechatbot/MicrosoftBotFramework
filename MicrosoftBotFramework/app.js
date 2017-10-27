@@ -98,8 +98,9 @@ function getEntityElement(message) {
     };
     request(options, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log("constate mon body: " + body);
-            return body.entities[0].resolution.values[0];
+            console.log("constate mon body: " + JSON.stringify(body));
+            var retourLuis = JSON.parse(body);
+            return retourLuis.entities[0].resolution.values[0];
         }
         else {
             console.log('erreur recuperation element');
