@@ -109,7 +109,8 @@ function getEntityElement(message) {
     })
 };
 
-function getRecette(token,produit) {
+function getRecette(token, produit) {
+    console.log("Debut getRecette");
     var options = {
         method: 'GET',
         uri: URL_MCO + "/api/v1/recherche/recette?mot=" + produit,
@@ -143,6 +144,10 @@ function getRecette(token,produit) {
             }
             msg.attachments(myCardArray);
             session.send(msg).endDialog();
+        }
+        else {
+            console.log("erreur recherche recette");
+            session.send("Je suis désolé mais je n'ai pas trouvé de recette correspondant à ta recherche 😔 ")
         }
     })
 }
@@ -399,7 +404,7 @@ bot.dialog('getrecette', [
         session.send('Je traite ta demande et je reviens vers toi dès que j\'ai trouvé la recette parfaite');
         var userMessage = session.message.text;
         session.dialogData.ingredient = getEntityElement(userMessage);        
-        console.log(session.dialogData.ingredient);
+        console.log("ceci est l'ingredient qu'on a j'espère recuperé: " + session.dialogData.ingredient);
         getRecette(session.dialogData.token, session.dialogData.ingredient);
         
     }
