@@ -182,7 +182,7 @@ function getIdrc(email, mdp, session) {
         request(options, function (error, response, body) {
             console.log('ok');
             console.log("ceci est l'id apres login RC: " + body.id);
-            session.dialogData.idrc = body.id;
+            session.userData.idrc = body.id;
             resolve();            
             console.log("terminé l'idrc");
         }, (error, response) => {
@@ -220,7 +220,7 @@ function getToken(email, mdp, idrc, session) {
         if (!error && response.statusCode == 200) {
             console.log('ok');
             console.log("Ceci estle token qu'on choppe: " + body.TokenAuthentification);
-            session.dialogData.TokenAuthentification = body.TokenAuthentification;
+            session.userData.TokenAuthentification = body.TokenAuthentification;
         }
         else {
             console.log("erreur récuperation Token");
@@ -251,12 +251,12 @@ function getSessionId(email, mdp,session) {
             var c = parseCookies(response.headers['set-cookie'].toString());
             console.log("MYCOOOKIIIEEES: " + parseCookies(response.headers['set-cookie'].toString()));
             parseCookies(response.headers['set-cookie'].toString());
-            session.dialogData.sessionID = c["ASP.NET_SessionId"];
-            console.log("Le ASPSESSIONID est : " + session.dialogData.sessionID);
+            session.userData.sessionID = c["ASP.NET_SessionId"];
+            console.log("Le ASPSESSIONID est : " + session.userData.sessionID);
         }
     })
 
-    var cookieSession = 'ASP.NET_SessionId=' + session.dialogData.sessionID;
+    var cookieSession = 'ASP.NET_SessionId=' + session.userData.sessionID;
     //HitFO sinon ça marche pas.
     request({
         url: FO_URL,
@@ -329,27 +329,27 @@ bot.dialog('login', [//TODO enlever cette deuxième carte qui apparait pour rien
             // A Card's Submit Action obj was received
             console.log("ceci est inchallah la data utilisateur: " + JSON.stringify(session.message.value));
 
-            session.dialogData.email = session.message.value.email;//on stocke dans dialogdata car cela nous permet de stocker meme en dehors de ce dialogue et ce même si on demande d'autres inputs'
-            session.dialogData.mdp = session.message.value.mdp;
-            console.log("email: " + session.dialogData.email);
-            console.log("Mot de passe: " + session.dialogData.mdp);
-            getIdrc(session.dialogData.email, session.dialogData.mdp, session)
-                .then(() => console.log("voyons voir si l'idrc est accessible en dehors de la fonction getidrc: " + session.dialogData.idrc))
-                .then(() => getToken(session.dialogData.email, session.dialogData.mdp, session.dialogData.idrc, session))
-                .then(() => getSessionId(session.dialogData.email, session.dialogData.mdp, session))
+            session.userData.email = session.message.value.email;//on stocke dans userData car cela nous permet de stocker meme en dehors de ce dialogue et ce même si on demande d'autres inputs'
+            session.userData.mdp = session.message.value.mdp;
+            console.log("email: " + session.userData.email);
+            console.log("Mot de passe: " + session.userData.mdp);
+            getIdrc(session.userData.email, session.userData.mdp, session)
+                .then(() => console.log("voyons voir si l'idrc est accessible en dehors de la fonction getidrc: " + session.userData.idrc))
+                .then(() => getToken(session.userData.email, session.userData.mdp, session.userData.idrc, session))
+                .then(() => getSessionId(session.userData.email, session.userData.mdp, session))
                 .then(() => session.send("Vous êtes bien connecté"))
             
         }
     },
     function (session, results) {
         //recuperation idrc ,token, aspnetsession
-        session.dialogData.mdp = results.response;
-        console.log("email: " + session.dialogData.email);
-        console.log("Mot de passe: " + session.dialogData.mdp);
-        getIdrc(session.dialogData.email, session.dialogData.mdp, session)
-            .then(() => console.log("voyons voir si l'idrc est accessible en dehors de la fonction getidrc: " + session.dialogData.idrc))
-            .then(() =>getToken(session.dialogData.email, session.dialogData.mdp, session.dialogData.idrc, session))
-            .then(() =>getSessionId(session.dialogData.email, session.dialogData.mdp,session))
+        session.userData.mdp = results.response;
+        console.log("email: " + session.userData.email);
+        console.log("Mot de passe: " + session.userData.mdp);
+        getIdrc(session.userData.email, session.userData.mdp, session)
+            .then(() => console.log("voyons voir si l'idrc est accessible en dehors de la fonction getidrc: " + session.userData.idrc))
+            .then(() =>getToken(session.userData.email, session.userData.mdp, session.userData.idrc, session))
+            .then(() =>getSessionId(session.userData.email, session.userData.mdp,session))
             .then(() => session.send("Vous êtes bien connecté"))
 
         session.endDialog();
@@ -365,17 +365,17 @@ bot.dialog('getproduit', [
     function (session) {
         session.send('Je traite ta demande et je reviens vers toi le plus vite possible');    
         var produit = builder.EntityRecognizer.findEntity(args.entities, 'foodName');
-        session.dialogData.produit = results.response;
-        console.log('${session.dialogData.produit}');
-        console.log(session.dialogData.produit);
+        session.userData.produit = results.response;
+        console.log('${session.userData.produit}');
+        console.log(session.userData.produit);
         var options = {
             method: 'POST',
             uri: FO_URL + "RechercheJs",
             headers: {
-                cookie: session.dialogData.sessionID, 
+                cookie: session.userData.sessionID, 
             },
             body: {
-                mot: session.dialogData.produit
+                mot: session.userData.produit
             },
             json: true
         };
@@ -415,8 +415,7 @@ bot.dialog('getrecette', [
         session.send('Je traite ta demande et je reviens vers toi dès que j\'ai trouvé la recette parfaite');
         var userMessage = session.message.text;
         getEntityElement(userMessage)
-            .then((p) => console.log("ceci est l'ingredient qu'on a j'espère recuperé: " + p))
-            .then((p) => getRecette(session.dialogData.token, p,session))
+            .then((p) => getRecette(session.userData.TokenAuthentification, p,session))
     }
 ]).triggerAction({
     matches: 'Recherche Recette'/*/^recettes$/i*/,
