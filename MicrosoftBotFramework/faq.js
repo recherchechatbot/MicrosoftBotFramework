@@ -70,7 +70,7 @@ bot.dialog('getproduit', [ //TODO le faire marcher
                     "name": "Ajout Express"
                 }
             ],
-            "replyToId": "5d5cdc723"
+            
         };
         session.send(msg);
 
