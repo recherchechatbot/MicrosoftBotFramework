@@ -118,7 +118,7 @@ function getEntityElement(message) {
     })
 };
 
-function getRecette(token, produit) {
+function getRecette(token, produit,session) {
     console.log("Debut getRecette");
     var options = {
         method: 'GET',
@@ -414,7 +414,7 @@ bot.dialog('getrecette', [
         var userMessage = session.message.text;
         session.dialogData.ingredient = getEntityElement(userMessage)
             .then(() => console.log("ceci est l'ingredient qu'on a j'espère recuperé: " + session.dialogData.ingredient))
-            .then(() => getRecette(session.dialogData.token, session.dialogData.ingredient))
+            .then(() => getRecette(session.dialogData.token, session.dialogData.ingredient,session))
     }
 ]).triggerAction({
     matches: 'Recherche Recette'/*/^recettes$/i*/,
