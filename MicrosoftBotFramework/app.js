@@ -460,7 +460,7 @@ bot.dialog('consulterListeCourses', [
 
                                         {
                                             "type": "TextBlock",
-                                            "text": "Pour consulter votre liste de courses, vous devez vous connecter à votre compte. Vous pouvez consulter vos listes de courses directement en cliquant ci-dessous:", "wrap": true
+                                            "text": "Pour consulter votre liste de courses, tu dois être connecté à ton compte. Tu pourras alors consulter ta liste de courses directement en cliquant ci-dessous. Si tu veux te connecter, tu peux le faire ici en tapant \"login\" ", "wrap": true
                                         }
                                     ]
                                 }
