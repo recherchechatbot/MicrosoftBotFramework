@@ -104,7 +104,7 @@ function getEntityElement(message) {
             console.log('erreur recuperation element');
             
         }
-    }
+    })
 };
 
 function getRecette(token,produit) {
