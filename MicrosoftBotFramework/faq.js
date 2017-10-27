@@ -25,36 +25,36 @@ const MICROSOFT_APP_PASSWORD = process.env.MICROSOFT_APP_PASSWORD;
 
 const LUIS_APP_URL = process.env.LUIS_APP_URL;
 
-//Setup server restify
-server.listen(process.env.port || process.env.PORT || 3978, function () {
-    console.log('%s listening to %s', server.name, server.url);
-});
+////Setup server restify
+//server.listen(process.env.port || process.env.PORT || 3978, function () {
+//    console.log('%s listening to %s', server.name, server.url);
+//});
 
-//Creation chat connector pour communiquer avec le serve bot framework
-var connector = new builder.ChatConnector({
-    appId: MICROSOFT_APP_ID,
-    appPassword: MICROSOFT_APP_PASSWORD
-});
-
-
-
-
-//listen messages utlisateurs
-server.post('/api/messages', connector.listen());
-
-
-
-//Reception message utilisateur
-var bot = new builder.UniversalBot(connector, function (session) {
-    session.send("SALUT SALUT");
-});
+////Creation chat connector pour communiquer avec le serve bot framework
+//var connector = new builder.ChatConnector({
+//    appId: MICROSOFT_APP_ID,
+//    appPassword: MICROSOFT_APP_PASSWORD
+//});
 
 
 
 
-//Ajout reconnaissance LUIS
-var recognizer = new builder.LuisRecognizer(LUIS_APP_URL);
-bot.recognizer(recognizer);
+////listen messages utlisateurs
+//server.post('/api/messages', connector.listen());
+
+
+
+////Reception message utilisateur
+//var bot = new builder.UniversalBot(connector, function (session) {
+//    session.send("SALUT SALUT");
+//});
+
+
+
+
+////Ajout reconnaissance LUIS
+//var recognizer = new builder.LuisRecognizer(LUIS_APP_URL);
+//bot.recognizer(recognizer);
 
 
     
