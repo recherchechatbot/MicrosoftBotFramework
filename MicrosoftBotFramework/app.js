@@ -416,7 +416,7 @@ bot.dialog('getrecette', [
         session.send('Je traite ta demande et je reviens vers toi dès que j\'ai trouvé la recette parfaite');
         var userMessage = session.message.text;
         getEntityElement(userMessage,session)
-            .then((p) => getRecette(session.userData.TokenAuthentification, session.userData.produit,session))
+            .then(() => getRecette(session.userData.TokenAuthentification, session.userData.produit,session))
     }
 ]).triggerAction({
     matches: 'Recherche Recette'/*/^recettes$/i*/,
