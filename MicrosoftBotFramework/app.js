@@ -106,9 +106,9 @@ function getEntityElement(message) {
                 console.log("body.entities[0] stringifyisé" + JSON.stringify(body.entities[0]));
                 console.log("body.entities[0].resolution stringifyisé" + JSON.stringify(body.entities[0].resolution));
                 console.log("body.entities[0].resolution.values[0] stringifyisé" + JSON.stringify(body.entities[0].resolution.values[0]));
-
-                return JSON.stringify(body.entities[0].resolution.values[0]);
                 resolve();
+                return JSON.stringify(body.entities[0].resolution.values[0]);
+                
             }
             else {
                 console.log('erreur recuperation element');
