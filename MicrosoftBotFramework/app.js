@@ -476,7 +476,10 @@ bot.dialog('consulterListeCourses', [
                             }
                         ]
         }
-        session.send(card);
+        session.send(new builder.Message(session).addAttachment({
+            contentType: "application/vnd.microsoft.card.adaptive",
+            content: card
+        }));
     }
 ]).triggerAction({
     matches: 'FAQ.Consulter.Liste.Courses',
