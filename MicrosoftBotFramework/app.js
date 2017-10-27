@@ -415,11 +415,11 @@ bot.dialog('getrecette', [
 
 //<<<<<<<<<<<<<<<<<<<<<<FAQ>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-bot.dialog('ajoutexpress', [
+bot.dialog('ajoutExpress', [
     function (session) {
         let msg = {
             "type": "message",
-            "text": "Vous êtes pressé ? L’Ajout Express vous permet d’ajouter des produits à votre panier en seulement quelques clics.Rien de plus simple, sélectionnez cette option lorsque vous êtes dans votre panier sur le site de courses en ligne.En cliquant sur le bouton ci- dessous, vous accédez directement aux rayons puis aux sous- familles.Vous n’avez plus qu’à compléter votre panier.",
+            "text": "Tu es pressé ? L’Ajout Express te permet d’ajouter des produits à ton panier en seulement quelques clics. Rien de plus simple, sélectionne cette option lorsque tu es dans ton panier sur le site de courses en ligne.En cliquant sur le bouton ci- dessous, tu accedes directement aux rayons puis aux sous-familles.Tu n’as plus qu’à compléter ton panier.",
             "attachments": [
                 {
                     "contentType": "image/png",
@@ -434,6 +434,14 @@ bot.dialog('ajoutexpress', [
     }
 ]).triggerAction({
     matches: 'FAQ.Ajout.Express',
+    });
+
+bot.dialog('listeCourses', [
+    function (session) {
+        session.send("La liste de courses procure un gain de temps considérable. Elle te donne la possibilité par un simple clic de déposer dans ton panier les articles que tu commandes régulièrement.Pour que tes prochaines commandes soient plus rapides, tu peux créer des listes thématiques. Remplis ton panier avec les articles désirés, clique ensuite sur « Aller en caisse », puis clique sur le lien « Tout ajouter à une liste ». Donne un nom à ta liste et le tour est joué ! Ta liste de courses est enregistrée, tu pourras la réutiliser lors de ta prochaine visite sur notre site.");
+    }
+]).triggerAction({
+    matches: 'FAQ.Liste.Courses',
 });
 
 
