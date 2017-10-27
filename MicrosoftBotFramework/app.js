@@ -91,22 +91,25 @@ function parseCookies(cookiesString) {
 }
 
 function getEntityElement(message) {
-    var options = {
-        method: 'GET',
-        uri: LUIS_APP_URL + message,
-        json: true
-    };
-    request(options, function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-            console.log("constate mon body: " + JSON.stringify(body));
-            var retourLuis = JSON.parse(body);
-            return retourLuis.entities[0].resolution.values[0];
-        }
-        else {
-            console.log('erreur recuperation element');
-            
-        }
-    })
+    return new Promise((resolve, reject) => {
+        var options = {
+            method: 'GET',
+            uri: LUIS_APP_URL + message,
+            json: true
+        };
+        request(options, function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+                console.log("constate mon body: " + JSON.stringify(body));
+                var retourLuis = JSON.parse(body);
+                resolve();
+                return retourLuis.entities[0].resolution.values[0];
+            }
+            else {
+                console.log('erreur recuperation element');
+
+            }
+        })
+    }
 };
 
 function getRecette(token, produit) {
@@ -361,7 +364,7 @@ bot.dialog('getproduit', [
             method: 'POST',
             uri: FO_URL + "RechercheJs",
             headers: {
-                cookie: session.dialogData.sessionID, //TODO Authentification enlever le dur
+                cookie: session.dialogData.sessionID, 
             },
             body: {
                 mot: session.dialogData.produit
@@ -403,10 +406,9 @@ bot.dialog('getrecette', [
     function (session,args) {
         session.send('Je traite ta demande et je reviens vers toi dès que j\'ai trouvé la recette parfaite');
         var userMessage = session.message.text;
-        session.dialogData.ingredient = getEntityElement(userMessage);        
-        console.log("ceci est l'ingredient qu'on a j'espère recuperé: " + session.dialogData.ingredient);
-        getRecette(session.dialogData.token, session.dialogData.ingredient);
-        
+        session.dialogData.ingredient = getEntityElement(userMessage)
+            .then(() => console.log("ceci est l'ingredient qu'on a j'espère recuperé: " + session.dialogData.ingredient))
+            .then(() => getRecette(session.dialogData.token, session.dialogData.ingredient))
     }
 ]).triggerAction({
     matches: 'Recherche Recette'/*/^recettes$/i*/,
