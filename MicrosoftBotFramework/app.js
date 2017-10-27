@@ -526,3 +526,10 @@ bot.dialog('ancienneCommande', [
     matches: 'FAQ.Ancienne.Commande',
 });
 
+bot.dialog('produitFavori', [
+    function (session) {
+        session.send("Tu peux ajouter un produit dans tes favoris en cliquant sur le coeur situé à coté de ce dernier. Tu pourras le retrouver ensuite dans l’onglet « Mon Drive malin ».");
+    }
+]).triggerAction({
+    matches: 'FAQ.Produit.Favori',
+});
