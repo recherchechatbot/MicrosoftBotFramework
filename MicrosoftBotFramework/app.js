@@ -109,7 +109,7 @@ function getEntityElement(message) {
 
             }
         })
-    }
+    })
 };
 
 function getRecette(token, produit) {
