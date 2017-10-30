@@ -576,7 +576,7 @@ bot.dialog('suppressionCompte', [
             "actions": [
                 {
                     "type": "Action.OpenUrl",
-                    "url": "/mon-compte/mes-commandes",
+                    "url": "/mon-compte/mon-profil",
                     "title": "Mon compte"
 
                 }
