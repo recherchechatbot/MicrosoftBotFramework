@@ -814,4 +814,46 @@ bot.dialog('produitTrad', [
 
 ]).triggerAction({
     matches: 'FAQ.Produit.Trad',
+    });
+
+bot.dialog('differencePrix', [
+    function (session) {
+        session.sendTyping();
+        var card = {
+            "type": "AdaptiveCard",
+            "version": "1.0",
+            "body": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": 2,
+                            "items": [
+
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Les prix sur le site drive.intermarche.com sont les mêmes que les prix en magasin. Si tu constates une différence de prix entre le site et ton point de vente tu peux nous en informer en appelant le numero ci-dessous", "wrap": true
+                                },
+                                {
+                                    "type": "Image",
+                                    "url": "https://driveimg1.intermarche.com/fr/Content/images/compte/BannieresSAV.jpg",
+                                    "size": "auto"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        session.send(new builder.Message(session).addAttachment({
+            contentType: "application/vnd.microsoft.card.adaptive",
+            content: card
+        }));
+        
+    }
+
+]).triggerAction({
+    matches: 'FAQ.Difference.Prix',
 });
+
