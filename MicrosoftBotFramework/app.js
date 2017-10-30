@@ -795,3 +795,13 @@ bot.dialog('produitIntrouvable', [
 ]).triggerAction({
     matches: 'FAQ.Produit.Introuvable',
 });
+
+bot.dialog('produitsFrais', [
+    function (session) {
+        session.sendTyping();
+        session.send("Nos véhicules de livraison sont réfrigérés.Ce mode de livraison permet de conserver tous les types de produits (surgelés, frais…) du magasin à ton domicile. \n Si tu choisis le mode Drive, tes produits frais et surgelés sont conservés à la bonne température jusqu’au retrait");
+    }
+
+]).triggerAction({
+    matches: 'FAQ.Produit.Introuvable',
+});
