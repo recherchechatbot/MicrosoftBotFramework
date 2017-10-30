@@ -1161,6 +1161,50 @@ bot.dialog('validationCommande', [
     matches: 'FAQ.Validation.Commande',
 });
 
+bot.dialog('creneauHoraire', [
+    function (session) {
+        session.sendTyping();
+        var card = {
+            "type": "AdaptiveCard",
+            "version": "1.0",
+            "body": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": 2,
+                            "items": [
+
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Essaye de te deconnecter et de te reconnecter. Je t'invite également à verifier que ton navigateur internet est bien compatible avec notre site. Le site est optimisé pour Internet Explorer 9, Google Chrome, Mozilla Firefox et Safari. Je te conseille vivement de les télécharger et de mettre à jour ton navigateur internet. Verifie également que le créneau horaire selectionné est bien disponible. ", "wrap": true
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Si malgré cela le problème persiste, je t'invite à contacter mes amis humains du support en utilisant le numero ci-dessous.", "wrap": true
+                                },                                
+                                {
+                                    "type": "Image",
+                                    "url": "https://driveimg1.intermarche.com/fr/Content/images/compte/BannieresSAV.jpg",
+                                    "size": "stretch"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        session.send(new builder.Message(session).addAttachment({
+            contentType: "application/vnd.microsoft.card.adaptive",
+            content: card
+        }));
+
+    }
+
+]).triggerAction({
+    matches: 'FAQ.Creneau.Horaire',
+});
 
 
 
