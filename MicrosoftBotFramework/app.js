@@ -621,7 +621,7 @@ bot.dialog('changementMagasin', [
                 {
                     "type": "Action.OpenUrl",
                     "url": "/mon-compte/mes-magasins",
-                    "title": "Mon compte"
+                    "title": "Mes magasins"
 
                 }
             ]
