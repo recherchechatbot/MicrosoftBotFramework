@@ -634,4 +634,48 @@ bot.dialog('changementMagasin', [
 
 ]).triggerAction({
     matches: 'FAQ.Changement.Magasin',
+    });
+
+bot.dialog('changementMagasin', [
+    function (session) {
+        session.sendTyping();
+        var card = {
+            "type": "AdaptiveCard",
+            "version": "1.0",
+            "body": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": 2,
+                            "items": [
+
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Tu peux à tout moment modifier tes abonnements pour recevoir ou non nos communications par email, par SMS ou par voie postale en cliquant sur le bouton ci-dessous", "wrap": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "actions": [
+                {
+                    "type": "Action.OpenUrl",
+                    "url": "/mon-compte/mon-profil",
+                    "title": "Mon compte"
+
+                }
+            ]
+        }
+        session.send(new builder.Message(session).addAttachment({
+            contentType: "application/vnd.microsoft.card.adaptive",
+            content: card
+        }));
+    }
+
+]).triggerAction({
+    matches: 'FAQ.Newsletter',
 });
+
