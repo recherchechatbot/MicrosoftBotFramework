@@ -417,6 +417,7 @@ bot.dialog('getrecette', [
 
 bot.dialog('ajoutExpress', [
     function (session) {
+        session.sendTyping();
         let msg = {
             "type": "message",
             "text": "Tu es pressé ? L’Ajout Express te permet d’ajouter des produits à ton panier en seulement quelques clics. Rien de plus simple, sélectionne cette option lorsque tu es dans ton panier sur le site de courses en ligne.En cliquant sur le bouton ci- dessous, tu accedes directement aux rayons puis aux sous-familles.Tu n’as plus qu’à compléter ton panier.",
@@ -438,6 +439,7 @@ bot.dialog('ajoutExpress', [
 
 bot.dialog('listeCourses', [
     function (session) {
+        session.sendTyping();
         session.send("La liste de courses procure un gain de temps considérable. Elle te donne la possibilité par un simple clic de déposer dans ton panier les articles que tu commandes régulièrement.Pour que tes prochaines commandes soient plus rapides, tu peux créer des listes thématiques. Remplis ton panier avec les articles désirés, clique ensuite sur « Aller en caisse », puis clique sur le lien « Tout ajouter à une liste ». Donne un nom à ta liste et le tour est joué ! Ta liste de courses est enregistrée, tu pourras la réutiliser lors de ta prochaine visite sur notre site.");
     }
 ]).triggerAction({
@@ -446,6 +448,7 @@ bot.dialog('listeCourses', [
 
 bot.dialog('consulterListeCourses', [
     function (session) {
+        session.sendTyping();
         var card = {
             "type": "AdaptiveCard",
                 "version": "1.0",
@@ -487,6 +490,7 @@ bot.dialog('consulterListeCourses', [
 
 bot.dialog('ancienneCommande', [
     function (session) {
+        session.sendTyping();
         var card = {
             "type": "AdaptiveCard",
             "version": "1.0",
@@ -517,6 +521,7 @@ bot.dialog('ancienneCommande', [
                 }
             ]
         }
+
         session.send(new builder.Message(session).addAttachment({
             contentType: "application/vnd.microsoft.card.adaptive",
             content: card
@@ -528,6 +533,7 @@ bot.dialog('ancienneCommande', [
 
 bot.dialog('produitFavori', [
     function (session) {
+        session.sendTyping();
         session.send("Tu peux ajouter un produit dans tes favoris en cliquant sur le coeur situé à coté de ce dernier. Tu pourras le retrouver ensuite dans l’onglet « Mon Drive malin ».");
     }
 ]).triggerAction({
@@ -537,8 +543,17 @@ bot.dialog('produitFavori', [
 bot.dialog('oubliMdp', [
     function (session) {
         session.sendTyping();
-        session.send("Lors de ta connexion sur le site, clique sur « J’ai oublié mon mot de passe ». Tu recevra un email avec un lien sur lequel il faudra cliquer pour pouvoir renseigner un nouveau mot de passe. Pense à vérifier tes courriers indésirables si tu n’as pas reçu l’email après quelques minutes 😉.");
-        
+        session.send("Lors de ta connexion sur le site, clique sur « J’ai oublié mon mot de passe ». Tu recevra un email avec un lien sur lequel il faudra cliquer pour pouvoir renseigner un nouveau mot de passe. Pense à vérifier tes courriers indésirables si tu n’as pas reçu l’email après quelques minutes 😉.");        
+    }
+
+]).triggerAction({
+    matches: 'FAQ.Oubli.Mdp',
+});
+
+bot.dialog('suppressionCompte', [
+    function (session) {
+        session.sendTyping();
+        session.send("Conformément à la loi \"Informatique et Liberté\" (art 38, 39 & 40 de la loi Informatiques et Libertés modifiée du 6 juillet 1978), tu disposes d'un droit d'accès, de modification, de rectification et de suppression des données te concernant. Tu peux exercer ce droit en nous contacatant par email à l'adresse suivante: intermarche@mousquetaires.com");
     }
 
 ]).triggerAction({
