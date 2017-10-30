@@ -963,6 +963,16 @@ bot.dialog('securitéTransactions', [
     matches: 'FAQ.Sécurité.Transactions',
 });
 
+bot.dialog('refusPaiement', [
+    function (session) {
+        session.sendTyping();
+        session.send("Si ton paiement est refusé, pas de panique, ton Intermarché te contactera afin de trouver une solution 😉.");
+    }
+]).triggerAction({
+    matches: 'FAQ.Refus.Paiement',
+});
+
+
 
 
 
