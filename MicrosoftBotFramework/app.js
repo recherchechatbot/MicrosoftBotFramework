@@ -591,4 +591,47 @@ bot.dialog('suppressionCompte', [
 
 ]).triggerAction({
     matches: 'FAQ.Suppression.Compte',
+    });
+
+bot.dialog('suppressionCompte', [
+    function (session) {
+        session.sendTyping();
+        var card = {
+            "type": "AdaptiveCard",
+            "version": "1.0",
+            "body": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": 2,
+                            "items": [
+
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Si tu souhaites passer commande dans un autre magasin, je t'invite à cliquer sur le bouton ci-dessous. Dans \"Mes magasins\", clique sur \"changer de magasin\" puis entre le code postal du magasin sur lequel tu veux passer commande", "wrap": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "actions": [
+                {
+                    "type": "Action.OpenUrl",
+                    "url": "/mon-compte/mes-magasins",
+                    "title": "Mon compte"
+
+                }
+            ]
+        }
+        session.send(new builder.Message(session).addAttachment({
+            contentType: "application/vnd.microsoft.card.adaptive",
+            content: card
+        }));
+    }
+
+]).triggerAction({
+    matches: 'FAQ.Suppression.Compte',
 });
