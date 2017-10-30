@@ -789,7 +789,7 @@ bot.dialog('delaiLivraison', [
 bot.dialog('produitIntrouvable', [
     function (session) {
         session.sendTyping();
-        session.send("Le délai de livraison dépend du planning proposé par ton Intermarché et du créneau horaire que tu auras choisi.");
+        session.send("Si tu souhaites commander un produit mais que celui-ci n'apparaît pas, il est fort probable qu'il ne soit plus disponible. N'hésite pas à revenir régulièrement sur notre site, des réapprovisionnements sont réalisés fréquemment.");
     }
 
 ]).triggerAction({
