@@ -566,7 +566,7 @@ bot.dialog('suppressionCompte', [
 
                                 {
                                     "type": "TextBlock",
-                                    "text": "Tu peux à tout moment supprimer ton compte en cliquant sur le bouton ci-dessou. Conformémemt à la loi \"Informatique et Liberté\" (art 38, 39 & 40 de la loi Informatiques et Libertés modifiée du 6 juillet 1978), tu disposes d'un droit d'accès, de modification, de rectification et de suppression des données te concernant. Tu peux exercer ce droit en nous contactant par email à l'adresse suivante: intermarche@mousquetaires.com", "wrap": true
+                                    "text": "Tu peux à tout moment supprimer ton compte en cliquant sur le bouton ci-dessous. Conformémemt à la loi \"Informatique et Liberté\" (art 38, 39 & 40 de la loi Informatiques et Libertés modifiée du 6 juillet 1978), tu disposes d'un droit d'accès, de modification, de rectification et de suppression des données te concernant. Tu peux exercer ce droit en nous contactant par email à l'adresse suivante: intermarche@mousquetaires.com", "wrap": true
                                 }
                             ]
                         }
