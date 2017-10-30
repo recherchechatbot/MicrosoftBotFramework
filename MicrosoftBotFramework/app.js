@@ -552,8 +552,38 @@ bot.dialog('oubliMdp', [
 
 bot.dialog('suppressionCompte', [
     function (session) {
+        var card = {
+            "type": "AdaptiveCard",
+            "version": "1.0",
+            "body": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": 2,
+                            "items": [
+
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Tu peux à tout moment supprimer ton compte en cliquant sur le bouton ci-dessou. Conformémemt à la loi \"Informatique et Liberté\" (art 38, 39 & 40 de la loi Informatiques et Libertés modifiée du 6 juillet 1978), tu disposes d'un droit d'accès, de modification, de rectification et de suppression des données te concernant. Tu peux exercer ce droit en nous contactant par email à l'adresse suivante: intermarche@mousquetaires.com", "wrap": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "actions": [
+                {
+                    "type": "Action.OpenUrl",
+                    "url": "/mon-compte/mes-commandes",
+                    "title": "Mon compte"
+
+                }
+            ]
+        }
         session.sendTyping();
-        session.send("Conformémemt à la loi \"Informatique et Liberté\" (art 38, 39 & 40 de la loi Informatiques et Libertés modifiée du 6 juillet 1978), tu disposes d'un droit d'accès, de modification, de rectification et de suppression des données te concernant. Tu peux exercer ce droit en nous contacatant par email à l'adresse suivante: intermarche@mousquetaires.com");
+        
     }
 
 ]).triggerAction({
