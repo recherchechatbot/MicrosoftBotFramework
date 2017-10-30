@@ -593,7 +593,7 @@ bot.dialog('suppressionCompte', [
     matches: 'FAQ.Suppression.Compte',
     });
 
-bot.dialog('suppressionCompte', [
+bot.dialog('changementMagasin', [
     function (session) {
         session.sendTyping();
         var card = {
@@ -633,5 +633,5 @@ bot.dialog('suppressionCompte', [
     }
 
 ]).triggerAction({
-    matches: 'FAQ.Suppression.Compte',
+    matches: 'FAQ.Changement.Magasin',
 });
