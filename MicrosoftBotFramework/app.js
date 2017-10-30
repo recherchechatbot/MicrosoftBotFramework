@@ -636,7 +636,7 @@ bot.dialog('changementMagasin', [
     matches: 'FAQ.Changement.Magasin',
     });
 
-bot.dialog('changementMagasin', [
+bot.dialog('newsletter', [
     function (session) {
         session.sendTyping();
         var card = {
