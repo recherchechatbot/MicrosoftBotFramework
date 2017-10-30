@@ -722,7 +722,7 @@ bot.dialog('confirmationCommande', [
     matches: 'FAQ.Confirmation.Commande',
     });
 
-bot.dialog('confirmationCommande', [
+bot.dialog('changementHoraire', [
     function (session) {
         session.sendTyping();
         var card = {
