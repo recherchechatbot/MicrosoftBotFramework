@@ -970,7 +970,72 @@ bot.dialog('refusPaiement', [
     }
 ]).triggerAction({
     matches: 'FAQ.Refus.Paiement',
+    });
+
+bot.dialog('debitCommande', [
+    function (session) {
+        session.sendTyping();
+        session.send("Pour le règlement par carte de crédit en ligne, le débit est effectué lors de la livraison de la commande à la condition d’avoir obtenu préalablement l’autorisation de débit de ton compte auprès des centres de paiement compétents, faute de quoi, ta commande ne pourra être prise en compte.");
+    }
+]).triggerAction({
+    matches: 'FAQ.Debit.Commande',
+    });
+
+bot.dialog('demandeCarte', [
+    function (session) {
+        session.sendTyping();
+        var card = {
+            "type": "AdaptiveCard",
+            "version": "1.0",
+            "body": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": 2,
+                            "items": [
+
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Pour bénéficier des avantages liés au programme, il faut adhérer au programme de fidélité Intermarché", "wrap": true
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Tu peux obtenir ta carte gratuitement soit: ", "wrap": true
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "-En te rendant à l'accueil de ton magasin", "wrap": true
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "-En faisant la demande dans ton espace client en cliquant sur le bouton ci-dessous", "wrap": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "actions": [
+                {
+                    "type": "Action.OpenUrl",
+                    "url": "/mon-compte/ma-carte-intermarche",
+                    "title": "Ma carte intermarché"
+
+                }
+            ]
+        }
+        session.send(new builder.Message(session).addAttachment({
+            contentType: "application/vnd.microsoft.card.adaptive",
+            content: card
+        }));
+    }
+
+]).triggerAction({
+    matches: 'FAQ.Demande.Carte',
 });
+
 
 
 
