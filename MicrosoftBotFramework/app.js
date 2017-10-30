@@ -552,6 +552,7 @@ bot.dialog('oubliMdp', [
 
 bot.dialog('suppressionCompte', [
     function (session) {
+        session.sendTyping();
         var card = {
             "type": "AdaptiveCard",
             "version": "1.0",
@@ -582,8 +583,10 @@ bot.dialog('suppressionCompte', [
                 }
             ]
         }
-        session.sendTyping();
-        
+        session.send(new builder.Message(session).addAttachment({
+            contentType: "application/vnd.microsoft.card.adaptive",
+            content: card
+        }));
     }
 
 ]).triggerAction({
