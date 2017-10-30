@@ -553,7 +553,7 @@ bot.dialog('oubliMdp', [
 bot.dialog('suppressionCompte', [
     function (session) {
         session.sendTyping();
-        session.send("Conformément à la loi \"Informatique et Liberté\" (art 38, 39 & 40 de la loi Informatiques et Libertés modifiée du 6 juillet 1978), tu disposes d'un droit d'accès, de modification, de rectification et de suppression des données te concernant. Tu peux exercer ce droit en nous contacatant par email à l'adresse suivante: intermarche@mousquetaires.com");
+        session.send("Conformémemt à la loi \"Informatique et Liberté\" (art 38, 39 & 40 de la loi Informatiques et Libertés modifiée du 6 juillet 1978), tu disposes d'un droit d'accès, de modification, de rectification et de suppression des données te concernant. Tu peux exercer ce droit en nous contacatant par email à l'adresse suivante: intermarche@mousquetaires.com");
     }
 
 ]).triggerAction({
