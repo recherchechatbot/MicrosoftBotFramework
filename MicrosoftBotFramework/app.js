@@ -537,9 +537,8 @@ bot.dialog('produitFavori', [
 bot.dialog('oubliMdp', [
     function (session) {
         session.sendTyping();
-        setTimeout(function () {
-            session.send("Lors de ta connexion sur le site, clique sur « J’ai oublié mon mot de passe ». Tu recevra un email avec un lien sur lequel il faudra cliquer pour pouvoir renseigner un nouveau mot de passe. Pense à vérifier tes courriers indésirables si tu n’as pas reçu l’email après quelques minutes 😉.");
-        }, 3000);
+        session.send("Lors de ta connexion sur le site, clique sur « J’ai oublié mon mot de passe ». Tu recevra un email avec un lien sur lequel il faudra cliquer pour pouvoir renseigner un nouveau mot de passe. Pense à vérifier tes courriers indésirables si tu n’as pas reçu l’email après quelques minutes 😉.");
+        
     }
 
 ]).triggerAction({
