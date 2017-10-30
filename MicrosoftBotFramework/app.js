@@ -677,5 +677,48 @@ bot.dialog('newsletter', [
 
 ]).triggerAction({
     matches: 'FAQ.Newsletter',
+    });
+
+bot.dialog('confirmationCommande', [
+    function (session) {
+        session.sendTyping();
+        var card = {
+            "type": "AdaptiveCard",
+            "version": "1.0",
+            "body": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": 2,
+                            "items": [
+
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Si ta commande a bien été prise en compte, tu vas recevoir un email de confirmation de commande. Tu peux également te rendre dans ton compte dans la rubrique « Mes commandes en cours » en cliquant ci-dessous", "wrap": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "actions": [
+                {
+                    "type": "Action.OpenUrl",
+                    "url": "/mon-compte/mes-commandes",
+                    "title": "Mes commandes"
+
+                }
+            ]
+        }
+        session.send(new builder.Message(session).addAttachment({
+            contentType: "application/vnd.microsoft.card.adaptive",
+            content: card
+        }));
+    }
+
+]).triggerAction({
+    matches: 'FAQ.Confirmation.Commande',
 });
 
