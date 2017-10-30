@@ -1021,7 +1021,7 @@ bot.dialog('demandeCarte', [
                 {
                     "type": "Action.OpenUrl",
                     "url": "/mon-compte/ma-carte-intermarche",
-                    "title": "Ma carte intermarché"
+                    "title": "Ma carte fidelité"
 
                 }
             ]
