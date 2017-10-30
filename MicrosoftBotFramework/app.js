@@ -720,5 +720,48 @@ bot.dialog('confirmationCommande', [
 
 ]).triggerAction({
     matches: 'FAQ.Confirmation.Commande',
+    });
+
+bot.dialog('confirmationCommande', [
+    function (session) {
+        session.sendTyping();
+        var card = {
+            "type": "AdaptiveCard",
+            "version": "1.0",
+            "body": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": 2,
+                            "items": [
+
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Si tu souhaites modifier ton horaire de livraison ou de retrait, rend-toi dans ton compte en cliquant sur le bouton ci-dessous. Dans \"Mes commandes en cours\", sélectionne la commande que tu souhaites modifier. Si ta commande est en statut \"en préparation\" il est malheuresement dejà trop tard pour la modifier 😕.", "wrap": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "actions": [
+                {
+                    "type": "Action.OpenUrl",
+                    "url": "/mon-compte/mes-commandes",
+                    "title": "Mes commandes"
+
+                }
+            ]
+        }
+        session.send(new builder.Message(session).addAttachment({
+            contentType: "application/vnd.microsoft.card.adaptive",
+            content: card
+        }));
+    }
+
+]).triggerAction({
+    matches: 'FAQ.Changement.Horaire',
 });
 
