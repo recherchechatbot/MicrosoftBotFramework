@@ -924,5 +924,45 @@ bot.dialog('montantMinimum', [
     matches: 'FAQ.Montant.Minimum',
     });
 
+bot.dialog('securitéTransactions', [
+    function (session) {
+        session.sendTyping();
+        var card = {
+            "type": "AdaptiveCard",
+            "version": "1.0",
+            "body": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": 2,
+                            "items": [
+
+                                {
+                                    "type": "TextBlock",
+                                    "text": "A chaque étape, ton paiement en ligne est 100% sécurisé! Aucune information ne transite en clair sur le site : le serveur est en mode crypté et toutes les informations sont codées. Le fait de communiquer ton numéro de carte de crédit sur le serveur bancaire au moment du paiement de ta commande est entièrement sécurisé.", "wrap": true
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Par ailleurs, tu remarqueras dans ton navigateur internet une adresse commençant par https:// ainsi qu’un cadenas. Intermarché n’a jamais accès à tes coordonnées et ne les conserve en aucun cas sur ses serveurs.", "wrap": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        session.send(new builder.Message(session).addAttachment({
+            contentType: "application/vnd.microsoft.card.adaptive",
+            content: card
+        }));
+    }
+
+]).triggerAction({
+    matches: 'FAQ.Sécurité.Transactions',
+});
+
+
 
 
