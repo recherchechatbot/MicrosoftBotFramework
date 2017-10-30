@@ -557,5 +557,5 @@ bot.dialog('suppressionCompte', [
     }
 
 ]).triggerAction({
-    matches: 'FAQ.Oubli.Mdp',
+    matches: 'FAQ.Suppression.Compte',
 });
