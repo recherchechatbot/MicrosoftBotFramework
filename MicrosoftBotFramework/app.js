@@ -765,7 +765,6 @@ bot.dialog('changementHoraire', [
     matches: 'FAQ.Changement.Horaire',
 });
 
-
 bot.dialog('produitManquant', [
     function (session) {
         session.sendTyping();
@@ -838,7 +837,7 @@ bot.dialog('differencePrix', [
                                 {
                                     "type": "Image",
                                     "url": "https://driveimg1.intermarche.com/fr/Content/images/compte/BannieresSAV.jpg",
-                                    "size": "auto"
+                                    "size": "stretch"
                                 }
                             ]
                         }
