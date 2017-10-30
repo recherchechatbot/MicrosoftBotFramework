@@ -897,7 +897,7 @@ bot.dialog('modePaiement', [
                                 },
                                 {
                                     "type": "TextBlock",
-                                    "text": "*Voir conditions avec votre magasin", "wrap": true
+                                    "text": "*Voir conditions avec ton magasin", "wrap": true
                                 }
                             ]
                         }
@@ -913,4 +913,16 @@ bot.dialog('modePaiement', [
 
 ]).triggerAction({
     matches: 'FAQ.Modes.Paiement',
-});
+    });
+
+bot.dialog('montantMinimum', [
+    function (session) {
+        session.sendTyping();
+        session.send("Pour connaître le montant minimum d’achat proposé par votre magasin, rendez - vous sur la page d’accueil au niveau du logo (en haut à gauche), cliquez sur le nom de votre magasin puis allez sur « Voir les plannings ».");
+    }
+]).triggerAction({
+    matches: 'FAQ.Montant.Minimum',
+    });
+
+
+
