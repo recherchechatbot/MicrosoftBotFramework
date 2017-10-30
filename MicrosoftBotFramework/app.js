@@ -543,5 +543,5 @@ bot.dialog('oubliMdp', [
     }
 
 ]).triggerAction({
-    matches: 'FAQ.Oublie.Mdp',
+    matches: 'FAQ.Oubli.Mdp',
 });
