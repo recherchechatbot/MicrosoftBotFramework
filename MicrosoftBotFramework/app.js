@@ -799,9 +799,19 @@ bot.dialog('produitIntrouvable', [
 bot.dialog('produitsFrais', [
     function (session) {
         session.sendTyping();
-        session.send("Nos véhicules de livraison sont réfrigérés.Ce mode de livraison permet de conserver tous les types de produits (surgelés, frais…) du magasin à ton domicile. \n Si tu choisis le mode Drive, tes produits frais et surgelés sont conservés à la bonne température jusqu’au retrait");
+        session.send("Nos véhicules de livraison sont réfrigérés. Ce mode de livraison permet de conserver tous les types de produits (surgelés, frais…) du magasin à ton domicile. \n Si tu choisis le mode Drive, tes produits frais et surgelés sont conservés à la bonne température jusqu’au retrait");
     }
 
 ]).triggerAction({
     matches: 'FAQ.Produits.Frais',
+});
+
+bot.dialog('produitTrad', [
+    function (session) {
+        session.sendTyping();
+        session.send("Sur notre site de courses en ligne, tu peux commander des produits à la coupe comme si tu étais au rayon boucherie, poissonnerie, ou encore fromagerie de ton magasin. De même, de nombreux fruits et légumes te sont proposés. \n Dans ton panier, tu peux ajouter des commentaires sur tes produits dans la rubrique « Commentaires pour le livreur » pour aider ton préparateur à répondre au mieux à tes attentes. Exemple : « Je souhaite des bananes très mûres », « Je préfère des tranches de jambon très fines »…");
+    }
+
+]).triggerAction({
+    matches: 'FAQ.Produit.Trad',
 });
