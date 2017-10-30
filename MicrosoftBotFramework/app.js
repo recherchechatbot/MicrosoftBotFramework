@@ -765,3 +765,33 @@ bot.dialog('changementHoraire', [
     matches: 'FAQ.Changement.Horaire',
 });
 
+
+bot.dialog('produitManquant', [
+    function (session) {
+        session.sendTyping();
+        session.send("En cas de produits manquants lors de ta livraison, ton livreur t'en informera et ceux-ci ne te seront pas facturés.");
+    }
+
+]).triggerAction({
+    matches: 'FAQ.Produit.Manquant',
+});
+
+bot.dialog('delaiLivraison', [
+    function (session) {
+        session.sendTyping();
+        session.send("Le délai de livraison dépend du planning proposé par ton Intermarché et du créneau horaire que tu auras choisi.");
+    }
+
+]).triggerAction({
+    matches: 'FAQ.Delai.Livraison',
+});
+
+bot.dialog('produitIntrouvable', [
+    function (session) {
+        session.sendTyping();
+        session.send("Le délai de livraison dépend du planning proposé par ton Intermarché et du créneau horaire que tu auras choisi.");
+    }
+
+]).triggerAction({
+    matches: 'FAQ.Produit.Introuvable',
+});
