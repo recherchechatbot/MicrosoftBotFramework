@@ -803,5 +803,5 @@ bot.dialog('produitsFrais', [
     }
 
 ]).triggerAction({
-    matches: 'FAQ.Produit.Introuvable',
+    matches: 'FAQ.Produits.Frais',
 });
