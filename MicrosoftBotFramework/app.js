@@ -1034,8 +1034,132 @@ bot.dialog('demandeCarte', [
 
 ]).triggerAction({
     matches: 'FAQ.Demande.Carte',
+    });
+
+bot.dialog('utilisationCarte', [
+    function (session) {
+        session.sendTyping();
+        var card = {
+            "type": "AdaptiveCard",
+            "version": "1.0",
+            "body": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": 2,
+                            "items": [
+
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Pour utiliser ta carte fidelité sur le site internet, il faut que tu renseignes ton numero de carte dans la rubrique ci-dessous", "wrap": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "actions": [
+                {
+                    "type": "Action.OpenUrl",
+                    "url": "/mon-compte/ma-carte-intermarche",
+                    "title": "Ma carte fidelité"
+
+                }
+            ]
+        }
+        session.send(new builder.Message(session).addAttachment({
+            contentType: "application/vnd.microsoft.card.adaptive",
+            content: card
+        }));
+    }
+
+]).triggerAction({
+    matches: 'FAQ.Utilisation.Carte',
 });
 
+bot.dialog('problemeAffichage', [
+    function (session) {
+        session.sendTyping();
+        var card = {
+            "type": "AdaptiveCard",
+            "version": "1.0",
+            "body": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": 2,
+                            "items": [
+
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Notre site est optimisé pour Internet Explorer 9, Google Chrome, Mozilla Firefox et Safari. Je te conseille vivement de les télécharger et de mettre à jour ton navigateur internet. Si malgré cela tu rencontres un problème spécifique, je t'invite à contacter mes amis humains du support en utilisant le numero ci-dessous.", "wrap": true
+                                },
+                                {
+                                    "type": "Image",
+                                    "url": "https://driveimg1.intermarche.com/fr/Content/images/compte/BannieresSAV.jpg",
+                                    "size": "stretch"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        session.send(new builder.Message(session).addAttachment({
+            contentType: "application/vnd.microsoft.card.adaptive",
+            content: card
+        }));
+
+    }
+
+]).triggerAction({
+    matches: 'FAQ.Probleme.Affichage',
+    });
+
+bot.dialog('validationCommande', [
+    function (session) {
+        session.sendTyping();
+        var card = {
+            "type": "AdaptiveCard",
+            "version": "1.0",
+            "body": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": 2,
+                            "items": [
+
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Verifie que ton navigateur est compatible avec notre site. Le site est optimisé pour Internet Explorer 9, Google Chrome, Mozilla Firefox et Safari. Je te conseille vivement de les télécharger et de mettre à jour ton navigateur internet. Si malgré cela tu rencontres un problème spécifique, je t'invite à contacter mes amis humains du support en utilisant le numero ci-dessous.", "wrap": true
+                                },
+                                {
+                                    "type": "Image",
+                                    "url": "https://driveimg1.intermarche.com/fr/Content/images/compte/BannieresSAV.jpg",
+                                    "size": "stretch"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        session.send(new builder.Message(session).addAttachment({
+            contentType: "application/vnd.microsoft.card.adaptive",
+            content: card
+        }));
+
+    }
+
+]).triggerAction({
+    matches: 'FAQ.Validation.Commande',
+});
 
 
 
