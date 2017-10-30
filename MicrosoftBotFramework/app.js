@@ -859,7 +859,56 @@ bot.dialog('differencePrix', [
 bot.dialog('modePaiement', [
     function (session) {
         session.sendTyping();
-        session.send("Plusieurs modes de paiement sont disponibles selon le mode de livraison choisi ainsi que le magasin sélectionné : \n-Pour la livraison, auprès de ton livreur et ce par chèque ou carte bancaire*.\n-Pour le retrait, tu peux payer soit pas carte bancaire soit par chèque auprès du personnel du magasin*\n-Sur notre site, tu peux aussi payer ta commande directement en ligne par carte bancaire*.\n-Enfin, pour les commandes Drive, tu pourras payer directement à la borne*.\n\n*Voir conditions avec votre magasin");
+        var card = {
+            "type": "AdaptiveCard",
+            "version": "1.0",
+            "body": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": 2,
+                            "items": [
+
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Plusieurs modes de paiement sont disponibles selon le mode de livraison choisi ainsi que le magasin sélectionné :", "wrap": true
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "-Pour la livraison, auprès de ton livreur et ce par chèque ou carte bancaire*.", "wrap": true
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "-Pour le retrait, tu peux payer soit pas carte bancaire soit par chèque auprès du personnel du magasin*", "wrap": true
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "-Sur notre site, tu peux payer ta commande directement en ligne par carte bancaire*.", "wrap": true
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "-Enfin, pour les commandes Drive, tu pourras payer directement à la borne*.", "wrap": true
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": " ", "wrap": true
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "*Voir conditions avec votre magasin", "wrap": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        session.send(new builder.Message(session).addAttachment({
+            contentType: "application/vnd.microsoft.card.adaptive",
+            content: card
+        }));
     }
 
 ]).triggerAction({
