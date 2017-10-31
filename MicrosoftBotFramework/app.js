@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var restify = require('restify');
 var builder = require('botbuilder');
+var QnAClient = require('./lib/client');
 var apiairecognizer = require('api-ai-recognizer');
 var http = require('http');
 var request = require('request');
@@ -21,9 +22,18 @@ const MICROSOFT_APP_ID = process.env.MICROSOFT_APP_ID;
 const MICROSOFT_APP_PASSWORD = process.env.MICROSOFT_APP_PASSWORD;
 const LUIS_APP_URL = process.env.LUIS_APP_URL;
 
+const knowledgeBaseId = "54d25cae-a84d-4744-8bd4-326a62889822"; //TODO passer dans les settings heroku
+const subscriptionKey = "d679b92d574b4f7bbe30290d30cb1329"; //TODO pareil
+
 //Setup server restify
 server.listen(process.env.port || process.env.PORT || 3978, function () {
     console.log('%s listening to %s', server.name, server.url);
+});
+
+var qnaClient = new QnAClient({
+    knowledgeBaseId: knowledgeBaseId,        
+    subscriptionKey: subscriptionKey
+    // Optional field: Score threshold
 });
 
 //Creation chat connector pour communiquer avec le serve bot framework
@@ -1206,6 +1216,8 @@ bot.dialog('creneauHoraire', [
     matches: 'FAQ.Creneau.Horaire',
     });
 
+
+//Default handler
 bot.dialog('none', [
     function (session) {
         session.sendTyping();
@@ -1245,8 +1257,67 @@ bot.dialog('none', [
 
 ]).triggerAction({
     matches: 'None',
+    });
+
+
+//Smalltalk
+bot.dialog('/', [
+    (session, args) => {
+        // Post user's question to QnA smalltalk kb
+        qnaClient.post({ question: session.message.text }, function (err, res) {
+            if (err) {
+                console.error('Error from callback:', err);
+                session.send('Oops - something went wrong.');
+                return;
+            }
+
+            if (res) {
+                // Send reply from QnA back to user
+                session.send(res);
+            } else {
+                // Put whatever default message/attachments you want here
+                session.send('Hmm, I didn\'t quite understand you there. Care to rephrase?')
+            }
+        });
+    }
+]);
+
+
+// Enable Conversation Data persistence
+bot.set('persistConversationData', true);
+
+
+// Send welcome when conversation with bot is started, by initiating the root dialog
+bot.on('conversationUpdate', function (message) {
+    if (message.membersAdded) {
+        message.membersAdded.forEach(function (identity) {
+            if (identity.id === message.address.bot.id) {
+                // bot.beginDialog(message.address, '/');
+                var msg = new builder.Message().address(message.address);
+                msg.text('Hello, how may I help you?');
+                msg.textLocale('en-US');
+                bot.send(msg);
+            }
+        });
+    }
 });
 
+
+// Other wrapper functions
+function beginDialog(address, dialogId, dialogArgs) {
+    bot.beginDialog(address, dialogId, dialogArgs);
+}
+
+function sendMessage(message) {
+    bot.send(message);
+}
+
+
+module.exports = {
+    listen: listen,
+    beginDialog: beginDialog,
+    sendMessage: sendMessage
+};
 
 
 
