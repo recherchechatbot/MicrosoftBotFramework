@@ -1302,7 +1302,7 @@ bot.on('conversationUpdate', function (message) {
     }
 });
 
-
+//
 // Other wrapper functions
 function beginDialog(address, dialogId, dialogArgs) {
     bot.beginDialog(address, dialogId, dialogArgs);
