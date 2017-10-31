@@ -13,7 +13,7 @@ var LineByLineReader = require('line-by-line'),
 
 var batchlabels = [];
 var count = 0;
-const LUIS_APP_URL = process.env.LUIS_APP_URL;
+const LUIS_APP_URL = "https://westeurope.api.cognitive.microsoft.com/luis/api/v2.0/apps/7bdd8be2-33f1-4be7-9bb8-54e0fe8d15e4/versions/0.1/examples";
 
 // Iterate through the lines
 lr.on('line', function (line) {
@@ -40,13 +40,14 @@ lr.on('close', function () {
 
 
 function uploadToLuis(labels) {
+    console.log("lllllllaaaaaaaaaabeeeeeeeeeelllllls:  " + JSON.stringify(labels));
     var options = {
         method: 'POST',
         uri: LUIS_APP_URL,
         json: true,
-        body: labels,
+        body: JSON.stringify(labels),
         headers: {
-            "Ocp-Apim-Subscription-Key": "7bdd8be2-33f1-4be7-9bb8-54e0fe8d15e4",//TODO passer dans les var de heroku
+            "Ocp-Apim-Subscription-Key": "97b706dcc753412cadc7bb66d615ce1a",//TODO passer dans les var de heroku
             "Content-Type": "application/json"
         }
     };
@@ -58,7 +59,7 @@ function uploadToLuis(labels) {
         })
         .catch(function (err) {
             // POST failed
-            console.log('Web request failed: ' + response.statusMessage);
+            console.log('Web request failed: ');
             lr.close(); // stop line reader
             return;
         });

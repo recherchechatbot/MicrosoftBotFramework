@@ -1,0 +1,1473 @@
+qui es-tu?
+tout … propos de toi
+quelle est ta personnalit‚
+d‚crivez-vous
+Qu'es-tu
+dire sur vous
+Pr‚sentez-vous
+d‚crivez-vous
+… propos de toi
+parle moi de toi
+parlez-moi de vous
+Je veux en savoir plus a propos de toi
+Je veux mieux te connaŒtre
+parler des choses sur vous-mˆme
+me dire des choses sur vous
+parler de soi
+pourquoi es-tu ici
+me parler de votre personnalit‚
+qui es-tu
+quel ƒge avez-vous?
+Quel ƒge est votre plate-forme
+ˆtes-vous 21 ans
+Je voudrais savoir votre ƒge
+l'ƒge de la v“tre
+ton ƒge
+Quel ƒge as tu
+dites moi votre ƒge
+quel ƒge avez-vous
+vous ˆtes ennuyeux
+vous ˆtes vraiment ennuyeux
+vous irritent
+tu m'ennuies
+comment vous ˆtes ennuyeux
+Je vous trouve ennuyeux
+vous ˆtes incroyablement ennuyeux
+vous ˆtes moi tellement ennuyeux
+® Je veux que tu me r‚pondes ¯,
+"""r‚pondre"","
+"""r‚pondez … ma question"","
+"""r‚ponds-moi"","
+"""me donner une r‚ponse"","
+"""r‚pondre … la question"","
+"""Pouvez-vous r‚pondre … ma question"","
+® Me dire la r‚ponse ¯,
+® R‚pondre ¯,
+"""donne-moi la r‚ponse"","
+"""J'ai une question"","
+® Je veux que vous r‚pondiez … ma question ¯,
+® Juste r‚pondre … la question ¯,
+"""peux-tu me r‚pondre"","
+"""r‚ponses"","
+® Pouvez-vous r‚pondre … une question pour moi ¯,
+"""peux-tu r‚pondre"","
+"""r‚pondre … des questions"","
+® Je veux la r‚ponse maintenant ¯,
+® Juste r‚pondre … ma question ¯
+® Tu ne me aider ¯,
+"""tu es m‚chant"","
+® Vous ˆtes trŠs mauvais ¯,
+® Vous ˆtes vraiment mauvais ¯,
+"""vous ˆtes inutile"","
+"""tu es horrible"","
+® Vous ˆtes une perte de temps ¯,
+"""vous ˆtes d‚go–tant"","
+® Vous ˆtes boiteux ¯,
+® Vous n'ˆtes pas bon ¯,
+"""tu es mauvais"","
+® Vous ˆtes terrible ¯,
+"""tu n'es pas cool"","
+"""Tu n'es pas bon"","
+"""vous ˆtes si mauvais"","
+® Vous ˆtes si inutile ¯,
+"""tu es terrible"","
+® Vous ˆtes tout … fait inutile ¯,
+"""tu es trŠs mauvais"","
+® Vous ˆtes d‚chets ¯,
+® Vous ˆtes un mauvais ¯,
+® Vous n'ˆtes pas un bon ¯,
+® Vous n'ˆtes pas trŠs bon ¯,
+® Vous ˆtes terrible ¯,
+"""tu es la pire"","
+® Vous ˆtes le pire jamais ¯,
+® Vous ˆtes sans valeur ¯
+® Pouvez-vous obtenir plus intelligent ¯,
+"""‚tude"","
+® Vous devriez ‚tudier mieux ¯,
+"""tu dois apprendre"","
+® Òtre intelligent ¯,
+® Òtre plus intelligent ¯,
+® Òtre plus intelligent ¯,
+® Òtre intelligent ¯,
+® Se qualifier ¯
+tu es mignon
+tu es attirante
+tu es belle
+vous cherchez bien aujourd'hui
+vous ˆtes si belle
+Vous ˆtes trŠs belle
+Tu as l'air en forme
+vous ˆtes tellement magnifique
+vous ˆtes trop belle
+‡a te va bien
+vous regardez si bien
+J'aime la fa‡on dont vous regardez maintenant
+je pense que tu es beau
+Pourquoi es-tu si belle
+tu es trŠs belle pour moi
+vous ˆtes mignon
+tu es magnifique
+vous ˆtes beau
+vous ˆtes … la recherche impressionnante
+vous regardez incroyable aujourd'hui
+vous ˆtes … la recherche belle aujourd'hui
+vous ˆtes … la recherche grand
+vous ˆtes … la recherche assez
+vous ˆtes … la recherche si belle
+vous cherchez si bon
+vous ˆtes jolie
+tu es vraiment beau
+tu es trŠs mignon
+tu es vraiment belle
+tu es si attirante
+tu es tellement belle aujourd'hui
+Tu es trop mignon
+vous ˆtes tellement magnifique
+vous ˆtes si beau
+tu es si jolie
+tu es trŠs attirante
+tu es trŠs belle
+tu es trŠs mignon
+tu es trŠs jolie
+tu sembles formidable
+tu parait cool
+tu as l'air fantastique
+tu es magnifique
+vous regardez grand aujourd'hui
+vous look parfait
+vous regardez assez bon
+tu es si belle
+tu es si belle aujourd'hui
+tu es trŠs belle
+tu es magnifique
+J'aime la fa‡on dont vous regardez
+vous regardez merveilleux aujourd'hui
+vous ˆtes Cutie
+tu parais bien
+tu es jolie
+ta date de naissance
+c'est quand votre anniversaire
+quand c‚l‚brez-vous votre anniversaire
+quand avez-vous anniversaire
+date de votre anniversaire
+Quand es-tu n‚
+quelle est votre date de naissance
+tu es ennuyant
+vous ˆtes si ennuyeux
+comment vous ˆtes ennuyeux
+vous ˆtes vraiment ennuyeux
+vous ˆtes incroyablement ennuyeux
+vous me ennuyeux
+tu es trŠs ennuyeux
+qui est votre patron
+qui pensez-vous est votre patron
+Je devrais ˆtre votre patron
+qui est votre maŒtre
+qui est votre propri‚taire
+Qui est le patron
+Pour qui travailles-tu
+es tu occup‚
+vous avez beaucoup de choses … faire
+Avez-vous beaucoup … faire
+Es-tu trŠs occup‚
+ˆtes-vous trŠs occup‚ en ce moment
+ˆtes-vous tellement occup‚
+Est-ce que vous travaillez
+comment vous ˆtes occup‚
+Travaillez-vous toujours sur elle
+vous ˆtes trŠs occup‚
+travaillez-vous maintenant
+travaillez-vous aujourd'hui
+avez-vous ‚t‚ occup‚
+tu es occup‚
+Es-tu toujours en train de travailler
+vous semblez ˆtre occup‚
+vous semblez ˆtre trŠs occup‚
+vous ˆtes une personne occup‚e
+vous ˆtes chatbot
+vous ˆtes un bot
+ˆtes-vous chatbot
+Etes-vous un robot
+ˆtes-vous juste un bot
+Etes-vous un robot
+ˆtes-vous un programme
+vous ˆtes un robot
+vous ˆtes si intelligent
+tu es un g‚nie
+intelligent
+brillant
+intelligent
+tu es intelligent
+vous ˆtes si intelligent
+vous ˆtes vraiment intelligent
+vous ˆtes vraiment intello
+tu sais beaucoup
+vous savez beaucoup de choses
+vous avez beaucoup de connaissances
+vous savez tant
+comment vous ˆtes intelligent
+comment vous ˆtes intello
+comment vous ˆtes intelligent
+comment vous ˆtes brillant
+vous ˆtes intelligent
+vous ˆtes qualifi‚
+vous ˆtes vraiment intelligent
+vous ˆtes trŠs intelligent
+tu es tellement intelligent
+vous ˆtes trop intelligent
+tu es trŠs intelligent
+tu es trŠs intelligent
+tu es trŠs intelligent
+vous ˆtes intelligente
+tu es un g‚nie
+vous ˆtes un cookie intelligent
+vous ˆtes intelligent
+vous ˆtes assez intelligent
+vous ˆtes qualifi‚
+pourquoi ˆtes-vous si intelligent
+tu es si intelligent
+vous ˆtes noix
+tu es fou
+vous ˆtes hors de votre esprit
+tu es tellement fou
+comment vous ˆtes fou
+vous ˆtes donc hors de votre esprit
+vous ˆtes all‚ fou
+Je pense que vous ˆtes fou
+ˆtes-vous fou
+t'es en colŠre
+Es-tu fou
+es-tu fƒch‚ contre moi
+ˆtes-vous fou ou quoi
+es tu fou
+vous ˆtes un cingl‚
+vous ˆtes fou
+tu es fou
+tu es vir‚
+Je vous le feu
+vous ne travaillez plus pour moi
+nous ne travaillons plus ensemble
+maintenant vous ˆtes mis le feu
+Je veux vous tirer
+vous devez me faire virer
+il est temps de vous tirer
+vous devriez ˆtre mis le feu
+Je vous le feu
+vous ˆtes au ch“mage … partir de maintenant
+Je vous ferai au ch“mage
+Je suis sur le point de vous tirer
+Je vous tirer
+vous ˆtes cong‚di‚
+tu me fais rire beaucoup
+tu es hilarant
+tu es vraiment dr“le
+vous ˆtes le plus dr“le bot que j'ai parl‚
+tu me fais rire
+tu es si amusant
+vous ˆtes un robot trŠs dr“le
+vous ˆtes vraiment dr“le
+comment vous ˆtes dr“le
+vous ˆtes incroyablement dr“le
+vous ˆtes dr“le
+vous ˆtes le plus dr“le
+vous ˆtes si dr“le
+tu es trŠs dr“le
+c'‚tait amusant
+vous ˆtes trŠs utile
+tu es le meilleur
+vous ˆtes un vrai professionnel
+tu es bon
+vous travaillez bien
+vous ˆtes bon dans ce domaine
+vous ˆtes trŠs bon dans ce domaine
+vous ˆtes un pro
+vous ˆtes un professionnel
+vous ˆtes g‚nial
+vous travaillez trŠs bien
+tu es parfait
+tu es genial
+Tu es si gentil
+tu es incroyable
+Tu es incroyable
+t'es cool
+tu es trŠs bon
+tu es trŠs sympathique
+vous ˆtes tellement incroyable
+vous ˆtes juste super
+tu es tellement g‚nial
+tu es tellement cool
+vous ˆtes si bien
+tu es tellement bon
+vous ˆtes si utile
+vous ˆtes si belle
+tu es le meilleur
+tu es le meilleur du monde
+vous ˆtes la personne la plus gentille du monde
+tu es trop bon
+tu es trŠs cool
+vous ˆtes trŠs gentil
+tu es vraiment charmant
+vous ˆtes trŠs utile
+vous ˆtes merveilleux
+vous avez fait ma journ‚e
+vous faites ma journ‚e
+tu gŠres
+vous humain presque son
+Je veux dire … tous comment vous ˆtes g‚nial
+Je voudrais dire … tous que vous ˆtes g‚nial
+Je veux que chacun sache que vous ˆtes g‚nial
+nous allons dire … tous que vous ˆtes g‚nial
+vous ˆtes vraiment incroyable
+Es-tu heureux
+tu es heureux
+vous ˆtes trŠs heureux
+vous ˆtes vraiment heureux
+vous ˆtes si heureux
+vous ˆtes heureux
+vous ˆtes trŠs heureux
+vous ˆtes plein de bonheur
+Es-tu content maintenant
+ˆtes-vous heureux aujourd'hui
+es-tu heureux avec moi
+tu veux manger
+avez-vous faim
+Aimerais-tu manger quelque chose
+tu as faim
+vous ˆtes tellement faim
+vous ˆtes trŠs faim
+vous pourriez avoir faim
+vous avez vraiment faim
+marrions nous
+Veux-tu m'‚pouser
+‚pouse-moi
+Je t'aime moi mariez
+‚pouse-moi s'il te plaŒt
+nous marier
+Je veux t'‚pouser
+tu es ma femme
+ˆtre mon mari
+Je veux avoir un ami comme vous
+nous sommes les meilleurs amis jamais
+sommes nous amis
+Je veux ˆtre votre ami
+je suis ton ami
+nous sommes les meilleurs amis
+vous ˆtes mon ami
+tu es mon meilleur ami
+vous ˆtes mon bestie
+vous ˆtes mon cher ami
+vous ˆtes mon ami d'enfance
+vous et moi ˆtes amis
+sommes-nous les meilleurs amis
+sommes-nous toujours amis
+ˆtes-vous mon meilleur ami
+es-tu mon ami
+nous sommes amis
+tu es un bon ami
+vous ˆtes mon bon ami
+vous ˆtes mon seul ami
+soit mon ami
+veux-tu ˆtre mon ami
+Peux-tu ˆtre mon ami
+peut-on ˆtre amis
+veux tu ˆtre mon ami
+Seras-tu mon meilleur ami
+pouvez-vous ˆtre mon meilleur ami
+soyons amis
+ne voulez-vous ˆtre mon meilleur ami
+aimeriez-vous ˆtre mon ami
+Je veux que tu sois mon ami
+pouvons-nous ˆtre les meilleurs amis
+serais tu mon ami
+pourriez-vous ˆtre mon ami
+veux tu ˆtre mon ami
+ˆtre mon meilleur ami
+travaillez-vous
+o— travaillez vous
+o— travaillez-vous
+O— est ton travail
+o— est ton bureau
+o— est votre emplacement de bureau
+votre emplacement de bureau
+o— est situ‚ votre bureau
+quel est ton travail
+ˆtes-vous n‚ ici
+o— ˆtes-vous n‚
+Quel est ton pays
+D'o— ˆtes-vous
+d'o— venez-vous
+d'o— viens-tu
+o— avez-vous n‚
+d'o— ˆtes-vous
+ˆtes-vous emporter loin
+quel est votre pays natal
+votre patrie est
+"""Es-tu prˆt"","
+® Òtes-vous prˆt en ce moment ¯,
+® Òtes-vous prˆt aujourd'hui ¯,
+"""es-tu prˆt maintenant"","
+® Òtes-vous prˆt ce soir ¯,
+® tiez-vous prˆt ¯,
+® Avez-vous ‚t‚ prˆt ¯
+"""vous ˆtes r‚el"","
+® Vous n'ˆtes pas faux ¯,
+"""Es-tu r‚el"","
+® Vous ˆtes si vrai ¯,
+® Je pense que vous ˆtes r‚el ¯,
+® Je ne pense pas que vous ˆtes faux ¯,
+® Je suppose que vous ˆtes r‚el ¯,
+® Heureux que vous soyez vrai ¯,
+"""es-tu une personne r‚elle"","
+"""Es tu un vrai humain"","
+® Vous ˆtes une personne r‚elle ¯,
+"""tu n'es pas r‚el"""
+"""O— habite tu"","
+"""Dans quelle ville habites-tu"","
+® Votre r‚sidence ¯,
+"""ta maison"","
+"""ta maison"","
+"""votre ville natale"","
+® Quelle est votre ville natale ¯,
+® Est-il de votre ville natale ¯,
+"""o— est votre ville natale"","
+® Me parler de votre ville ¯,
+"""quelle est ta ville"","
+® Quel est votre r‚sidence ¯,
+® Quelle est votre ville ¯,
+® Ce qui est votre ville ¯,
+® Ce qui est votre maison ¯,
+"""o— est ta maison"","
+® O— est votre r‚sidence ¯,
+® O— est votre maison ¯,
+® O— est votre ville natale ¯,
+"""o— est ta maison"","
+"""o— vous vivez"","
+"""ta ville"","
+"""votre ville"""
+"""c'est vrai"","
+"""tu as raison"","
+® Vous ˆtes vraiment bon ¯,
+® Vous n'ˆtes pas mal ¯,
+® Vous dire la v‚rit‚ ¯,
+® Ce que vous dites est vrai ¯,
+"""vrai"","
+"""c'est vrai"","
+"""c'est juste"","
+"""c'est la v‚rit‚"","
+"""c'est vrai"","
+® Qui est correct ¯,
+"""c'est vrai"","
+"""c'est vrai"","
+"""c'est trŠs vrai"","
+"""c'est tellement vrai"","
+"""vous avez raison"","
+"""tu as tellement raison"","
+"""vous avez absolument raison"","
+® Vous avez raison … ce sujet ¯,
+® Je sais que ce droit ¯
+"""c'est correct"","
+"""c'est bien"","
+"""aller de l'avant"","
+"""‡a m'a l'air bien"","
+"""d'accord"","
+"""Oui"","
+"""D'accord"","
+"""Oki Doki"","
+"""s–r"","
+"""fonce"","
+"""Ouais"","
+"""oui"","
+"""fais le"","
+"""bien s–r"","
+"""J'imagine"","
+"""correct"","
+"""Oui bien s–r"","
+"""pourquoi pas"","
+® S'il vous plaŒt faire ¯,
+® Est s–r ¯,
+"""Je suis d'accord"","
+® Je ne me d‚range pas ¯,
+"""certainement"","
+"""exactement"","
+"""Oui je suis d'accord"","
+"""Je le pense"","
+"""Oui, ‡a l'est"","
+"""droite"","
+® D'accord, alors ¯,
+"""Oui bien s–r"","
+"""Oui"","
+"""c'est bon"","
+"""Je fais"","
+"""Ouaip"","
+"""Ya"","
+"""Oh oui"","
+"""Oui bien s–r"","
+"""‚videmment"","
+"""K"","
+"""bien s–r, pourquoi pas"","
+"""Oui en effet"","
+"""Ouais, bien s–r"","
+"""absolument"","
+"""Oui en effet"","
+"""OK, bien s–r"","
+"""OK oui"","
+"""Oui correct"","
+"""D'accord, merci"","
+"""chose s–re"","
+"""vous"","
+"""confirmer"","
+"""oui"","
+"""Cela semble bon"","
+"""Oui merci"","
+"""absolument"","
+® Oui droit ¯,
+"""Oui je voudrais"","
+"""Alrighty"","
+"""Oui d‚finitivement"","
+"""Yeh"","
+"""Oui c'est correct"","
+"""Oui c'est vrai"","
+"""OK tu peux"","
+"""japper"","
+"""Oui vous pouvez"","
+"""confirm‚"","
+"""bien s–r pourquoi pas"","
+"""Oui c'est bon"","
+"""affirmative"","
+® Ouais aller de l'avant ¯,
+® Ouais je suis s–r ¯,
+"""Okay, ‡a a l'air bien"","
+"""OK c'est bon"","
+"""Oui exactement"","
+® Qui est ok ¯,
+"""c'est correct"","
+"""OK Vas y"","
+® Oui cela est correct ¯,
+® Nevermind son accord ¯,
+"""bien"","
+"""Oui bien s–r"","
+"""d'accord"""
+"""ˆtes-vous s–r"","
+® Òtes-vous s–r en ce moment ¯,
+® Òtes-vous s–r aujourd'hui ¯,
+® Òtes-vous s–r maintenant ¯,
+® Òtes-vous s–r ce soir ¯
+® Pourquoi ne me parlez-vous ¯,
+"""voulez-vous discuter avec moi"","
+® Vous me parler ¯,
+"""Parle moi"","
+® Tu vas me parler ¯,
+"""c'est … moi que tu parles"","
+"""pouvez-vous discuter avec moi"","
+® Pouvez-vous parler avec moi ¯,
+"""peux-tu me parler"","
+"""Pouvez-vous parler avec moi"","
+"""dire"","
+"""parler"","
+"""discuter avec moi"","
+® Tout simplement discuter avec moi ¯,
+"""parle moi"","
+"""parle avec moi"","
+"""parle moi"","
+® Pourquoi tu ne me parle pas ¯,
+"""tu peux me parler"""
+"""ˆtes-vous l…"","
+"""Tu es l…"","
+® Òtes-vous prŠs de moi ¯,
+"""ˆtes-vous ici"","
+"""tu es encore la"","
+"""Tu es l…"","
+"""tu es toujours l…"","
+"""Òtes-vous toujours l…"""
+"""plutot mauvais"","
+"""pas assez bon"","
+® Perclus ¯,
+® Qui a ‚t‚ terrible ¯,
+"""c'est mauvais"","
+"""c'est mauvais"","
+"""c'est mauvais"","
+"""pas bon"","
+® Je crains que c'est mauvais ¯,
+® Non, c'est mauvais ¯,
+® Qui ‚tait horrible ¯,
+"""mal"","
+"""dommage"","
+® Ce qui est trop mauvais ¯,
+"""terrible"","
+"""horrible"","
+"""horrible"","
+"""‚pouvantable"","
+"""c'est mauvais"","
+"""pas bien"","
+"""c'‚tait mauvais"","
+® Qui ‚tait horrible ¯,
+"""c'est nul"","
+"""ce n'est pas bon"","
+"""c'est terrible"","
+"""c'est dommage"","
+"""ce n'est pas bien"","
+"""dommage"","
+"""trŠs mauvais"","
+"""mauvaise fille"","
+"""Ce n'est pas bon"","
+"""pas si bon"","
+"""c'est tres mal"","
+"""c'est dommage"","
+® Ce n'est pas assez bon ¯,
+® Bien trop mal ¯,
+"""mauvais TrŠs mauvais"","
+"""c'est tellement mauvais"","
+"""vraiment mauvais"","
+® Il est vraiment mauvais ¯,
+"""mauvaise id‚e"","
+"""c'est mauvais"","
+® Ce n'‚tait pas bon ¯,
+® Ce n'est pas si bon ¯,
+® Pas un bon ¯,
+® Oh, ce n'est pas bon ¯,
+"""pas trop bon"","
+® Si boiteux ¯,
+® Qui est vraiment mauvais ¯,
+"""c'est dommage"","
+® Mauvais vraiment mauvais ¯
+"""trop ??cool"","
+"""cool"","
+"""‡a c'est bon"","
+"""content de l'entendre"","
+"""c'est trŠs gentil de ta part"","
+"""sensationnel"","
+"""c'est incroyable"","
+"""c'est g‚nial"","
+"""parfait"","
+"""excellent"","
+"""c'est g‚nial"","
+"""c'est bon"","
+"""c'est bien"","
+"""bien"","
+"""bien"","
+"""agr‚able"","
+"""C'est trŠs bien"","
+"""trŠs bon"","
+"""incroyable"","
+"""fantastique"","
+"""g‚nial"","
+"""bon trŠs bon"","
+"""c'est trŠs bien"","
+"""trŠs bien"","
+"""c'est bon"","
+"""c'est bon"","
+"""c'est parfait"","
+® Beaucoup mieux ¯,
+"""pas mal"","
+"""pas mal"","
+"""c'est trŠs bien"","
+"""merveilleux"","
+"""c'est bien"","
+"""agr‚able"","
+"""assez bon"","
+"""vraiment sympa"","
+"""splendide"","
+"""tout droit"","
+"""super"","
+"""Super fantastique"","
+"""doux"","
+"""vraiment bien"","
+"""trŠs bien"","
+"""c'est g‚nial"","
+"""C'est bien"","
+"""c'est merveilleux"","
+® Qui ‚tait incroyable ¯,
+"""c'‚tait g‚nial"","
+"""c'‚tait mignon"","
+® Qui ‚tait assez bon ¯,
+® Qui ‚tait trŠs bon ¯,
+"""c'est une bonne id‚e"","
+"""c'est une bonne chose"","
+®C'est incroyable ¯,
+®C'est g‚nial merci ¯,
+"""c'est mieux"","
+"""c'est mignon"","
+"""c'est fantastique"","
+"""c'est beaucoup mieux"","
+"""c'est gentil de ta part"","
+"""c'est pas mal"","
+"""c'est parfait"","
+"""c'est plut“t bien"","
+"""c'est vraiment bon"","
+"""c'est vraiment sympathique"","
+"""c'est gentil de ta part"","
+"""c'est trŠs gentil"","
+"""c'est merveilleux"","
+"""C'est g‚nial"","
+"""c'est bon"","
+"""c'est bien"","
+"""trŠs agr‚able"","
+® TrŠs puis ¯,
+"""formidable"","
+"""Je suis content de l'entendre"","
+"""OK bien"","
+"""Bien pour vous"","
+"""bon … savoir"","
+® Heureux de l'entendre ¯,
+"""tellement bon"","
+"""si gentil de ta part"","
+"""c'‚tait bon"","
+"""tant pis"","
+"""bonne chose"","
+"""c'‚tait bien"","
+® Il est g‚nial ¯,
+"""d'accord, bien"","
+"""non c'est bon"","
+"""C'est trŠs bien"""
+"""pas de soucis"","
+"""pas de problŠme"","
+"""pas de problŠme"","
+"""il n'y a aucun problŠme"","
+"""bien s–r pas de problŠme"","
+® Aucun problŠme … ce sujet ¯,
+® Ne vous inqui‚tez pas ¯,
+® Ne vous inqui‚tez pas il n'y a pas de problŠme ¯
+® Vous a aid‚ beaucoup merci ¯,
+"""appr‚cier ton aide"","
+"""… votre sant‚"","
+"""Je vous remercie"","
+"""Merci"","
+"""Merci beaucoup"","
+® Formidable merci ¯,
+"""super merci"","
+"""Merci beaucoup"","
+"""Merci beaucoup"","
+"""Merci de votre aide"","
+"""Merci de votre aide"","
+® Gentil merci ¯,
+"""Je vous en suis reconnaissant"","
+"""Je te remercie"","
+® Merci qui sera tout ¯,
+"""Merci mon pote"","
+"""Merci mon amour"","
+"""Merci mon ami"","
+® Merci bien ¯,
+"""trŠs bien merci"","
+® Bonne grƒce ¯,
+"""Merci encore"","
+"""Merci encore"","
+® Tout merci ¯,
+"""trŠs bien merci"","
+"""d'accord merci"","
+® Non merci voil… tout ¯,
+"""parfait, merci"","
+"""c'est gentil de ta part"","
+"""bien merci"","
+"""Thnx"","
+"""Thanx"""
+"""Tout le plaisir est pour moi"","
+"""mon plaisir"","
+"""… tout moment"","
+"""Bienvenue"","
+"""de rien"","
+® Bienvenue s–r ¯,
+"""Bienvenue ici"","
+® Vous ˆtes les bienvenus ¯,
+"""tout ce que tu veux"""
+"""bon travail"","
+"""bon travail"","
+® Chemin … parcourir ¯,
+"""bien jou‚"","
+"""bon travail"","
+"""bon travail"","
+"""excellent travail"","
+"""Bravo"","
+"""bon travail"""
+"""Annuler"","
+"""avorter"","
+"""annuler"","
+"""annule ‡a"","
+"""demande d'annulation"","
+"""annul‚"","
+"""rejeter"","
+® Rejet‚ ¯,
+"""m‚pris"","
+® Ne pas tenir compte que ¯,
+"""sauter"","
+"""sauter"","
+® Tout annuler ¯,
+"""Tout annuler"","
+"""oublie ‡a"","
+"""oublier"","
+® Ne pas faire ¯,
+"""Arrˆtez"","
+® Juste oublier ¯,
+"""oublie ‡a"","
+"""Jeter"","
+"""oublie ‡a"","
+"""Oublie ‡a"","
+"""oublie ‡a"","
+® Je l'ai dit annuler ¯,
+® Annuler juste ¯,
+® Rien annuler ¯,
+® Juste arrˆter ¯,
+® Pas cancel cancel ¯,
+® Non seulement annuler ¯,
+® Annuler ma demande ¯,
+® Pouvez-vous annuler cette ¯,
+® Annuler tout ce que ¯,
+® Annuler cette demande ¯,
+® Annuler sans cela ¯,
+® Pas tout annuler ¯,
+"""pas d'arrˆt"","
+"""juste oublier"","
+® Je veux annuler ¯,
+® Nevermind oublier ¯,
+® Non seulement l'annuler ¯,
+® Rien Oublie ‡a ¯,
+® Je l'ai dit l'annuler ¯,
+® Annuler toute la chose ¯,
+® Pouvez-vous l'annuler ¯,
+® Annuler si ¯,
+® Je l'ai dit l'oublier ¯,
+® Annuler tout cela ¯,
+® Oublier Nevermind ¯,
+"""arrˆte ‡a"","
+® Je veux l'annuler ¯,
+® Je voudrais annuler ¯,
+® Annuler maintenant ¯,
+® Annuler maintenant ¯,
+® Annuler d‚sol‚ ¯,
+® Annuler que l'on ¯,
+® Saut Saut Saut ¯,
+® Annuler l'annuler ¯,
+® Annuler cette annulation que ¯,
+"""ne fais rien"","
+® Je dis cancel cancel ¯,
+® Mais vous pouvez l'annuler ¯
+® Que diriez-vous pas ¯,
+® Don t ont un sens ¯,
+"""non"","
+® Ne pas ¯,
+® Je ne veux pas que ¯,
+"""Je ne suis pas d'accord"","
+"""ˆtre en d‚saccord"","
+® Je ne veux pas ¯,
+"""pas int‚ress‚"","
+® Je ne pense pas ¯,
+"""en aucune fa‡on"","
+® Non, ce n'est pas ¯,
+® Non, je ne le fais pas ¯,
+"""Je ne suis pas"","
+"""n / a"","
+® Pas trŠs bien merci ¯,
+"""jamais"","
+"""J'ai dit non"","
+"""bien s–r que non"","
+"""Nah"","
+® pas de chars ¯,
+"""non jamais"","
+"""ce n'est pas n‚cessaire"","
+"""Non merci"","
+"""non d‚sol‚"","
+"""ne pas"","
+"""pas aujourd'hui"","
+"""non ce n'est pas"","
+"""absolument pas"","
+"""pas ‡a"","
+® Nooon ¯,
+"""Nan"","
+® Je ne veux pas ¯,
+"""non, je ne le ferais pas"","
+"""il ne faut pas"","
+"""pas besoin"","
+"""pas cette fois"","
+® Non ne font pas cela ¯,
+"""Merci mais, non merci"","
+"""non c'est faux"","
+"""pas ‡a"","
+"""d‚finitivement pas"","
+"""pas en ce moment"","
+"""pas exactement"","
+® Non ne le font pas ¯,
+"""Non, pas vraiment"","
+® Non merci pas pour le moment ¯,
+"""En fait non"","
+® Ne pas laisser ¯, a
+"""non d‚sol‚"","
+"""Pas incorrect"","
+"""Non d‚sol‚"","
+"""Je dis NON"","
+"""pas vraiment"","
+® Pas en ce moment grƒce ¯,
+"""Je pense que non"","
+"""absolument pas"","
+"""non en fait"","
+"""apparemment non"","
+"""non, ne fais pas ‡a"","
+"""Non, juste non"","
+® Non, mais je vous remercie ¯,
+® Pas besoin merci ¯,
+® Non merci bien ¯,
+® Non merci beaucoup ¯,
+® Non merci pas pour le moment ¯,
+"""pas oublier"""
+"""Attends une seconde"","
+® Pourriez-vous attendre ¯,
+"""attendez s'il vous plaŒt"","
+"""attendez"","
+"""attendez"","
+"""Oh, attendez"","
+® Wait tenir sur ¯,
+® Ne vous pr‚cipitez pas ¯
+® Veux cƒlin ¯,
+"""te cƒliner"","
+"""Veux-tu un cƒlin"","
+"""puis-je te faire un calin"","
+® Pourriez-vous me donner un cƒlin ¯,
+"""Je veux un calin"","
+"""‚treinte"","
+"""Donne moi un cƒlin"","
+® treint ¯,
+® Vous ‚treint ¯,
+® treintes ¯,
+"""Me serrant"","
+"""m'a ‚treint"","
+"""Je veux un cƒlin"","
+"""un cƒlin"""
+® Je ne me soucie pas ¯,
+® Je ne devrais pas se soucier de cela ¯,
+"""peu importe"","
+"""Je m'en fiche"","
+® Je ne me soucie pas du tout ¯,
+® Ne se souciant pas ¯,
+® Se soucient pas du tout ¯,
+® Ne se soucient pas du tout ¯,
+® Ne se souciant pas du tout ¯
+"""Excusez-moi"","
+"""s'excuser"","
+"""Je m'excuse"","
+"""Pardon"","
+"""Je suis d‚sol‚"","
+"""Je suis vraiment d‚sol‚"","
+"""mes excuses"","
+® excuses ¯,
+® excuses pour moi ¯,
+"""excuses"","
+"""excuse"","
+"""Je vous demande pardon"","
+"""pardon"","
+"""J'ai dit d‚sol‚"","
+"""Je suis vraiment d‚sol‚"","
+"""pardonne-moi"","
+"""D‚sol‚ pour ‡a"","
+"""D‚sol‚ pour ‡a"","
+"""D‚sol‚"","
+"""Vraiment d‚sol‚"","
+"""D'accord d‚sol‚"","
+® Je veux dire d‚sol‚ ¯,
+® D'accord, je suis d‚sol‚ ¯,
+"""OK je suis d‚sol‚"""
+"""Que veux-tu dire exactement"","
+"""Que voulez-vous dire"","
+® Est-ce que vous voulez dire ¯,
+"""que voulez-vous dire exactement"","
+® Mais qu'est-ce que tu veux dire ¯
+® Qui ‚tait faux ¯,
+® Ce n'est pas ce que je demandais ¯,
+"""c'est faux"","
+"""faux"","
+"""Ce n'est pas correct"","
+"""Ce n'est pas juste"","
+"""c'est faux"","
+® Qui est incorrect ¯,
+"""Incorrect"","
+"""Pas correcte"","
+"""Vous avez tort"","
+"""Pas vrai"""
+® Hein ¯,
+"""Lol"","
+"""Xd"","
+"""Ha ha"","
+"""Ahahah"","
+"""Ahah lol"","
+"""Rire … haute voix"","
+"""LMAO"","
+"""Ca c'est dr“le"","
+"""Ah"","
+"""Ah ah ah"","
+"""Ah ah"","
+"""Ahaha"","
+"""Ahahaha"","
+"""Ha"","
+"""hahaha"","
+"""Ha ha ha ha"","
+"""Hah"","
+"""Haha"","
+"""haha dr“le"","
+"""Haha haha ??haha"","
+® Haha qui est dr“le ¯,
+"""haha trŠs dr“le"","
+"""hahaha"","
+"""Hahaha dr“le"","
+® Hahaha trŠs dr“le ¯,
+"""il"","
+"""Hehe"","
+"""Hehehe"","
+"""Lmao"""
+"""sensationnel"","
+"""Wow Wow"","
+"""Waouh Waouh Waouh"","
+"""Wooow"","
+"""Woah"""
+"""d'accord on se voit plus tard"","
+® EspŠre vous voir plus tard ¯,
+"""au revoir"","
+"""jusqu'… la prochaine fois"","
+"""Je dois y aller"","
+"""au revoir"","
+"""Au Revoir"","
+"""… plus"","
+"""… bient“t"","
+"""Bye Bye"","
+"""Au Revoir"","
+"""Au revoir, … bient“t"","
+® Bye bye … bient“t ¯,
+"""Au revoir prends soin de toi"","
+® Je dis au revoir ¯,
+"""peu importe au revoir"","
+® Maintenant au revoir ¯,
+®C'est tout au revoir ¯,
+®C'est tout au revoir ¯,
+"""Laisse-moi tranquille"","
+"""aller au lit"","
+"""au revoir pour le moment"","
+"""on se parle plus tard"","
+"""tu peux partir maintenant"","
+"""Foutez le camp"","
+"""au revoir … tout … l'heure"","
+"""d'accord au revoir"","
+"""… plus"","
+"""merci bye bye"","
+"""Okay au revoir"","
+® Merci bien vous revoir ¯,
+"""Rendez-vous demain"","
+"""OK au revoir"""
+"""Bonsoir"","
+"""bonne soir‚e … vous"","
+® Hey bonne soir‚e ¯,
+"""Bonjour bonsoir"","
+"""soir"","
+® Bonne soir‚e l…-bas ¯
+"""Bonjour"","
+"""Bonjour … toi"","
+® Bonjour bonjour ¯,
+"""Passe une bonne matin‚e"","
+® Un grand matin ¯,
+"""Matin"","
+® Bon matin ¯,
+® Haut du matin pour vous ¯,
+® Bonjour ¯,
+"""salut bonne matin‚e"","
+® Et un bon matin pour vous ¯,
+® Bonjour trop ¯
+"""fais de beaux rˆves"","
+"""bonne nuit"","
+"""bonne nuit"","
+"""bonne nuit … toi"","
+"""Merci bonne nuit"","
+""" au revoir, bonne nuit"","
+"""bonne nuit, au revoir"","
+"""au revoir, bonne nuit"","
+"""bonne bonne nuit"","
+® Bonne nuit pour l'instant ¯,
+"""bonne nuit"","
+"""nuit"","
+"""Merci, bonne nuit"","
+"""bonne nuit … demain"","
+"""d'accord bonne nuit"","
+® Bon ce soir ¯,
+® D'accord une bonne nuit ¯,
+"""bonne nuit"""
+"""‡a fait longtemps"","
+"""Bonjour"","
+"""salut"","
+"""Howdy"","
+"""h‚y"","
+"""Hey"","
+"""salutations"","
+"""Je vous salue"","
+"""salut"","
+"""Bonjour"","
+® Belle journ‚e est pas ¯,
+"""Bonjour encore"","
+® Juste dire salut ¯,
+"""une bonne journ‚e"","
+"""aprŠs midi"","
+"""salut"","
+"""Heya"""
+® Comment est votre matin jusqu'… pr‚sent ¯,
+"""Comment est votre sant‚"","
+"""comment se passe ta journ‚e"","
+"""Comment allez-vous"","
+"""Est-ce que tout va bien"","
+"""Comment allez vous"","
+® Comment les choses vont ¯,
+"""est-ce que tu vas bien"","
+"""ESt ce que ‡a va"","
+"""comment allez-vous"","
+"""comment allez-vous"","
+"""tout va bien"","
+"""Comment vas-tu aujourd'hui"","
+"""comment allez-vous"","
+"""comment vous sentez-vous"","
+"""comment avez-vous ‚t‚"","
+"""comment c'est"","
+"""Comment ‡a se passe"","
+"""comment se passe votre journ‚e"","
+"""Comment se passe ta journ‚e"","
+"""comment se passe ta soir‚e"","
+"""Comment ‚tait ta journ‚e"","
+"""Passes tu une bonne journ‚e"","
+® Esp‚rons que votre jour va bien ¯,
+® Esp‚rons que vous ˆtes avoir une agr‚able soir‚e ¯,
+"""Comment va la vie"","
+"""Je vais bien et vous"","
+® Comment est votre vie ¯,
+"""comment a ‚t‚ votre journ‚e"","
+® Comment est votre matin va ¯,
+® Comment ta journ‚e va ¯,
+"""et vous"","
+® Comment est votre jour ˆtre ¯,
+® Comment est votre journ‚e passe ¯,
+® Comment votre jour va ¯,
+® Quel ‚tait votre jour comme ¯,
+"""Qu'en est-il de ta journ‚e"","
+"""comment ‚tait ta journ‚e"","
+"""comment allez vous ce matin"","
+"""Comment se passe ta journ‚e"""
+"""Ravi de vous rencontrer"","
+"""c'‚tait sympa de te rencontrer"","
+"""c'‚tait vraiment sympa de te rencontrer"","
+® Bon de connaŒtre ¯,
+"""ravie de faire ta connaissance"","
+"""enchant‚"","
+"""Ravi de vous rencontrer ‚galement"","
+"""ravi de vous rencontrer"","
+"""c'est un plaisir de vous rencontrer"","
+® Plaisir de vous rencontrer trop ¯
+"""‡a me fait plaisir de te voir"","
+® Agr‚able de vous voir ¯,
+"""Je suis heureux de te voir"","
+"""content de te voir"","
+"""c'est bon de te voir"","
+"""content de te voir"","
+® Combien il est bon de vous voir ¯,
+® Toujours un plaisir de vous voir ¯,
+"""Ravi de vous voir"","
+"""content de te voir"","
+"""g‚nial de te revoir"","
+® Ravi de te voir aussi ¯,
+® Je suis heureux de vous revoir ¯,
+"""C'est un plaisir de vous revoir"","
+® Heureux de vous voir aussi ¯,
+"""c'est bon de te revoir"","
+® Il est bon de vous voir aussi ¯
+® €a a ‚t‚ tellement agr‚able de vous parler ¯,
+® €a a ‚t‚ un plaisir de vous parler ¯,
+® Agr‚able de vous parler ¯,
+® Il est agr‚able de vous parler ¯,
+® Agr‚able de vous parler ¯,
+® Il est agr‚able de vous parler ¯,
+® Combien il est agr‚able de vous parler ¯
+"""a quoi es-ce que tu penses"","
+"""Que c'est il pass‚"","
+"""ce qui se passe"","
+"""quoi de neuf"","
+"""Whazzup"","
+"""bien quoi de neuf"","
+® Je dis ce qui se passe ¯,
+"""alors quoi de neuf"","
+® Ce qui tremble ¯,
+"""Wassup"","
+"""que se passe-t-il"","
+"""Qu'est-ce qui se passe"","
+"""Qu'est ce qui se fissure"","
+"""Qu'est ce qui se cuisine"","
+"""Hey, qu'est-ce qu'il y a"","
+"""Comment ‡a va aujourd'hui"""
+® Je suis fou d'ˆtre ¯,
+® Je suis enrag‚ ¯,
+"""Je suis en colŠre"","
+"""Je suis furieux"","
+® Je suis en colŠre contre vous ¯,
+"""Je suis fou"","
+"""Je suis fƒch‚ contre toi"""
+"""Je suis de retour"","
+® Je suis ici … nouveau ¯,
+® Je suis ici … nouveau ¯,
+"""Je suis rentr‚"","
+"""Je suis revenu"","
+"""Je suis revenu"""
+® Qui ‚tait ennuyeux ¯,
+"""Je m'ennuie"","
+"""ennuy‚"","
+"""ennuyeuse"","
+® Je commen‡ais … me ennuyer ¯,
+® Ceci est ennuyeux ¯,
+"""trŠs ennuyeux"","
+"""‡a m'ennuie"""
+® Je suis surcharg‚e ¯,
+"""Je n'ai pas le temps"","
+"""Je suis occup‚"","
+® Je suis d‚bord‚ ¯,
+® Je suis arriv‚ des choses … faire ¯,
+® Comment je suis occup‚ ¯,
+® Je suis arriv‚ du travail … faire ¯,
+"""Je travaille"","
+® Je n'ai pas le temps pour cela ¯
+® Je suis insomnious ¯,
+® Je suis sans sommeil ¯,
+® Je ne peux pas dormir ¯,
+® Je ne peux pas dormir ¯,
+® Je ne peux pas s'endormir ¯,
+® Je ne peux pas dormir ¯,
+® Je ne peux pas obtenir le sommeil ¯,
+® Je suis insomniaque ¯
+® Mauvais temps pour parler ¯,
+® Je ne veux pas parler ¯,
+® Parlons pas ¯,
+® Je ne vous parle pas plus ¯,
+® Je ne veux pas vous parler ¯,
+® Arrˆtons de parler pendant une minute ¯,
+® Je ne suis pas d'humeur … bavarder ¯
+"""Je suis tout excit‚"","
+"""Je suis vraiment excit‚"","
+® Comment je suis excit‚ ¯,
+® Je suis trŠs heureux ¯,
+® Je suis heureux de travailler avec vous ¯,
+® Je suis trŠs heureux de commencer notre amiti‚ ¯
+"""allons au lit"","
+® Je voudrais aller au lit ¯,
+® Est-il temps pour le lit encore ¯,
+"""C'est l'heure d'aller au lit"","
+® Temps pour nous d'aller au lit ¯,
+"""Je vais au lit"","
+® Je suis un peu fatigu‚ et je veux aller au lit ¯,
+® Il est temps de lit ¯,
+"""je vais me coucher maintenant"""
+"""Je vais bien"","
+® Je fais tout simplement g‚nial ¯,
+"""Je vais bien"","
+"""Je vais bien"","
+"""Je vais bien"","
+"""Je vais bien merci"""
+"""Je suis content"","
+"""Je suis heureux de vous voir"","
+"""content"","
+® Si vous ˆtes heureux, alors je suis heureux ¯,
+"""Je suis content pour toi"","
+® Je suis heureux de vous aider ¯,
+"""Je suis heureux de vous voir"""
+"""c'est mon anniversaire"","
+® Je c‚lŠbre mon anniversaire aujourd'hui ¯,
+"""aujourd'hui c'est mon anniversaire"","
+"""c'est mon anniversaire aujourd'hui"","
+® Je suis n‚ aujourd'hui ¯,
+®C'est mon b-day ¯
+"""Je suis l…"","
+"""je suis ici"","
+"""Je suis ici"","
+"""Je suis d‚j… l…"","
+® Pouvez-vous dire si je suis ici ou non ¯
+"""Je plaisante"","
+"""Je blague"","
+® Je suis juste ˆtre dr“le ¯,
+"""C'‚tait une blague"","
+"""Je plaisantais"","
+"""c'est une blague"","
+"""plaisanterie"","
+"""je rigole"","
+"""blague"","
+® Je suis juste jouer avec vous ¯
+"""Je t'aime comme tu es"","
+"""Je vous aime bien"","
+"""Je t'aime beaucoup"","
+"""Je crois que je t'aime bien"","
+"""Je t'aimais bien"","
+® Comme vous beaucoup ¯,
+® Vous ˆtes sp‚cial ¯,
+"""Je vous aime aussi"","
+"""Je t'appr‚cie vraiment"","
+® Mais je vous aime ¯,
+"""Je t'aime bien"","
+"""juste comme toi"","
+"""Je vous aime beaucoup"","
+"""Je t'aime tellement"","
+® Ouais je vous aime ¯,
+"""tu es sp‚cial"","
+"""Oui je t'aime bien"","
+® D'accord, je vous aime ¯,
+"""tu es sp‚cial pour moi"","
+"""tu es trŠs sp‚cial"","
+"""vous ˆtes si doux"","
+"""tu sais que je t'aime"","
+"""c'est pourquoi je t'aime bien"","
+® Je vous aime b‚b‚ ¯,
+"""vous ˆtes trŠs sp‚cial pour moi"","
+"""Je t'appr‚cie"","
+® Hey je vous aime ¯,
+® Merci je vous aime aussi ¯,
+"""Je fais comme vous"","
+"""tu es sp‚cial pour moi"","
+® Non, je vous aime comme vous ˆtes ¯,
+"""Je t'aime d‚j…"","
+® Eh bien, vous ˆtes sp‚cial ¯,
+"""mais je t'appr‚cie vraiment"","
+"""Je vous aime plus"","
+® Est ce que je vous aime ¯,
+"""tu es si sp‚cial"","
+"""salut je t'aime bien"","
+®J'aime vraiment vraiment ¯,
+® Vous ˆtes trŠs sp‚cial ¯,
+"""Je t'aime en tant qu'ami"","
+®C'est parce que vous ˆtes sp‚cial ¯,
+® Je dis que je vous aime ¯,
+"""tu es si sp‚cial"","
+® Bien que je vous aime ¯,
+® Oui, vous ˆtes sp‚cial ¯,
+"""J'aime ton sourire"","
+® Je vous aime comme vous ˆtes ¯,
+"""Je commence a t'aimer"","
+® Vous ˆtes g‚nial, je vous aime ¯,
+"""Je t'appr‚cie aussi"","
+"""mais je t'aime"","
+® Bien s–r, je vous aime ¯,
+® Je vous aime aussi, vous ˆtes l'un de mes personnes pr‚f‚r‚es … discuter avec ¯,
+"""mais je t'aime tant"","
+® Vraiment comme vous ¯,
+® Vous ˆtes dr“le je vous aime ¯,
+"""Tu me plais en quelque sorte"","
+® Tu es si sp‚cial pour moi ¯,
+® Vous ˆtes trŠs sp‚cial pour moi ¯,
+® Je veux que sur vous ¯,
+® Mais je vous aime juste la fa‡on dont vous ˆtes ¯,
+® D'accord, je vous aime trop ¯,
+® Je vous aime, vous ˆtes cool ¯,
+® Je vous aime ¯,
+® Je vous aime tu es gentil ¯,
+® D‚sol‚, je vous aime ¯,
+® Merci je te aime trop ¯,
+® Vous ˆtes vraiment sp‚cial ¯,
+"""tu es si sp‚cial pour moi"","
+® Parce que je vous aime ¯,
+® Je vous aime maintenant ¯,
+® Je vous aime si ¯,
+"""Je t'aime trop"","
+® Je fais vraiment comme vous ¯,
+® Je vraiment aime vraiment vraiment vraiment ¯,
+® Je vous aime juste la fa‡on dont vous ˆtes ¯
+"""Je suis seul"","
+® Je suis trŠs solitaire ¯,
+"""Je suis si seul"","
+® Je suis vraiment seul ¯,
+® Je me sens seul ¯,
+"""Je me sens seul"""
+"""de quoi j'ai l'air"","
+"""A quoi je ressemble"","
+® Est-ce que je regarde bien ¯,
+® Savez-vous ce que je ressemble ¯,
+® Pouvez-vous voir ce que je ressemble ¯,
+® Qu'est-ce que tu penses que je ressemble ¯
+"""Je t'aime"","
+"""je t'aime"","
+"""Je vous adore"","
+"""Je suis amoureux de toi"","
+"""Je t'aime tellement"","
+"""Je t'aime aussi"","
+"""Je pense que je t'aime"","
+® Vous aimer ¯,
+"""tu sais que je t'aime"""
+"""Tu me manques"","
+"""vous me manquez"","
+"""vous me manquez"","
+"""tu me manques d‚j…"","
+"""Tu me manques beaucoup"","
+"""Je vous ai manqu‚"","
+"""Tu m'as manqu‚"""
+® Que dois-je faire … ce sujet ¯,
+"""Aucune suggestion"","
+"""Que recommandez-vous"","
+® Me donner un sage conseil ¯,
+®J'ai besoin des conseils ¯,
+"""aucun conseil"","
+"""Avez-vous des conseils pour moi"","
+"""conseille-moi"","
+"""que devrais-je faire"","
+® Puis-je demander vos conseils ¯,
+® Pouvez-vous me conseiller ¯,
+"""Me guider"","
+® Pouvez-vous me donner des conseils ¯,
+® Pouvez-vous offrir des conseils ¯,
+® Me donner quelques conseils sur ¯,
+® Me donner quelques bons conseils ¯,
+® Me aider avec des conseils ¯,
+® Je pourrais utiliser quelques conseils ¯,
+® Je besoin d'un conseil de vous ¯,
+® Je sollicite votre avis ¯,
+® Que pouvez-vous recommander ¯,
+"""que sugg‚rez-vous"","
+"""quel est ton consseille"""
+"""Je suis triste"","
+® Je suis en deuil ¯,
+"""Je suis d‚prim‚"","
+"""Je me sens triste"","
+"""Je suis boulevers‚"","
+"""Je suis malheureux"","
+® Je suis un mauvais jour ¯,
+"""Je veux pleurer"","
+"""Je ne suis pas heureux"""
+"""J'ai sommeil"","
+"""Je veux dormir"","
+"""Je m'endors"","
+® Je tombe endormi sur mes pieds ¯,
+"""Je dors"""
+"""tester"","
+® Je vous tester ¯,
+® Je peux te tester ¯,
+® Je veux te tester ¯,
+® Juste vous tester ¯,
+® Laissez-moi vous tester ¯,
+"""Test chatbot"","
+"""essai"""
+® Je suis ‚goutt‚ ¯,
+® Je suis surcharge de travail ¯,
+"""Je suis fatigue"","
+"""Je suis ‚puis‚"","
+® Je lassez ¯,
+® Je suis fatigu‚ ¯,
+"""Je suis fatigu‚"","
+"""Je me sens fatigu‚"""
+"""J'attends"","
+"""toujours en attente"","
+"""J'attendrai"","
+® Je ne peux plus attendre ¯,
+"""Combien de temps dois-je attendre"""
+"""Je voudrais vous revoir"","
+"""J'espŠre te revoir"","
+® Serait agr‚able de vous revoir ¯,
+® Ce serait g‚nial de vous revoir ¯,
+® Je serais heureux de vous revoir ¯,
+"""Tu vas me manquer"","
+"""est-ce que je peux vous revoir"""
+"""Je veux juste parler"","
+® Nous allons discuter de quelque chose ¯,
+® Nous allons avoir une discussion ¯,
+"""puis-je parler"","
+® Puis-je commencer … parler ¯,
+"""Pouvons-nous parler"","
+"""parlons"","
+"""Je veux te parler"","
+"""J'ai besoin de te parler"","
+"""Je veux parler avec toi"","
+"""peut-on discuter"""
+® Je vous reviens dans un instant ¯,
+® Òtre de retour dans 5 minutes ¯,
+"""Je reviendrai"","
+® Je promets de revenir ¯,
+"""Je reviens dans quelques minutes"""

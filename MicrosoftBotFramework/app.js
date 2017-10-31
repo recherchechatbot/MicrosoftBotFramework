@@ -1261,7 +1261,7 @@ bot.dialog('none', [
 
 
 //Smalltalk
-bot.dialog('/', [
+bot.dialog('smalltalk', [
     (session, args) => {
         // Post user's question to QnA smalltalk kb
         qnaClient.post({ question: session.message.text }, function (err, res) {
@@ -1294,15 +1294,19 @@ bot.on('conversationUpdate', function (message) {
             if (identity.id === message.address.bot.id) {
                 // bot.beginDialog(message.address, '/');
                 var msg = new builder.Message().address(message.address);
-                msg.text('Hello, how may I help you?');
-                msg.textLocale('en-US');
+                msg.text('Coucou, je peux t\'aider?');
+                msg.textLocale('fr-FR');
                 bot.send(msg);
             }
         });
     }
 });
 
-//
+// Connector listener wrapper to capture site url
+function listen() {
+    return connector.listen();
+}
+
 // Other wrapper functions
 function beginDialog(address, dialogId, dialogArgs) {
     bot.beginDialog(address, dialogId, dialogArgs);
