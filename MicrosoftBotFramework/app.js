@@ -342,7 +342,7 @@ bot.dialog('login', [//TODO enlever cette deuxième carte qui apparait pour rien
             session.endDialog();
             
         }
-    //},
+    }
     //function (session, results) {
     //    //recuperation idrc ,token, aspnetsession
     //    session.userData.mdp = results.response;
