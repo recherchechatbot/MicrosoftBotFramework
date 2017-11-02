@@ -22,8 +22,8 @@ const MICROSOFT_APP_ID = process.env.MICROSOFT_APP_ID;
 const MICROSOFT_APP_PASSWORD = process.env.MICROSOFT_APP_PASSWORD;
 const LUIS_APP_URL = process.env.LUIS_APP_URL;
 
-const knowledgeBaseId = "54d25cae-a84d-4744-8bd4-326a62889822"; //TODO passer dans les settings heroku
-const subscriptionKey = "d679b92d574b4f7bbe30290d30cb1329"; //TODO pareil
+const knowledgeBaseId = process.env.knowledgeBaseId; 
+const subscriptionKey = process.env.subscriptionKey;
 
 //Setup server restify
 server.listen(process.env.port || process.env.PORT || 3978, function () {

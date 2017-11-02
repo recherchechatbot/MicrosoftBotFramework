@@ -7,6 +7,8 @@ to the QnA maker to obtain a response.
 // This loads the environment variables from the .env file
 require('dotenv-extended').load();
 var request = require('request');
+const OCP_APIM_SUBSCRIPTION_KEY = process.env.OCP_APIM_SUBSCRIPTION_KEY;
+const LUIS_APP_ID = process.env.LUIS_APP_ID;
 
 var rp = require('request-promise');
 var LineByLineReader = require('line-by-line'),
@@ -14,7 +16,7 @@ var LineByLineReader = require('line-by-line'),
 
 var batchlabels = [];
 var count = 0;
-const LUIS_APP_URL = "https://westeurope.api.cognitive.microsoft.com/luis/api/v2.0/apps/7bdd8be2-33f1-4be7-9bb8-54e0fe8d15e4/versions/0.1/examples";
+const LUIS_APP_URL = "https://westeurope.api.cognitive.microsoft.com/luis/api/v2.0/apps/" +LUIS_APP_ID+ "/versions/0.1/examples";
 var body = [];
 // Iterate through the lines
 lr.on('line', function (line) {
@@ -63,7 +65,7 @@ function uploadToLuis(labels) {
         //json: true,
         body: JSON.stringify(labels),
         headers: {
-            "Ocp-Apim-Subscription-Key": "97b706dcc753412cadc7bb66d615ce1a",//TODO passer dans les var de heroku
+            "Ocp-Apim-Subscription-Key": OCP_APIM_SUBSCRIPTION_KEY,
             "Content-Type": "application/json"
         }
     };
