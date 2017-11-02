@@ -1162,6 +1162,7 @@ bot.dialog('validationCommande', [
             contentType: "application/vnd.microsoft.card.adaptive",
             content: card
         }));
+        session.endDialog;
 
     }
 
