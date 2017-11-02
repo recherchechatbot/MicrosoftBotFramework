@@ -1,6 +1,6 @@
 ﻿var responses = { // shift alt f
     "smalltalk.agent.acquaintance": [
-        "Je t'en prie, je suis là pour t'aider 😊"
+        "Je m'appelle Interbot et je suis là pour t'aider 😊"
     ],
     "smalltalk.agent.age": [
         "Je ne suis pas bien vieux, mais je sais plein de choses! 😎 "
@@ -283,7 +283,7 @@
         "Je n'ai pas bougé chef"
     ],
     "smalltalk.user.needs_advice": [
-        "Je ne suis probablement pas la bonne personne à qui demander ça"
+        "Dis moi tout!"
     ],
     "smalltalk.user.sad": [
         "Je suis désolé, si je peux t'aider n'hésite pas à faire appel à moi."
