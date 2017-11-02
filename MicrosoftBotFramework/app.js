@@ -48,9 +48,7 @@ server.post('/api/messages', connector.listen());
 
 
 //Reception message utilisateur
-var bot = new builder.UniversalBot(connector, function (session) {
-    session.send("SALUT SALUT");
-});
+var bot = new builder.UniversalBot(connector, '/');
 
 
 //Ajout reconnaissance LUIS
@@ -1261,7 +1259,7 @@ bot.dialog('none', [
 
 
 //Smalltalk
-bot.dialog('smalltalk', [
+bot.dialog('/', [
     (session, args) => {
         // Post user's question to QnA smalltalk kb
         qnaClient.post({ question: session.message.text }, function (err, res) {
@@ -1295,7 +1293,7 @@ bot.on('conversationUpdate', function (message) {
                 // bot.beginDialog(message.address, '/');
                 var msg = new builder.Message().address(message.address);
                 msg.text('Coucou, je peux t\'aider?');
-                msg.textLocale('fr-FR');
+                msg.textLocale('fr-fr');
                 bot.send(msg);
             }
         });
