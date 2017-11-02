@@ -157,6 +157,7 @@ function getRecette(token, produit,session) {
         else {
             console.log("erreur recherche recette");
             session.send("Je suis désolé mais je n'ai pas trouvé de recette correspondant à ta recherche 😔 ")
+            session.endDialog();
         }
     })
 }
@@ -324,6 +325,7 @@ bot.dialog('login', [//TODO enlever cette deuxième carte qui apparait pour rien
             contentType: "application/vnd.microsoft.card.adaptive",
             content: card
         }));
+        session.endDialog();
         if (session.message && session.message.value) {
             // A Card's Submit Action obj was received
             console.log("ceci est inchallah la data utilisateur: " + JSON.stringify(session.message.value));
@@ -337,23 +339,24 @@ bot.dialog('login', [//TODO enlever cette deuxième carte qui apparait pour rien
                 .then(() => getToken(session.userData.email, session.userData.mdp, session.userData.idrc, session))
                 .then(() => getSessionId(session.userData.email, session.userData.mdp, session))
                 .then(() => session.send("Vous êtes bien connecté"))
+            session.endDialog();
             
         }
-    },
-    function (session, results) {
-        //recuperation idrc ,token, aspnetsession
-        session.userData.mdp = results.response;
-        console.log("email: " + session.userData.email);
-        console.log("Mot de passe: " + session.userData.mdp);
-        getIdrc(session.userData.email, session.userData.mdp, session)
-            .then(() => console.log("voyons voir si l'idrc est accessible en dehors de la fonction getidrc: " + session.userData.idrc))
-            .then(() =>getToken(session.userData.email, session.userData.mdp, session.userData.idrc, session))
-            .then(() =>getSessionId(session.userData.email, session.userData.mdp,session))
-            .then(() => session.send("Vous êtes bien connecté"))
+    //},
+    //function (session, results) {
+    //    //recuperation idrc ,token, aspnetsession
+    //    session.userData.mdp = results.response;
+    //    console.log("email: " + session.userData.email);
+    //    console.log("Mot de passe: " + session.userData.mdp);
+    //    getIdrc(session.userData.email, session.userData.mdp, session)
+    //        .then(() => console.log("voyons voir si l'idrc est accessible en dehors de la fonction getidrc: " + session.userData.idrc))
+    //        .then(() =>getToken(session.userData.email, session.userData.mdp, session.userData.idrc, session))
+    //        .then(() =>getSessionId(session.userData.email, session.userData.mdp,session))
+    //        .then(() => session.send("Vous êtes bien connecté"))
 
-        session.endDialog();
+    //    session.endDialog();
 
-    }
+    //}
 
 
 ]).triggerAction({
@@ -449,7 +452,9 @@ bot.dialog('listeCourses', [
     function (session) {
         session.sendTyping();
         session.send("La liste de courses procure un gain de temps considérable. Elle te donne la possibilité par un simple clic de déposer dans ton panier les articles que tu commandes régulièrement.Pour que tes prochaines commandes soient plus rapides, tu peux créer des listes thématiques. Remplis ton panier avec les articles désirés, clique ensuite sur « Aller en caisse », puis clique sur le lien « Tout ajouter à une liste ». Donne un nom à ta liste et le tour est joué ! Ta liste de courses est enregistrée, tu pourras la réutiliser lors de ta prochaine visite sur notre site.");
+        session.endDialog();
     }
+
 ]).triggerAction({
     matches: 'FAQ.Liste.Courses',
     });
@@ -491,6 +496,7 @@ bot.dialog('consulterListeCourses', [
             contentType: "application/vnd.microsoft.card.adaptive",
             content: card
         }));
+        session.endDialog();
     }
 ]).triggerAction({
     matches: 'FAQ.Consulter.Liste.Courses',
@@ -534,6 +540,7 @@ bot.dialog('ancienneCommande', [
             contentType: "application/vnd.microsoft.card.adaptive",
             content: card
         }));
+        session.endDialog();
     }
 ]).triggerAction({
     matches: 'FAQ.Ancienne.Commande',
@@ -543,6 +550,7 @@ bot.dialog('produitFavori', [
     function (session) {
         session.sendTyping();
         session.send("Tu peux ajouter un produit dans tes favoris en cliquant sur le coeur situé à coté de ce dernier. Tu pourras le retrouver ensuite dans l’onglet « Mon Drive malin ».");
+        session.endDialog();
     }
 ]).triggerAction({
     matches: 'FAQ.Produit.Favori',
@@ -552,6 +560,7 @@ bot.dialog('oubliMdp', [
     function (session) {
         session.sendTyping();
         session.send("Lors de ta connexion sur le site, clique sur « J’ai oublié mon mot de passe ». Tu recevra un email avec un lien sur lequel il faudra cliquer pour pouvoir renseigner un nouveau mot de passe. Pense à vérifier tes courriers indésirables si tu n’as pas reçu l’email après quelques minutes 😉.");        
+        session.endDialog();
     }
 
 ]).triggerAction({
@@ -595,6 +604,7 @@ bot.dialog('suppressionCompte', [
             contentType: "application/vnd.microsoft.card.adaptive",
             content: card
         }));
+        session.endDialog();
     }
 
 ]).triggerAction({
@@ -638,6 +648,7 @@ bot.dialog('changementMagasin', [
             contentType: "application/vnd.microsoft.card.adaptive",
             content: card
         }));
+        session.endDialog();
     }
 
 ]).triggerAction({
@@ -681,6 +692,7 @@ bot.dialog('newsletter', [
             contentType: "application/vnd.microsoft.card.adaptive",
             content: card
         }));
+        session.endDialog();
     }
 
 ]).triggerAction({
@@ -724,6 +736,7 @@ bot.dialog('confirmationCommande', [
             contentType: "application/vnd.microsoft.card.adaptive",
             content: card
         }));
+        session.endDialog();
     }
 
 ]).triggerAction({
@@ -767,6 +780,7 @@ bot.dialog('changementHoraire', [
             contentType: "application/vnd.microsoft.card.adaptive",
             content: card
         }));
+        session.endDialog();
     }
 
 ]).triggerAction({
@@ -777,6 +791,7 @@ bot.dialog('produitManquant', [
     function (session) {
         session.sendTyping();
         session.send("En cas de produits manquants lors de ta livraison, ton livreur t'en informera et ceux-ci ne te seront pas facturés.");
+        session.endDialog();
     }
 
 ]).triggerAction({
@@ -787,6 +802,7 @@ bot.dialog('delaiLivraison', [
     function (session) {
         session.sendTyping();
         session.send("Le délai de livraison dépend du planning proposé par ton Intermarché et du créneau horaire que tu auras choisi.");
+        session.endDialog();
     }
 
 ]).triggerAction({
@@ -797,6 +813,7 @@ bot.dialog('produitIntrouvable', [
     function (session) {
         session.sendTyping();
         session.send("Si tu souhaites commander un produit mais que celui-ci n'apparaît pas, il est fort probable qu'il ne soit plus disponible. N'hésite pas à revenir régulièrement sur notre site, des réapprovisionnements sont réalisés fréquemment.");
+        session.endDialog();
     }
 
 ]).triggerAction({
@@ -807,6 +824,7 @@ bot.dialog('produitsFrais', [
     function (session) {
         session.sendTyping();
         session.send("Nos véhicules de livraison sont réfrigérés. Ce mode de livraison permet de conserver tous les types de produits (surgelés, frais…) du magasin à ton domicile. \n Si tu choisis le mode Drive, tes produits frais et surgelés sont conservés à la bonne température jusqu’au retrait");
+        session.endDialog();
     }
 
 ]).triggerAction({
@@ -817,6 +835,7 @@ bot.dialog('produitTrad', [
     function (session) {
         session.sendTyping();
         session.send("Sur notre site de courses en ligne, tu peux commander des produits à la coupe comme si tu étais au rayon boucherie, poissonnerie, ou encore fromagerie de ton magasin. De même, de nombreux fruits et légumes te sont proposés. \n Dans ton panier, tu peux ajouter des commentaires sur tes produits dans la rubrique « Commentaires pour le livreur » pour aider ton préparateur à répondre au mieux à tes attentes. Exemple : « Je souhaite des bananes très mûres », « Je préfère des tranches de jambon très fines »…");
+        session.endDialog();
     }
 
 ]).triggerAction({
@@ -857,6 +876,7 @@ bot.dialog('differencePrix', [
             contentType: "application/vnd.microsoft.card.adaptive",
             content: card
         }));
+        session.endDialog();
         
     }
 
@@ -917,6 +937,7 @@ bot.dialog('modePaiement', [
             contentType: "application/vnd.microsoft.card.adaptive",
             content: card
         }));
+        session.endDialog();
     }
 
 ]).triggerAction({
@@ -927,6 +948,7 @@ bot.dialog('montantMinimum', [
     function (session) {
         session.sendTyping();
         session.send("Pour connaître le montant minimum d’achat proposé par votre magasin, rendez - vous sur la page d’accueil au niveau du logo (en haut à gauche), cliquez sur le nom de votre magasin puis allez sur « Voir les plannings ».");
+        session.endDialog();
     }
 ]).triggerAction({
     matches: 'FAQ.Montant.Minimum',
@@ -965,6 +987,7 @@ bot.dialog('securitéTransactions', [
             contentType: "application/vnd.microsoft.card.adaptive",
             content: card
         }));
+        session.endDialog();
     }
 
 ]).triggerAction({
@@ -975,6 +998,7 @@ bot.dialog('refusPaiement', [
     function (session) {
         session.sendTyping();
         session.send("Si ton paiement est refusé, pas de panique, ton Intermarché te contactera afin de trouver une solution 😉.");
+        session.endDialog();
     }
 ]).triggerAction({
     matches: 'FAQ.Refus.Paiement',
@@ -984,6 +1008,7 @@ bot.dialog('debitCommande', [
     function (session) {
         session.sendTyping();
         session.send("Pour le règlement par carte de crédit en ligne, le débit est effectué lors de la livraison de la commande à la condition d’avoir obtenu préalablement l’autorisation de débit de ton compte auprès des centres de paiement compétents, faute de quoi, ta commande ne pourra être prise en compte.");
+        session.endDialog();
     }
 ]).triggerAction({
     matches: 'FAQ.Debit.Commande',
@@ -1038,6 +1063,7 @@ bot.dialog('demandeCarte', [
             contentType: "application/vnd.microsoft.card.adaptive",
             content: card
         }));
+        session.endDialog();
     }
 
 ]).triggerAction({
@@ -1081,6 +1107,7 @@ bot.dialog('utilisationCarte', [
             contentType: "application/vnd.microsoft.card.adaptive",
             content: card
         }));
+        session.endDialog();
     }
 
 ]).triggerAction({
@@ -1121,6 +1148,7 @@ bot.dialog('problemeAffichage', [
             contentType: "application/vnd.microsoft.card.adaptive",
             content: card
         }));
+        session.endDialog();
 
     }
 
@@ -1208,6 +1236,7 @@ bot.dialog('creneauHoraire', [
             contentType: "application/vnd.microsoft.card.adaptive",
             content: card
         }));
+        session.endDialog();
 
     }
 
@@ -1251,6 +1280,7 @@ bot.dialog('none', [
             contentType: "application/vnd.microsoft.card.adaptive",
             content: card
         }));
+        session.endDialog();
 
     }
 
