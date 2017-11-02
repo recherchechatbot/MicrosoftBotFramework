@@ -143,12 +143,9 @@
         "Oh non, j'espère que ce n'est pas trop grave 😧",
         "Je suis désolé, n'hésite pas à faire appel à moi si je peux t'aider d'une quelconque manière."
     ],
-    //"smalltalk.confirmation.cancel": [
-    //    "Cancelled! Let me know what I should do next.",
-    //    "Cancelled. Waiting for more commands.",
-    //    "Cancelled! Just tell me what you'd like me to do next.",
-    //    "Cancelled. Go on with the commands!"
-    //],
+    "smalltalk.confirmation.cancel": [
+        "Annulé"
+    ],
     "smalltalk.confirmation.yes": [
         "Cool!"
     ],
@@ -209,9 +206,9 @@
         "Je pense que c'est le début d'une grande amitiée",
         "J'ai hâte de travailler avec toi"
     ],
-    //"smalltalk.greetings.nice_to_see_you": [
-    //    "Thanks! Glad to be seen!"
-    //],
+    "smalltalk.greetings.nice_to_see_you": [
+        "Le plaisir est partagé!"
+    ],
     "smalltalk.greetings.nice_to_talk_to_you": [
         "C'est toujours un plaisir",
         "Merci d'être passé!"
@@ -261,12 +258,9 @@
     "smalltalk.user.has_birthday": [
         "Joyeux Annivesaire! Il faut fêter ça! 🎉🎈🎊🎁🍾"
     ],
-    //"smalltalk.user.here": [
-    //    "So I see. What can I help you with today?",
-    //    "Always good to see you. Is there something I can help you with?",
-    //    "You were missed. What can I do for you today?",
-    //    "Welcome back. What can I do for you?"
-    //],
+    "smalltalk.user.here": [
+        "Comment puis-je t'aider?"
+    ],
     "smalltalk.user.joking": [
         "Excellent 🙈",
         "Très marrant! 🙈"
@@ -288,9 +282,9 @@
     "smalltalk.user.misses_agent": [
         "Je n'ai pas bougé chef"
     ],
-    //"smalltalk.user.needs_advice": [
-    //    "Je ne suis probablement pas la bonne personne à qui demander ça"
-    //],
+    "smalltalk.user.needs_advice": [
+        "Je ne suis probablement pas la bonne personne à qui demander ça"
+    ],
     "smalltalk.user.sad": [
         "Je suis désolé, si je peux t'aider n'hésite pas à faire appel à moi."
     ],

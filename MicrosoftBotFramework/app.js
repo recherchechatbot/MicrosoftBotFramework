@@ -1305,7 +1305,39 @@ bot.dialog('/', [
                 session.send(res);
             } else {
                 // Put whatever default message/attachments you want here
-                session.send('Hmm, I didn\'t quite understand you there. Care to rephrase?')
+                session.sendTyping();
+                var card = {
+                    "type": "AdaptiveCard",
+                    "version": "1.0",
+                    "body": [
+                        {
+                            "type": "ColumnSet",
+                            "columns": [
+                                {
+                                    "type": "Column",
+                                    "width": 2,
+                                    "items": [
+
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "Je suis desolé je ne comprends pas ta demande. Essaye de la retaper en utilisant des mots plus simple. Sinon, tu peux contacter le support en appelant le numero ci-dessous", "wrap": true
+                                        },
+                                        {
+                                            "type": "Image",
+                                            "url": "https://driveimg1.intermarche.com/fr/Content/images/compte/BannieresSAV.jpg",
+                                            "size": "stretch"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+                session.send(new builder.Message(session).addAttachment({
+                    contentType: "application/vnd.microsoft.card.adaptive",
+                    content: card
+                }));
+                session.endDialog();
             }
         });
     }
