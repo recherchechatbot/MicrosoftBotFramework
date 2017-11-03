@@ -412,7 +412,7 @@ bot.dialog('getproduit', [ //TODO le faire marcher
         session.send('Je traite ta demande et je reviens vers toi le plus vite possible');   
         var userMessage = session.message.text;
         getEntityElement(userMessage, session)
-            .then(() => getProduit(session.userData.produit, sessionID));      
+            .then(() => getProduit(session.userData.produit, session.userData.sessionID));      
         console.log("le produit qu'on recupere: " + session.userData.produit);
     }
 ]).triggerAction({
