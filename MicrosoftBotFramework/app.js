@@ -95,7 +95,7 @@ function getEntityElement(message,session) {
             json: true
         };
         request(options, function (error, response, body) {
-            if (!error && response.statusCode == 200) {
+            if (!error && response.statusCode == 200 && body.entities[0]) {
                 console.log("constate mon body: " + JSON.stringify(body));
                 console.log("body.entities[0]" + body.entities[0]);
                 console.log("body.entities[0].resolution" + body.entities[0].resolution);
@@ -110,6 +110,7 @@ function getEntityElement(message,session) {
             }
             else {
                 console.log('erreur recuperation element');
+                session.send("Je suis désolé mais je n'ai pas reconnu ton produit. Essaye avec une autre orthographe ou un autre produit.")
 
             }
         })
