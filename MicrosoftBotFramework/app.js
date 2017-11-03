@@ -165,7 +165,7 @@ function getRecette(token, produit,session) {
 function getProduit(produit, sessionID) {
     console.log("Debut getProduit");
     console.log('le produit qu\'on utilise: ' + produit);
-    console.log('Le session ID' + session);
+    console.log('Le session ID' + sessionID);
     var options = {
         method: 'POST',
         uri: FO_URL + "RechercheJs",
