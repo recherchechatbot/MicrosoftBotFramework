@@ -170,7 +170,7 @@ function getProduit(produit, sessionID,session) {
         method: 'POST',
         uri: FO_URL + "RechercheJs",
         headers: {
-            cookie: sessionID
+            cookie: 'ASP.NET_SessionId=' + sessionID
         },
         body: {
             mot: produit
