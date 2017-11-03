@@ -408,7 +408,7 @@ bot.dialog('getproduit', [ //TODO le faire marcher
         
     }
 ]).triggerAction({
-    matches: /^courses$/i,
+    matches: 'Courses',
     });
 
 
