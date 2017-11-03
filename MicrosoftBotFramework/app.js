@@ -370,7 +370,7 @@ bot.dialog('login', [//TODO enlever cette deuxième carte qui apparait pour rien
             contentType: "application/vnd.microsoft.card.adaptive",
             content: card
         }));
-        session.endDialog();
+        
         if (session.message && session.message.value) {
             // A Card's Submit Action obj was received
             console.log("ceci est inchallah la data utilisateur: " + JSON.stringify(session.message.value));
