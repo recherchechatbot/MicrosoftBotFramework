@@ -370,7 +370,6 @@ bot.dialog('login', [//TODO enlever cette deuxième carte qui apparait pour rien
             contentType: "application/vnd.microsoft.card.adaptive",
             content: card
         }));
-        
         if (session.message && session.message.value) {
             // A Card's Submit Action obj was received
             console.log("ceci est inchallah la data utilisateur: " + JSON.stringify(session.message.value));
@@ -410,7 +409,8 @@ bot.dialog('login', [//TODO enlever cette deuxième carte qui apparait pour rien
 
 bot.dialog('getproduit', [ //TODO le faire marcher  
     function (session) {
-        session.send('Je traite ta demande et je reviens vers toi le plus vite possible');    
+        session.send('Je traite ta demande et je reviens vers toi le plus vite possible');   
+        var userMessage = session.message.text;
         getEntityElement(userMessage, session)
             .then(() => getProduit(session.userData.produit, sessionID));      
         console.log("le produit qu'on recupere: " + session.userData.produit);
