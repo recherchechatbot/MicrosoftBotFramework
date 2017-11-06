@@ -105,8 +105,6 @@ function getEntityElement(message,session) {
                 console.log("body.entities[0].resolution.values[0] stringifyisé" + JSON.stringify(body.entities[0].resolution.values[0]));
                 session.userData.produit = JSON.stringify(body.entities[0].resolution.values[0]);
                 resolve();
-                
-                
             }
             else {
                 console.log('erreur recuperation element');
@@ -174,37 +172,60 @@ function getProduit(produit, sessionID,session) {
             cookie: 'ASP.NET_SessionId=' + sessionID
         },
         body: {
-            mot: produit
+            mot: poulet
         },
         json: true
     };
     request(options, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            var msg = new builder.Message(session);
-            msg.attachmentLayout(builder.AttachmentLayout.carousel)
-            var myCardArray = [];
-            const limit = Math.min(10, body.length);
-            for (var i = 0; i < limit; i++) {
-                myCardArray.push(
-                    new builder.HeroCard(session)
-                        .title(body[i].Libelle)
-                        .text(body[i].Prix + ' (' + body[i].Conditionnement + ')')
-                        .subtitle(body[i].PrixParQuantite)
-                        .images([builder.CardImage.create(session, body[i].NomImage)])
-                        .buttons([
-                            builder.CardAction.imBack(session, "Ajouter au panier", "Ajouter au panier")//TODO Vraiment ajouter au panier
-                        ])
-                )
-            }
-            msg.attachments(myCardArray);
-            session.send(msg).endDialog();
+            var options2 = {
+                method: 'POST',
+                uri: FO_URL + "RechercheJs",
+                headers: {
+                    cookie: 'ASP.NET_SessionId=' + sessionID
+                },
+                body: {
+                    mot: produit
+                },
+                json: true
+            };
+            request(options2, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    var msg = new builder.Message(session);
+                    msg.attachmentLayout(builder.AttachmentLayout.carousel)
+                    var myCardArray = [];
+                    const limit = Math.min(10, body.length);
+                    for (var i = 0; i < limit; i++) {
+                        myCardArray.push(
+                            new builder.HeroCard(session)
+                                .title(body[i].Libelle)
+                                .text(body[i].Prix + ' (' + body[i].Conditionnement + ')')
+                                .subtitle(body[i].PrixParQuantite)
+                                .images([builder.CardImage.create(session, body[i].NomImage)])
+                                .buttons([
+                                    builder.CardAction.imBack(session, "Ajouter au panier", "Ajouter au panier")//TODO Vraiment ajouter au panier
+                                ])
+                        )
+                    }
+                    msg.attachments(myCardArray);
+                    session.send(msg).endDialog();
+                }
+                else {
+                    console.log("erreur recherche produit");
+                    session.send("Je suis désolé mais je n'ai pas trouvé de produits correspondant à ta recherche 😔 ")
+                    session.endDialog();
+                }
+            })
+            
         }
         else {
             console.log("erreur recherche produit");
-            session.send("Je suis désolé mais je n'ai pas trouvé de produits correspondant à ta recherche 😔 ")
+            session.send("J'ai besoin que tu te connectes pour lancer cette recherche, afin de vérifier la disponibilité des produits dans ton Intermarché")
             session.endDialog();
         }
     })
+
+        
 }
 
 
