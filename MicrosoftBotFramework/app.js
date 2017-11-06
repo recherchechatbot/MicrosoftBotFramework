@@ -172,7 +172,7 @@ function getProduit(produit, sessionID,session) {
             cookie: 'ASP.NET_SessionId=' + sessionID
         },
         body: {
-            mot: poulet
+            mot: "poulet"
         },
         json: true
     };
