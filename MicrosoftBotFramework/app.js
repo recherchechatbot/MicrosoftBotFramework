@@ -302,32 +302,32 @@ function getToken(email, mdp, idrc, session) {
 
 
 function getSessionId(email, mdp,session) {
-    //var options = {
-    //    method: 'POST',
-    //    uri: FO_URL + "Connexion",
-    //    body: {
-    //        txtEmail:email,
-    //        txtMotDePasse: mdp,
-    //        largeur: "800",
-    //        hauteur: "300",
-    //        resteConnecte: true,
-    //    },
-    //    json: true,
-    //    headers: {
-    //        referer: 'http://google.fr'
-    //    }
-    //};
     var options = {
         method: 'POST',
-        uri: FO_URL,
+        uri: FO_URL + "Connexion",
         body: {
-        
+            txtEmail:email,
+            txtMotDePasse: mdp,
+            largeur: "800",
+            hauteur: "300",
+            resteConnecte: true,
         },
         json: true,
         headers: {
             referer: 'http://google.fr'
         }
     };
+    //var options = {
+    //    method: 'POST',
+    //    uri: FO_URL,
+    //    body: {
+        
+    //    },
+    //    json: true,
+    //    headers: {
+    //        referer: 'http://google.fr'
+    //    }
+    //};
 
 
     request(options, (error, response) => {
