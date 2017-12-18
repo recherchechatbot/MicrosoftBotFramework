@@ -169,19 +169,19 @@ function getProduit(produit, sessionID,session) {
     console.log("Debut getProduit");
     console.log('le produit qu\'on utilise: ' + produit);
     console.log('Le session ID' + sessionID);
-    //var options = {
-    //    method: 'POST',
-    //    uri: FO_URL + "RechercheJs",
-    //    headers: {
-    //        cookie: 'ASP.NET_SessionId=' + sessionID
-    //    },
-    //    body: {
-    //        mot: "poulet"
-    //    },
-    //    json: true
-    //};
-    //request(options, function (error, response, body) {
-    //    if (!error && response.statusCode == 200) {
+    var options = {
+        method: 'POST',
+        uri: FO_URL + "RechercheJs",
+        headers: {
+            cookie: 'ASP.NET_SessionId=' + sessionID
+        },
+        body: {
+            mot: "poulet"
+        },
+        json: true
+    };
+    request(options, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
             var options2 = {
                 method: 'POST',
                 uri: FO_URL + "RechercheJs",
@@ -221,16 +221,14 @@ function getProduit(produit, sessionID,session) {
                 }
             })
             
-        //}
-        //else {
-        //    console.log("erreur recherche produit");
-        //    session.send("J'ai besoin que tu te connectes pour lancer cette recherche, afin de vérifier la disponibilité des produits dans ton Intermarché")
-        //    session.endDialog();
-        //}
-    }/*)*/
-
-        
-//}
+        }
+        else {
+            console.log("erreur recherche produit");
+            session.send("J'ai besoin que tu te connectes pour lancer cette recherche, afin de vérifier la disponibilité des produits dans ton Intermarché")
+            session.endDialog();
+        }
+    })
+}
 
 
 function getIdrc(email, mdp, session) {
